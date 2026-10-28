@@ -8,43 +8,29 @@
 
 ## 安装与依赖
 
-宿主已验证版本为 DSH 0.2.1-rc.3。插件是无 npm 运行时依赖的 ESM bundle，宿主提供 `@deepseek-ai/*`。
+宿主已验证版本为 DSH 0.2.1-rc.3。**0.2.0为Windows x64自包含包**，宿主提供 `@deepseek-ai/*`，
+以下程序及所需DLL已包含在tgz中，不用另装Python、FFmpeg、Gifski或yt-dlp。
 
-| 外部程序 | 用途 | 配置项 |
+| 内置程序 | 用途 | 可选外部覆盖项 |
 |---|---|---|
-| yt-dlp | 解析、下载链接；本地视频转GIF不需要 | `ytdlpPath` |
-| FFmpeg | 截取、等比缩放、帧率采样与音视频合并 | `ffmpegPath` |
-| ffprobe | 探测原片，读取并验证GIF实际帧数和时长 | `ffprobePath` |
+| yt-dlp 2026.10.26目录版 | 解析、下载链接；包含其私有Python运行时 | `ytdlpPath` |
+| FFmpeg n9.0.2-36-g6882969ce9共享库版 | 截取、缩放、采样与音视频合并 | `ffmpegPath` |
+| 同版ffprobe | 探测原片，读取并验证GIF实际帧数和时长 | `ffprobePath` |
 | Gifski | 高质量GIF编码；开发验证使用1.34.0 | `gifskiPath` |
 
-默认从 PATH 查找；也可在插件配置中填写可执行文件的绝对路径。**不自动安装或更新这些程序**。
-Gifski 官方下载见 <https://github.com/ImageOptim/gifski/releases>，
-yt-dlp 官方下载见 <https://github.com/yt-dlp/yt-dlp/releases>。
-Windows 可使用官方 `yt-dlp.exe`，不必另装 Python。不要向本包安装另一份 `@deepseek-ai/*`。
+默认使用包内固定版本，使用前验证SHA256及配套文件；不追随latest，不在安装或首次使用时下载／更新程序。
+只有显式填写覆盖路径时才使用用户指定的版本；旧版如果填写过路径，清空四个路径字段才切回内置版。
+本包目前不支持Windows ARM64、32位、macOS或Linux安装，后续应分别制作平台包。
+不要向本包安装另一份 `@deepseek-ai/*`。
 
-本机源码安装，在 PowerShell 执行：
+本机安装已生成的完整包，在PowerShell执行：
 
 ```powershell
-& 'E:\DeepSeekHarness\resources\runtime\cli\bin\dsh.cmd' plugin --profile desktop add 'file:F:\Project\03-Tools-Automation\DSH-plugin\dsh-cyber-amber'
+& 'E:\DeepSeekHarness\resources\runtime\cli\bin\dsh.cmd' plugin --profile desktop add 'file:F:/Project/03-Tools-Automation/DSH-plugin/dsh-cyber-amber/dist/dsh-cyber-amber-0.2.0.tgz'
 ```
 
-随后在 DSH 插件配置中填写需要的程序路径，再重启 DSH。本项目不会替你修改实际 `desktop` profile。
-开发后刷新 `file:` 安装需先 remove 再 add；仅改源码不会更新宿主拷贝。
-
-本机已有FFmpeg和ffprobe，现有Gifski也可直接复用，无需再安装一份；在配置中填写其绝对路径即可。
-若使用profile覆盖层，以下是填写形式（把yt-dlp路径替换为你实际保存的位置）：
-
-```yaml
-- id: cyber-amber
-  name: dsh-cyber-amber
-  config:
-    ffmpegPath: D:/Environment/FFmpeg/bin/ffmpeg.exe
-    ffprobePath: D:/Environment/FFmpeg/bin/ffprobe.exe
-    gifskiPath: F:/Project/03-Tools-Automation/QQBot/nonebot/tools/gifski-1.34.0/gifski.exe
-    ytdlpPath: F:/Tools/yt-dlp.exe
-```
-
-这只是本机配置示例，生产代码未内置上述路径；不要覆盖已有的其他profile条目。
+随后重启DSH。无需改PATH、执行安装脚本或给系统临时目录添加权限。
+本项目不会替你修改实际 `desktop` profile。开发后刷新本地安装需先remove再add；仅改源码不会更新宿主拷贝。
 
 ## 对话验收
 
@@ -58,6 +44,7 @@ Windows 可使用官方 `yt-dlp.exe`，不必另装 Python。不要向本包安�
 
 `amber_download_video`：`url` 必填，可为HTTP(S)页面链接、BV号或av号；`output_dir` 可选。
 默认取1080p以内最佳可用格式与可用音轨，不下载整个播放列表，成品视频保留。
+来源未提供分辨率元数据时允许选择该视频流，下载后用ffprobe报告实际尺寸。
 
 `amber_make_gif`：
 
@@ -99,7 +86,7 @@ DSH使用整对象替换，请保留你已修改的其他字段。
 | 配置项 | 默认 |
 |---|---|
 | `outputDir` | 空：使用会话工作目录的cyber-amber子目录 |
-| `ffmpegPath` / `ffprobePath` / `gifskiPath` / `ytdlpPath` | 空：PATH查找 |
+| `ffmpegPath` / `ffprobePath` / `gifskiPath` / `ytdlpPath` | 空：使用包内固定程序；填写时优先使用该路径 |
 | `cookiesFile` | 空：不带Cookie；需登录时填写Netscape Cookie文件绝对路径 |
 | `proxy` | 空：不额外指定下载代理；系统网络路由和环境代理仍可能生效 |
 | `sourceHeight` | 1080：下载格式高度上限 |
@@ -123,14 +110,19 @@ FFmpeg解码／截取／缩放／采样后直接通过背压管道传给Gifski�
 
 ## 开发测试
 
-不需要npm安装或更换包管理器。使用Node24，设置开发机Gifski路径后执行：
+不需要npm安装或更换包管理器。完整源码工作副本使用Node24执行：
 
 ```powershell
-$env:AMBER_TEST_GIFSKI = '你的Gifski绝对路径'
 node --test 'test/*.test.mjs'
 ```
 
-测试包含真实FFmpeg/Gifski编码，离线下载协议fixture只验证编排，**不是平台联网成功的证明**。
+测试包含真实包内FFmpeg/Gifski编码；测试原片由JavaScript直接生成，工件位于项目 `.validation/tests`，
+不要求FFmpeg向系统临时目录写视频。离线下载协议fixture只验证编排，不代表平台联网成功。
 DSH隔离验证和平台实测状态见 [docs/VALIDATION.md](docs/VALIDATION.md)。
+
+维护者从Git检出后，执行 `python scripts/vendor.py` 按锁定URL与哈希准备依赖，
+再执行 `node scripts/verify-bundle.mjs` 和 `npm pack --pack-destination dist`。
+依赖二进制不放入Git，但完整tgz包含它们；请保留发行tgz，必要时可从中恢复vendor目录并按清单校验。
+只有维护者显式执行准备脚本才联网，用户安装tgz无需运行该脚本。详见 [vendor/README.md](vendor/README.md)。
 
 本包原创代码为MIT；外部程序各自许可与来源见 [NOTICE.md](NOTICE.md)。

@@ -1,16 +1,29 @@
 # External tools and references
 
-This package contains original JavaScript glue and tests. It does not bundle FFmpeg,
-Gifski, yt-dlp, a Python interpreter, or another plugin's credentials/runtime.
+The original JavaScript glue and tests are MIT licensed. The Windows x64 release
+is an aggregate of that code and the following separately licensed command-line
+programs. Their notices and license texts are preserved under `vendor/licenses`.
+No other plugin's credentials or runtime are included.
 
 - Gifski: <https://github.com/ImageOptim/gifski>, AGPL-3.0-or-later; alternative
   commercial licensing is offered by its author. Tested engine version: 1.34.0.
-- FFmpeg / ffprobe: <https://ffmpeg.org>. The license depends on build options;
-  consult the distribution you install. No FFmpeg binary is distributed here.
-- yt-dlp: <https://github.com/yt-dlp/yt-dlp>. Source is Unlicense; standalone
-  distributions can include third-party code under additional licenses.
+- FFmpeg / ffprobe n9.0.2-36-g6882969ce9, BtbN LGPL shared build, plus its libav
+  DLLs. See `vendor/licenses/ffmpeg-LICENSE.txt` and `GPL-3.0.txt`.
+  Exact FFmpeg source: <https://github.com/FFmpeg/FFmpeg/tree/6882969ce9>.
+  Build recipes: <https://github.com/BtbN/FFmpeg-Builds/tree/autobuild-2026-10-27-18-38>.
+- yt-dlp 2026.10.26, official Windows x64 onedir distribution. It includes a
+  private Python runtime and bundled third-party components; a separate Python
+  installation is not needed. The yt-dlp source is Unlicense; the binary aggregate
+  is subject to the included third-party terms, including GPLv3+.
+  Full upstream notices: `vendor/licenses/yt-dlp-THIRD_PARTY_LICENSES.txt`.
+  Exact source: <https://github.com/yt-dlp/yt-dlp/tree/2026.10.26>.
 - DeepSeek Harness host API: <https://github.com/deepseek-ai/deepseek-harness>.
   Host packages are supplied by DSH, not installed or redistributed by this bundle.
+
+`vendor/sources.lock.json` records release origins, source/build references and
+archive checksums; `vendor/manifest.json` records every bundled dependency file's
+size and SHA256. Updates are manual release decisions, never automatic. Users may
+explicitly select their own executable paths, including modified versions.
 
 Design references, not runtime dependencies:
 <https://github.com/tkwkeven/dsh-ytdlp>,

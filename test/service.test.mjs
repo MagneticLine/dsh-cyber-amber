@@ -1,32 +1,30 @@
 import { after, before, test } from 'node:test'
 import assert from 'node:assert/strict'
 import { createHash } from 'node:crypto'
-import { access, mkdtemp, readFile, readdir, rm, stat } from 'node:fs/promises'
-import { tmpdir } from 'node:os'
+import { readFile, readdir, stat } from 'node:fs/promises'
 import { join, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { AmberService } from '../lib/service.js'
 import { JobQueue, Runtime, collectedText } from '../lib/runtime.js'
 import { nativeRuntime } from './support/native-runtime.mjs'
+import { testFolder, removeTestFolder, writeVideo } from './support/fixtures.mjs'
 
 let root, source, originalHash, programs
 const hash = bytes => createHash('sha256').update(bytes).digest('hex')
 
 before(async () => {
-  root = await mkdtemp(join(tmpdir(), 'amber-tests-'))
-  source = join(root, '原片 video with spaces.mp4')
+  root = await testFolder('media-')
+  source = join(root, '原片 video with spaces.avi')
   const subprocess = nativeRuntime(), runtime = new Runtime(subprocess)
   const signal = AbortSignal.timeout(30000)
   programs = { ffmpegPath: await runtime.executable(process.env.AMBER_TEST_FFMPEG, 'ffmpeg', signal),
     ffprobePath: await runtime.executable(process.env.AMBER_TEST_FFPROBE, 'ffprobe', signal),
     gifskiPath: await runtime.executable(process.env.AMBER_TEST_GIFSKI, 'gifski', signal) }
-  await runtime.run([programs.ffmpegPath, '-v', 'error', '-f', 'lavfi', '-i',
-    'testsrc2=size=320x180:rate=20:duration=3', '-c:v', 'libx264', '-pix_fmt', 'yuv420p', source],
-  { cwd: root, signal, stage: 'fixture' })
+  await writeVideo(source)
   originalHash = hash(await readFile(source))
 })
 
-after(async () => { if (root) await rm(root, { recursive: true, force: true }) })
+after(async () => { if (root) await removeTestFolder(root) })
 
 function setup(name, extra = {}, subprocess = nativeRuntime()) {
   const outputDir = join(root, name)
@@ -183,6 +181,18 @@ test('queue is serial, bounded, and frees a cancelled waiter immediately', async
   assert.equal(await held, 'done')
   assert.equal(await next, 'next')
   assert.equal(queue.count, 0)
+})
+
+test('permission errors identify the stage and directory without retrying or changing destinations', async () => {
+  let calls = 0
+  const runtime = new Runtime({ spawn: () => {
+    calls++
+    return { done: Promise.resolve({ exitCode: 13 }), waitForExit: async () => {}, terminate() {},
+      collected: { stderr: { readFrom: () => ({ text: 'Permission denied', lossy: false }) } } }
+  } })
+  await assert.rejects(runtime.run(['ffmpeg.exe'], { cwd: root, signal: new AbortController().signal, stage: 'encode' }),
+    error => error.code === 'permission_denied' && error.message.includes(root) && error.message.includes('不会自动'))
+  assert.equal(calls, 1)
 })
 
 test('missing session requires explicit output dir and default output follows workingDirectory', async () => {

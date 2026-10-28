@@ -1,0 +1,5 @@
+.validation/
+.tools/
+dist/
+test/
+scripts/

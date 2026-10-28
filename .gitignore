@@ -3,3 +3,7 @@ node_modules/
 .tools/
 cyber-amber/
 *.tgz
+dist/
+vendor/win32-x64/*.exe
+vendor/win32-x64/*.dll
+vendor/win32-x64/yt-dlp/

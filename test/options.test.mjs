@@ -59,7 +59,7 @@ test('download argv is config-isolated, single-video and keeps URL as one argume
   assert.equal(args.at(-2), '--')
   assert(args.includes('--ignore-config'))
   assert(args.includes('--no-playlist'))
-  assert.equal(args[args.indexOf('-f') + 1], 'bv[height<=1080]/b[height<=1080]')
+  assert.equal(args[args.indexOf('-f') + 1], 'bv[height<=?1080]/b[height<=?1080]')
   assert(!args.includes('--merge-output-format'))
   const audio = downloadArgs(url, resolve('.'), { ...DEFAULTS, cookiesFile: 'cookie path', proxy: 'http://127.0.0.1:7897' }, false)
   assert(audio[audio.indexOf('-f') + 1].includes('+ba'))

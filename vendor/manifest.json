@@ -1,0 +1,831 @@
+{
+  "schema_version": 1,
+  "platform": "win32",
+  "arch": "x64",
+  "components": {
+    "yt-dlp": {
+      "version": "2026.10.26",
+      "url": "https://github.com/yt-dlp/yt-dlp/releases/download/2026.10.26/yt-dlp_win.zip",
+      "sha256": "fd51b212cf8380c7a52ee08c0d6be7f3c59b2f2c832eaf7b45acfae6eab57419",
+      "cache_file": "yt-dlp-2026.10.26-win.zip",
+      "source_url": "https://github.com/yt-dlp/yt-dlp/tree/2026.10.26",
+      "license": "Unlicense and bundled third-party licenses"
+    },
+    "ffmpeg": {
+      "version": "n9.0.2-36-g6882969ce9",
+      "url": "https://github.com/BtbN/FFmpeg-Builds/releases/download/autobuild-2026-10-27-18-38/ffmpeg-n9.0.2-36-g6882969ce9-win64-lgpl-shared-9.0.zip",
+      "sha256": "f70e43c4f5670fbbf2dc4eb667b0d6b3743d68386f766c08bb2e0ec3edece398",
+      "cache_file": "ffmpeg-win64-lgpl-shared.zip",
+      "source_url": "https://github.com/FFmpeg/FFmpeg/tree/6882969ce9",
+      "build_url": "https://github.com/BtbN/FFmpeg-Builds/tree/autobuild-2026-10-27-18-38",
+      "license": "LGPL shared build"
+    },
+    "gifski": {
+      "version": "1.34.0",
+      "url": "https://github.com/ImageOptim/gifski/releases/download/1.34.0/gifski-1.34.0.tar.xz",
+      "sha256": "b9b6591aa163123d737353d9c8581efdf3234d28eeaa45329b31da905cd5a996",
+      "cache_file": "gifski-1.34.0.tar.xz",
+      "source_url": "https://github.com/ImageOptim/gifski/tree/1.34.0",
+      "license": "AGPL-3.0-or-later",
+      "exe_sha256": "9da8553cbe71c0facf544634b4e377262ea30d34becdc0ca077306342e776295"
+    }
+  },
+  "binaries": {
+    "ffmpeg": "win32-x64/ffmpeg.exe",
+    "ffprobe": "win32-x64/ffprobe.exe",
+    "gifski": "win32-x64/gifski.exe",
+    "yt-dlp": "win32-x64/yt-dlp/yt-dlp.exe"
+  },
+  "files": {
+    "licenses/GPL-3.0.txt": {
+      "sha256": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903",
+      "bytes": 35147,
+      "component": "ffmpeg"
+    },
+    "licenses/ffmpeg-LICENSE.txt": {
+      "sha256": "da7eabb7bafdf7d3ae5e9f223aa5bdc1eece45ac569dc21b3b037520b4464768",
+      "bytes": 7651,
+      "component": "ffmpeg"
+    },
+    "licenses/gifski-LICENSE.md": {
+      "sha256": "4e2b565ed4c9537443eb92a10d745a6f8aeb75fa086fd7b955bb52e2cde48a4d",
+      "bytes": 32240,
+      "component": "gifski"
+    },
+    "licenses/yt-dlp-LICENSE.txt": {
+      "sha256": "7e12e5df4bae12cb21581ba157ced20e1986a0508dd10d0e8a4ab9a4cf94e85c",
+      "bytes": 1211,
+      "component": "yt-dlp"
+    },
+    "licenses/yt-dlp-THIRD_PARTY_LICENSES.txt": {
+      "sha256": "472aefe951c7db35e1657c1d13fd337140511ed6f2b329205105ad441c5a02b7",
+      "bytes": 243550,
+      "component": "yt-dlp"
+    },
+    "win32-x64/avcodec-63.dll": {
+      "sha256": "3fd8be7aae0594b118324169b91a868c3d75f57d7b7d60136a5ad5480ee3fa57",
+      "bytes": 91810816,
+      "component": "ffmpeg"
+    },
+    "win32-x64/avdevice-63.dll": {
+      "sha256": "ffb490ae3abb163c9a1e2bbc01be641f6795b7e578e15a7e04fe3929b063a829",
+      "bytes": 5008384,
+      "component": "ffmpeg"
+    },
+    "win32-x64/avfilter-12.dll": {
+      "sha256": "e5bd44c27975781e647e062811935dfbc6bd211c6bd49bbff21db4c36aa7e5c7",
+      "bytes": 31876096,
+      "component": "ffmpeg"
+    },
+    "win32-x64/avformat-63.dll": {
+      "sha256": "725ff43ad96f2a90413be08ce88352a22795a355ceb5193515422a418839819d",
+      "bytes": 23003136,
+      "component": "ffmpeg"
+    },
+    "win32-x64/avutil-61.dll": {
+      "sha256": "5d1cdac282cdf0d04938595330c70671b87cb4ebb39ba0678a12f49cc8b4f058",
+      "bytes": 3025408,
+      "component": "ffmpeg"
+    },
+    "win32-x64/ffmpeg.exe": {
+      "sha256": "8fc3e99cbbe6d400072956d61ca6e682b6fda81a8d586c6db8a8bdcbb8f921ee",
+      "bytes": 551424,
+      "component": "ffmpeg"
+    },
+    "win32-x64/ffprobe.exe": {
+      "sha256": "293db2f1db2802299416c8a6aef097f1b97ef78315e7a72d5aed5e1ab45239c2",
+      "bytes": 269824,
+      "component": "ffmpeg"
+    },
+    "win32-x64/gifski.exe": {
+      "sha256": "9da8553cbe71c0facf544634b4e377262ea30d34becdc0ca077306342e776295",
+      "bytes": 1362432,
+      "component": "gifski"
+    },
+    "win32-x64/swresample-7.dll": {
+      "sha256": "abf6658978a676bca0868bf836f518cdca27ac530e64493e360139c2cee8de72",
+      "bytes": 747008,
+      "component": "ffmpeg"
+    },
+    "win32-x64/swscale-10.dll": {
+      "sha256": "aef7f087e8ce69b1e7db2255a5b46bf054b8368ce172d94c6b53326d3c82cd6e",
+      "bytes": 2343936,
+      "component": "ffmpeg"
+    },
+    "win32-x64/yt-dlp/_internal/Cryptodome/Cipher/_ARC4.pyd": {
+      "sha256": "dd3a9c4651fae8ba9f44937dc5c3afd6e443f0a622036e21180fdf558cf163f6",
+      "bytes": 11264,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/Cryptodome/Cipher/_Salsa20.pyd": {
+      "sha256": "cf27f0b954cb12880813b274c2a6afbde7b9f82f6f9767a0b3ad49af5c452425",
+      "bytes": 13312,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/Cryptodome/Cipher/_chacha20.pyd": {
+      "sha256": "a6ae1f2f1463e649660fb3f5585508b19944380d41371d43965645954b8a16db",
+      "bytes": 13312,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/Cryptodome/Cipher/_pkcs1_decode.pyd": {
+      "sha256": "6a23a4639eb6fb17ba079ac66226e371ecd6226a37d48de37f920feb607020e1",
+      "bytes": 13824,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/Cryptodome/Cipher/_raw_aes.pyd": {
+      "sha256": "c476ef00bde0e7c9d70e3928f4bfe04b5b8707d30c295751cc1a5a6e69247472",
+      "bytes": 36864,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/Cryptodome/Cipher/_raw_aesni.pyd": {
+      "sha256": "4fb4db0f874d3c6c0f0b60bb054d1913106a8c155f33263ab43a28c6ada45f61",
+      "bytes": 15360,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/Cryptodome/Cipher/_raw_arc2.pyd": {
+      "sha256": "624a1c62f94e2d97c98b1b9abe445b35f3738dc69f31db38ccb3d533212c0463",
+      "bytes": 15872,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/Cryptodome/Cipher/_raw_blowfish.pyd": {
+      "sha256": "fdc14a5a9f4c977ebe5f6a1a83a6aee916a7be3fc138755458e1e900b37ebfeb",
+      "bytes": 19456,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/Cryptodome/Cipher/_raw_cast.pyd": {
+      "sha256": "b908734eef3113437ae4f27c2f550a282e0a18de3619cd436370efcc165a0718",
+      "bytes": 24064,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/Cryptodome/Cipher/_raw_cbc.pyd": {
+      "sha256": "054910d9f916df27e12a2af768953f5b2c399ed877042e81c29e7b550ac0acba",
+      "bytes": 12288,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/Cryptodome/Cipher/_raw_cfb.pyd": {
+      "sha256": "d832ec85310cd7f9abb56544f7522d28c0e47dd87f92dba038cc7a5471de7bbf",
+      "bytes": 13312,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/Cryptodome/Cipher/_raw_ctr.pyd": {
+      "sha256": "b51570afc00f4208d20b0a9fda23294fc90dd76d0c0d14e97f307654a30d9862",
+      "bytes": 14848,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/Cryptodome/Cipher/_raw_des.pyd": {
+      "sha256": "c7f7b4ddffb27fdee044701db76cc655b2090baef170b3c8d875e69b2bf86242",
+      "bytes": 52736,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/Cryptodome/Cipher/_raw_des3.pyd": {
+      "sha256": "30681a8e5d35c9afe6c910559df2719ed38d155d472af39f6d008ec21e88cc46",
+      "bytes": 53248,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/Cryptodome/Cipher/_raw_ecb.pyd": {
+      "sha256": "3de1140d5bc0406009da25a7b512a0143b0538868a658faa3098f6934ab1337d",
+      "bytes": 10752,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/Cryptodome/Cipher/_raw_eksblowfish.pyd": {
+      "sha256": "8fbab48bfbafcd89fe95208a2e0ae287d6efdf8afb34e91ae3de0bd034b0acc4",
+      "bytes": 21504,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/Cryptodome/Cipher/_raw_ocb.pyd": {
+      "sha256": "8e52ed6946296e07f01d571937ba4b27878b8b44bc59e8fcfbc88bf37d6c28cd",
+      "bytes": 18432,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/Cryptodome/Cipher/_raw_ofb.pyd": {
+      "sha256": "50888d7356b74637fbca7ae75fbaf3cb6a00233465dee5c8e0910b3fe21d35ca",
+      "bytes": 12288,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/Cryptodome/Hash/_BLAKE2b.pyd": {
+      "sha256": "8ec098753c772b47230ba41e405913126dc05ab64b393333f36c318b51489590",
+      "bytes": 14848,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/Cryptodome/Hash/_BLAKE2s.pyd": {
+      "sha256": "7c6049038561f0a5ced6e1e475f1efad7e40763987c4444979a5dedd613fc618",
+      "bytes": 14336,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/Cryptodome/Hash/_MD2.pyd": {
+      "sha256": "b17c95abe715e67312a8ec4db515e5287ca5258158cf1a45905db08f49872731",
+      "bytes": 15360,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/Cryptodome/Hash/_MD4.pyd": {
+      "sha256": "10a4d1768ad89cdf96cded5fbcdee7ed223599c10c01d8075b8153c8019406b4",
+      "bytes": 13824,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/Cryptodome/Hash/_MD5.pyd": {
+      "sha256": "96381b3a405d1a5f4919500a25605a66aef21022f017a5ac6a62c639b79879ff",
+      "bytes": 15872,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/Cryptodome/Hash/_RIPEMD160.pyd": {
+      "sha256": "782ebe9212b6a2dd8fe7b5617e38e334d2028f0e76d101c93386ed0ccde3706c",
+      "bytes": 17920,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/Cryptodome/Hash/_SHA1.pyd": {
+      "sha256": "95a407910688654832b9c234fd493339b8463ac5a0cc499bb8e871452059e5bd",
+      "bytes": 18432,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/Cryptodome/Hash/_SHA224.pyd": {
+      "sha256": "528a3cca54cdefe104f378e6b6798d8796dba5a95eaf7d7bd0b1df489ca97f08",
+      "bytes": 22528,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/Cryptodome/Hash/_SHA256.pyd": {
+      "sha256": "2faf8c0ba8b7dd04f53edde98a02f65654053184a95642bc42b0d9c100e09876",
+      "bytes": 22528,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/Cryptodome/Hash/_SHA384.pyd": {
+      "sha256": "90128cdd9d178ad1cbfa8d5ee16f43d95fe02c63cd7fa9f77f74fe182698c335",
+      "bytes": 26624,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/Cryptodome/Hash/_SHA512.pyd": {
+      "sha256": "1f9a2b97c3d9a8198b1bcd810e3c2ef628b4b072dee92ecb0921cb13733377ca",
+      "bytes": 27136,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/Cryptodome/Hash/_ghash_clmul.pyd": {
+      "sha256": "255486a3f9c18a66e5cbe4e0b7c4c8df7bbe17801ac037664020fb1b7345a360",
+      "bytes": 12800,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/Cryptodome/Hash/_ghash_portable.pyd": {
+      "sha256": "886853a7d66cc698f4056054cc39742d4e7496371b5dfeb4c780f60943d7adb8",
+      "bytes": 12288,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/Cryptodome/Hash/_keccak.pyd": {
+      "sha256": "4731fcb3ba86ec62374e1f022a796cf951dabb2b2202b9e89004778061bffb4e",
+      "bytes": 16896,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/Cryptodome/Hash/_poly1305.pyd": {
+      "sha256": "8a29d20bfc01ff7948e2e116aa88003f668cd7a69f5b9e51efa2a5c7c2518feb",
+      "bytes": 14336,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/Cryptodome/Math/_modexp.pyd": {
+      "sha256": "fec06d1ef2ba26f193d7117508dd2be88bb3536ac1ea9f9f8e0dcc86cb14e851",
+      "bytes": 32256,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/Cryptodome/Protocol/_scrypt.pyd": {
+      "sha256": "d6004b77fa942ee830039a67ac34b2a244162a66db7218b45bf0d0cc366fac2d",
+      "bytes": 12288,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/Cryptodome/PublicKey/_curve25519.pyd": {
+      "sha256": "13ff69fbb08c90faad33dc2facb25f6fd188e5011623a60a20bfa8aa04102d5a",
+      "bytes": 20992,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/Cryptodome/PublicKey/_curve448.pyd": {
+      "sha256": "4f7b5d9bde1788081882bb18cd9dcac6fa48285ca06b836e1d6871d7611d82f6",
+      "bytes": 59392,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/Cryptodome/PublicKey/_ec_ws.pyd": {
+      "sha256": "a771ca51feb93b70532611c5fa3145ba3bd5019c412b365632df2058f3d42806",
+      "bytes": 756736,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/Cryptodome/PublicKey/_ed25519.pyd": {
+      "sha256": "af1ebd5f5290d376537ef2dd06acbd5ee1054b834fac3bd4f20a2b7461685d48",
+      "bytes": 25088,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/Cryptodome/PublicKey/_ed448.pyd": {
+      "sha256": "430c834c7ea0bd1dc413d6e711844ce2f879a5f517b8cb347610198becfa65ea",
+      "bytes": 75776,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/Cryptodome/Util/_cpuid_c.pyd": {
+      "sha256": "8b3df53a5e7b9ca0c20db71cac696a0473c297bbead93ef7ea3bddf6f74d6aef",
+      "bytes": 10240,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/Cryptodome/Util/_strxor.pyd": {
+      "sha256": "c2045e1eda9b76a7855140229fca3f2600f1e822cb28f988608f831d033f4be9",
+      "bytes": 10240,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/THIRD_PARTY_LICENSES.txt": {
+      "sha256": "5b7bc105c562b81b90d1a2cd5a8cc8b336ee107ae0ae81ce58450cd8b1bc2ad4",
+      "bytes": 248243,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/VCRUNTIME140.dll": {
+      "sha256": "d1f4225df2cd877dbf130d5668a021dce3f94118455ff5ec952061c30afc9ce7",
+      "bytes": 178616,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/VCRUNTIME140_1.dll": {
+      "sha256": "a7146c08f89fe5b04541ab507cdb59ff7b44534d4ba3c668a426c6450a03434e",
+      "bytes": 50112,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/_asyncio.pyd": {
+      "sha256": "c833cfdab82da58163acdada02cdb2b92d42bc543e1b5519dbcbe4d3805a98fc",
+      "bytes": 79072,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/_brotli.cp314-win_amd64.pyd": {
+      "sha256": "e91121006fc85b001a9d51b9293719d1af0e56e774bfd396bfe1d3ccf21baf85",
+      "bytes": 872960,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/_bz2.pyd": {
+      "sha256": "9590a3f4b7c0801cd379341d40bb89b5dc9a4e232c9498b6f3bc6b5e99d4ae7f",
+      "bytes": 87776,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/_cffi_backend.cp314-win_amd64.pyd": {
+      "sha256": "9e99b2184c60f21a88cafc374386ded3559e8694ed7cf111f2869e066d303334",
+      "bytes": 181248,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/_ctypes.pyd": {
+      "sha256": "adf71d85781a2fe937fcc44c0961498e2cf30849f9863ff7b5f7510817cea952",
+      "bytes": 143072,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/_decimal.pyd": {
+      "sha256": "9605f332fb52636d77a3125abc7e42ba22b3838dcf136d81f37fe5875cbd62d6",
+      "bytes": 290016,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/_elementtree.pyd": {
+      "sha256": "77707cb19dc91eb634d70f31b21022ee4c6ea5ce834c6952bc56ba00c6fd644d",
+      "bytes": 138976,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/_hashlib.pyd": {
+      "sha256": "9052a85ac9947afbbdfdd62b0cad7501b668e6107832cefaa4b76377d710dae0",
+      "bytes": 68832,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/_lzma.pyd": {
+      "sha256": "9ff9f63ad79f161722106e029b4c3afc6494848fd73f9bcc2ed5434a15c71bde",
+      "bytes": 160992,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/_multiprocessing.pyd": {
+      "sha256": "7606f4044ffc923eac208f5bc5acb1dea14fe8edf2efe08a63e11177f4c7a016",
+      "bytes": 38624,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/_overlapped.pyd": {
+      "sha256": "8f35ff35e76a2308ce0a50200fb01b55569f30952098239f7e000f3da1393a61",
+      "bytes": 58080,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/_queue.pyd": {
+      "sha256": "51a3d8e40b061db4fc77f9a3b18e6c2f912c4edf467e46c95ac325d35f2be4df",
+      "bytes": 36576,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/_socket.pyd": {
+      "sha256": "11f2ace2a37e59bf0f2fcfcc2523307408fa2e7f0aec561bc7531a8db130a83c",
+      "bytes": 87776,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/_sqlite3.pyd": {
+      "sha256": "33e91d0de7924180012c86efb17611ec589b93f90b321ed9ec3c2f4c99fae5be",
+      "bytes": 133344,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/_ssl.pyd": {
+      "sha256": "56fdbe70896e4b3c6d4e8897fad1d011129354172566832371289edca0d85a21",
+      "bytes": 193248,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/_uuid.pyd": {
+      "sha256": "ad949327a9730feefc7f2c14db9b1b43f4351df1aad3688dc1e68e4a23f7e81c",
+      "bytes": 28384,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/_wmi.pyd": {
+      "sha256": "c8f6705d2da1be12b10050a1311b7c865fd79f11404cfad1a70b3f8962051056",
+      "bytes": 40160,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/_zstd.pyd": {
+      "sha256": "7a7b50c580428daf3d43c87b121988d2e8c7af9533fa2195f1aef8652fc2c489",
+      "bytes": 503520,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/api-ms-win-core-console-l1-1-0.dll": {
+      "sha256": "88ace577a9c51061cb7d1a36babbbefa48212fadc838ffde98fdfff60de18386",
+      "bytes": 22072,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/api-ms-win-core-datetime-l1-1-0.dll": {
+      "sha256": "1bd81dfd19204b44662510d9054852fb77c9f25c1088d647881c9b976cc16818",
+      "bytes": 22056,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/api-ms-win-core-debug-l1-1-0.dll": {
+      "sha256": "591358eb4d1531e9563ee0813e4301c552ce364c912ce684d16576eabf195dc3",
+      "bytes": 21944,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/api-ms-win-core-errorhandling-l1-1-0.dll": {
+      "sha256": "d56ce7b1cd76108ad6c137326ec694a14c99d48c3d7b0ace8c3ff4d9bcee3ce8",
+      "bytes": 22096,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/api-ms-win-core-fibers-l1-1-0.dll": {
+      "sha256": "91d249d7bc0e38ef6bcb17158b1fdc6dd8888dc086615c9b8b750b87e52a5fb3",
+      "bytes": 22072,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/api-ms-win-core-fibers-l1-1-1.dll": {
+      "sha256": "fc9d86cec621383eab636ebc87ddd3f5c19a3cb2a33d97be112c051d0b275429",
+      "bytes": 22072,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/api-ms-win-core-file-l1-1-0.dll": {
+      "sha256": "1ca895aba4e7435563a6b43e85eba67a0f8c74aa6a6a94d0fc48fa35535e2585",
+      "bytes": 26152,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/api-ms-win-core-file-l1-2-0.dll": {
+      "sha256": "4cadbc0c39da7c6722206fdcebd670abe5b8d261e7b041dd94f9397a89d1990d",
+      "bytes": 22056,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/api-ms-win-core-file-l2-1-0.dll": {
+      "sha256": "93c624b366ba16c643fc8933070a26f03b073ad0cf7f80173266d67536c61989",
+      "bytes": 21960,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/api-ms-win-core-handle-l1-1-0.dll": {
+      "sha256": "39095f59c41d76ec81bb2723d646fde4c148e7cc3402f4980d2ade95cb9c84f9",
+      "bytes": 21944,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/api-ms-win-core-heap-l1-1-0.dll": {
+      "sha256": "8f105771b236dbcb859de271f0a6822ce1cb79c36988dd42c9e3f6f55c5f7eb9",
+      "bytes": 22072,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/api-ms-win-core-interlocked-l1-1-0.dll": {
+      "sha256": "53b25e753ca785bf8b695d89dde5818a318890211dc992a89146f16658f0b606",
+      "bytes": 22072,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/api-ms-win-core-kernel32-legacy-l1-1-1.dll": {
+      "sha256": "a9b13a1cd1b8c19b0c6b4afcd5bb0dd29c0e2288231ac9e6db8510094ce68ba6",
+      "bytes": 22080,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/api-ms-win-core-libraryloader-l1-1-0.dll": {
+      "sha256": "7f39ba298b41e4963047341288cab36b6a241835ee11ba4ad70f44dacd40906c",
+      "bytes": 22056,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/api-ms-win-core-localization-l1-2-0.dll": {
+      "sha256": "6ee44dd0d8510dc024c9f7c79b1b9fa88c987b26b6beb6653ddd11751c34e5dc",
+      "bytes": 22080,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/api-ms-win-core-memory-l1-1-0.dll": {
+      "sha256": "0512a35316ec9180437f86696a84c5c06a7e4e82e050055a656e5bf9fca206f9",
+      "bytes": 22056,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/api-ms-win-core-namedpipe-l1-1-0.dll": {
+      "sha256": "c05f1fffe3b5a2738ea54ce9485cca026fb9635f982626fba1e1dcc531897273",
+      "bytes": 22096,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/api-ms-win-core-processenvironment-l1-1-0.dll": {
+      "sha256": "c4eca98c3c67b6395d5b005b00ac1eb0318b86b23aa71035a44c2b1602befba9",
+      "bytes": 21968,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/api-ms-win-core-processthreads-l1-1-0.dll": {
+      "sha256": "5ccb89e93d67bc3288d4e84649c5346e66e15e3d7cd65d989daf3f4cb584be9a",
+      "bytes": 22096,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/api-ms-win-core-processthreads-l1-1-1.dll": {
+      "sha256": "4ad565a8ba3ef0ea8ab87221ad11f83ee0bc844ce236607958406663b407333e",
+      "bytes": 22072,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/api-ms-win-core-profile-l1-1-0.dll": {
+      "sha256": "7809160932f44e59b021699f5bc68799eb7293ee1fa926d6fcca3c3445302e61",
+      "bytes": 22080,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/api-ms-win-core-rtlsupport-l1-1-0.dll": {
+      "sha256": "9dc1e91e71c7c054854bd1487cb4e6946d82c9f463430f1c4e8d1471005172b1",
+      "bytes": 21960,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/api-ms-win-core-string-l1-1-0.dll": {
+      "sha256": "60fc31d2a0c634412f529dba76af3b9bf991352877c6dae528186d3935704cfd",
+      "bytes": 22056,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/api-ms-win-core-synch-l1-1-0.dll": {
+      "sha256": "3a72b4f29f39a265d32ad12f0ce15dbf60129c840e10d84d427829ede45e78ad",
+      "bytes": 22056,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/api-ms-win-core-synch-l1-2-0.dll": {
+      "sha256": "efc1e4460984a73cf47a3def033af1c8f3b1dbc1a56cd27781d3aacf3e3330cb",
+      "bytes": 22080,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/api-ms-win-core-sysinfo-l1-1-0.dll": {
+      "sha256": "b203d862ddef1dd62bf623fc866c7f7a9c317c1c2ae30d1f52cb41f955b5698e",
+      "bytes": 22072,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/api-ms-win-core-sysinfo-l1-2-0.dll": {
+      "sha256": "2703635d835396afd0f138d7c73751afe7e33a24f4225d08c1690b0a371932c0",
+      "bytes": 22080,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/api-ms-win-core-timezone-l1-1-0.dll": {
+      "sha256": "33f4fddc181066fce06b2227bded813f95e94ed1f3d785e982c6b6b56c510c57",
+      "bytes": 22056,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/api-ms-win-core-util-l1-1-0.dll": {
+      "sha256": "6eda016742a6171205a387a14b3c0b331841567740376f56768f8c151724207d",
+      "bytes": 21944,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/api-ms-win-crt-conio-l1-1-0.dll": {
+      "sha256": "b762061b688aae679afe788904d2c9970f74a7dac98f3b42463d08f25e483d3f",
+      "bytes": 22056,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/api-ms-win-crt-convert-l1-1-0.dll": {
+      "sha256": "ebb2ae5535a64f65daeab8235585114fc9dd2cf1a49f5852d446250b998b6ae4",
+      "bytes": 26056,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/api-ms-win-crt-environment-l1-1-0.dll": {
+      "sha256": "17d63275d00bdd8670422b95bd264c532998e0a1b041079e54fce4b6b7a55819",
+      "bytes": 22080,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/api-ms-win-crt-filesystem-l1-1-0.dll": {
+      "sha256": "9a9e2a65a281644e368d0f272b95ba5f6b445d1c35910d06056c5ebeb77402db",
+      "bytes": 22056,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/api-ms-win-crt-heap-l1-1-0.dll": {
+      "sha256": "bab9ac3ec83e380ae51e4295ef3bf2c738627812d3a49d1e713661abbc8dc57a",
+      "bytes": 22096,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/api-ms-win-crt-locale-l1-1-0.dll": {
+      "sha256": "bd14c67ea28e21d6257ad780a37122c9b5773f69e693f5db6bffaee4d839526e",
+      "bytes": 22080,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/api-ms-win-crt-math-l1-1-0.dll": {
+      "sha256": "606d66d82db562ea7979179d06486a0f94d079941d26b80a1e2c49d29959df6f",
+      "bytes": 30248,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/api-ms-win-crt-process-l1-1-0.dll": {
+      "sha256": "f6156b1020380ec4f0e48577ebedaaef5fb1ab1f337d8b4e72e6a33a7567a9cc",
+      "bytes": 22096,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/api-ms-win-crt-runtime-l1-1-0.dll": {
+      "sha256": "c5902934d026d7e15fbe9917d474f3322846a41a25e66f4b2b1f758801879f4b",
+      "bytes": 26152,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/api-ms-win-crt-stdio-l1-1-0.dll": {
+      "sha256": "a9c5a153d8c0286f9b41a2b1c65854ad9e6471b8755b7de87bae4470e60bcab6",
+      "bytes": 26168,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/api-ms-win-crt-string-l1-1-0.dll": {
+      "sha256": "25b8f83a7767211b11132775a0e27a45aa4ec8ab4e6572599f9c172ae3606b40",
+      "bytes": 26176,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/api-ms-win-crt-time-l1-1-0.dll": {
+      "sha256": "7c7f6393f06de11750adb09cc5698ae55cd9fb27b2e51e207286feb1b5b2b156",
+      "bytes": 22096,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/api-ms-win-crt-utility-l1-1-0.dll": {
+      "sha256": "d8ba5f17b9ffcbf3aeaf3fa1da226832d2fa90f81acce0cd669464e76ce434ac",
+      "bytes": 21952,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/base_library.zip": {
+      "sha256": "eaabaf387ade3baff52af7625b1bbc1cb9bcf9eadf397d888b2922be2398cd36",
+      "bytes": 1396401,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/certifi/cacert.pem": {
+      "sha256": "2ef52ad56b4803e264045c915e55c236cbfa045b84b81efefc218a19eb44bd2b",
+      "bytes": 235863,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/certifi/py.typed": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/charset_normalizer/cd.cp314-win_amd64.pyd": {
+      "sha256": "2fc82a309cdd4499e5dba1a87671f9ac3a3a35e44008afafd7867888d400f3a3",
+      "bytes": 119296,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/charset_normalizer/md.cp314-win_amd64.pyd": {
+      "sha256": "ca72897ac6a6aca48bac72b409bb3cbe6326b755b37d733cad731d5624e17f79",
+      "bytes": 210944,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/curl_cffi-0.17.0.dist-info/DELVEWHEEL": {
+      "sha256": "834774cfd61a0d050b60a8ce59a94f318ea99417e146f4300c4b16b64455ce90",
+      "bytes": 446,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/curl_cffi-0.17.0.dist-info/INSTALLER": {
+      "sha256": "ceebae7b8927a3227e5303cf5e0f1f7b34bb542ad7250ac03fbcde36ec2f1508",
+      "bytes": 4,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/curl_cffi-0.17.0.dist-info/METADATA": {
+      "sha256": "b624837429aad39b5e5559da8aca3c0492ea2fcc59edd892a48eabab3ee996e4",
+      "bytes": 19172,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/curl_cffi-0.17.0.dist-info/RECORD": {
+      "sha256": "8fa5e3de834d2672b72ff4eb39f71f24ea1c0a0babaee5c506c953f63966f4fc",
+      "bytes": 5011,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/curl_cffi-0.17.0.dist-info/REQUESTED": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/curl_cffi-0.17.0.dist-info/WHEEL": {
+      "sha256": "9c276c77f6aee9d90d02198d8387bd78b47bb9d32249bb02d79bef294bc7a245",
+      "bytes": 100,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/curl_cffi-0.17.0.dist-info/entry_points.txt": {
+      "sha256": "1f34f0a14a5b88a228e6e26baa7c4f93939dc59d0f853d1d3d34aa50ff09b3bd",
+      "bytes": 49,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/curl_cffi-0.17.0.dist-info/licenses/LICENSE": {
+      "sha256": "47e6ce96c02170758c16164e66f920620db614523d642eba5000ba0c7aa2be6e",
+      "bytes": 1129,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/curl_cffi-0.17.0.dist-info/top_level.txt": {
+      "sha256": "6f9d58079d08fefbba5c06d21119aab606987226000c203f6da56867f4f92f3b",
+      "bytes": 10,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/curl_cffi.libs/libcurl-impersonate-ae864b926b0a86bfa3b18a664407a1ab.dll": {
+      "sha256": "ae864b926b0a86bfa3b18a664407a1abb71c31a30c317d938f8c88537d044e45",
+      "bytes": 4113920,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/curl_cffi/_wrapper.pyd": {
+      "sha256": "1d478b6ea9d7d80cc165563ff1744b5eddda19c0015b843ca7964a6ec879ddca",
+      "bytes": 42496,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/libcrypto-3.dll": {
+      "sha256": "75495fe0e079ab00d49be740d3c710a0b94e3f74f9648cb7cc9f768fc7f52319",
+      "bytes": 6021880,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/libffi-8.dll": {
+      "sha256": "eff52743773eb550fcc6ce3efc37c85724502233b6b002a35496d828bd7b280a",
+      "bytes": 39696,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/libssl-3.dll": {
+      "sha256": "8957182a9c385bfd9f3f790921de2ddc614cf91f99edbed4e9e5446a46504e32",
+      "bytes": 1308920,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/pyexpat.pyd": {
+      "sha256": "87b0f7401749bd19bddf8872c17965a99142928fdefab0b513ded9c116f3da6b",
+      "bytes": 202464,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/python3.dll": {
+      "sha256": "7bb0a7df2d5cb829319dd8d122039843e2a762361bb5a61bb5d24ca34f4040b5",
+      "bytes": 73952,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/python314.dll": {
+      "sha256": "d8a06cc6ca3348925ea29e343e1c5c5895fe0bb433ff913e1cee44caf358aa6a",
+      "bytes": 6816992,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/select.pyd": {
+      "sha256": "0da869c017fd3231cfc1c1e4c4bef1bb7bf5cba38236e6d7bf1630c3507c5a1d",
+      "bytes": 33504,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/sqlite3.dll": {
+      "sha256": "99c296ca2b4372418edbdcbd923ab0df2cdbcf406782694d7376f2b01e5010c9",
+      "bytes": 1584864,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/ucrtbase.dll": {
+      "sha256": "2e5fb14b7bf8540278f3614a12f0226e56a7cc9e64b81cbd976c6fcf2f71cbfb",
+      "bytes": 1361448,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/unicodedata.pyd": {
+      "sha256": "4c4e9f9e71e299a7e0093830e79f955f2b12b4eb0a6bb45003d42256b6e5985d",
+      "bytes": 758496,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/websockets-17.3.dist-info/INSTALLER": {
+      "sha256": "ceebae7b8927a3227e5303cf5e0f1f7b34bb542ad7250ac03fbcde36ec2f1508",
+      "bytes": 4,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/websockets-17.3.dist-info/METADATA": {
+      "sha256": "9cc627bf78c7ad38e9679b309498e253ac2591f0a74b692f879c78481e450b72",
+      "bytes": 6506,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/websockets-17.3.dist-info/RECORD": {
+      "sha256": "7fae45c39a73c632bff280d720f165f98c07b9ba7ef1ad4d13ecbffc35e0ff64",
+      "bytes": 8263,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/websockets-17.3.dist-info/REQUESTED": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/websockets-17.3.dist-info/WHEEL": {
+      "sha256": "f8868e546779e082b2f4ef1acdce705bd9cc24829ee8add213946b7906f8242d",
+      "bytes": 101,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/websockets-17.3.dist-info/entry_points.txt": {
+      "sha256": "0e7867e1d9b912c23864c02c1e574617a0b005766b1979d1edc9cadbe5d1ef36",
+      "bytes": 51,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/websockets-17.3.dist-info/licenses/LICENSE": {
+      "sha256": "0f44514998aca209d3482d10204a8adf2aa4296ff157a36a5c0922f2280632d3",
+      "bytes": 1538,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/websockets-17.3.dist-info/top_level.txt": {
+      "sha256": "08ca5d2a49712acbd980283296dc5458e1e26d95d9d6e60856971af71b10f079",
+      "bytes": 11,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/websockets/speedups.cp314-win_amd64.pyd": {
+      "sha256": "67a44645d9cb97b9eb14484bf4659fc4cdbca3cfa45810d7d21915279564384d",
+      "bytes": 11264,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/yt_dlp_ejs/yt/solver/core.min.js": {
+      "sha256": "18da6ce0758b416e7ae645084f4f8801f9f9d59d6c477c05eaa0ff94ebd8cc00",
+      "bytes": 6945,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/_internal/yt_dlp_ejs/yt/solver/lib.min.js": {
+      "sha256": "c55987fe697e5b9ee18830163f7af85327e9bb5c3e674b969d38c8d205eaa577",
+      "bytes": 151561,
+      "component": "yt-dlp"
+    },
+    "win32-x64/yt-dlp/yt-dlp.exe": {
+      "sha256": "08e30ae43a9f0c2d3ed716ef05a95fc7b4ee9d93862148e344bad3de51b93f3c",
+      "bytes": 10591079,
+      "component": "yt-dlp"
+    }
+  }
+}

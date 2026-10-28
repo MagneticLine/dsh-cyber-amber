@@ -25,7 +25,7 @@ try {
   for (const [pattern, filter] of Object.entries(patterns)) {
     const source = join(work, pattern + '.mp4')
     await runtime.run([ffmpegPath, '-v', 'error', '-f', 'lavfi', '-i', filter, '-t', 2,
-      '-c:v', 'libx264', '-pix_fmt', 'yuv420p', source], { cwd: work, signal, stage: 'fixture' })
+      '-c:v', 'mpeg4', '-q:v', 2, '-pix_fmt', 'yuv420p', source], { cwd: work, signal, stage: 'fixture' })
     for (const [variant, args] of Object.entries({
       baseline: {}, smaller: { long_edge: 480 }, fewer_frames: { fps: 10 }, lower_quality: { quality: 50 },
     })) {

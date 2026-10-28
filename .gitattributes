@@ -2,3 +2,6 @@
 *.png binary
 *.gif binary
 *.mp4 binary
+*.exe binary
+*.dll binary
+*.tgz binary
