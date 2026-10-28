@@ -1,0 +1,16 @@
+{
+  "name": "dsh-cyber-amber",
+  "version": "0.1.0",
+  "description": "Download a video or turn a link/local clip into a high-quality Gifski GIF in DeepSeek Harness.",
+  "type": "module",
+  "exports": {
+    ".": "./lib/index.js",
+    "./locale/*.json": "./locale/*.json",
+    "./package.json": "./package.json"
+  },
+  "dsh": { "bundle": { "patch": "./cordis.patch.yml" } },
+  "engines": { "node": "^22.19.0 || >=24.0.0", "dsh": "^0.2.1-rc.3" },
+  "files": ["lib", "locale", "cordis.patch.yml", "README.md", "LICENSE", "NOTICE.md", "docs"],
+  "scripts": { "test": "node --test test/*.test.mjs" },
+  "license": "MIT"
+}
