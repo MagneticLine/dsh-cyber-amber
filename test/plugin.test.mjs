@@ -39,3 +39,13 @@ test('success rendering retains a usable path without claiming external publicat
   assert(out[0].text.includes('Q50/M75/L50'))
   assert(out[0].text.includes('未上传或发布'))
 })
+
+test('download rendering distinguishes audio availability and preserves cleanup warnings', () => {
+  for (const hasAudio of [true, false]) {
+    const text = render({}, { status: 'downloaded', path: 'F:/out/a.mkv', source: 'https://example.com/video',
+      width: 320, height: 180, duration_seconds: 1, bytes: 1000,
+      has_audio: hasAudio, audio_codec: hasAudio ? 'aac' : undefined, warnings: ['temporary directory retained'] })[0].text
+    assert(text.includes(hasAudio ? 'aac' : '无音轨'))
+    assert(text.includes('temporary directory retained'))
+  }
+})

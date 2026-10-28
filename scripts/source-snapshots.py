@@ -2,6 +2,8 @@
 from __future__ import annotations
 
 import hashlib
+import argparse
+import gzip
 import io
 import json
 from pathlib import Path
@@ -24,6 +26,9 @@ def sha256(path):
 
 
 def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--from-sidecar', type=Path, help='Reuse hash-verified source archives from an existing release; no network')
+    args = parser.parse_args()
     buildconf = (ROOT / 'vendor/ffmpeg-buildconf.txt').read_text(encoding='utf-8')
     assert '--enable-shared' in buildconf and '--disable-libx264' in buildconf
     CACHE.mkdir(parents=True, exist_ok=True)
@@ -33,6 +38,12 @@ def main():
     for name, (repo, commit) in SOURCES.items():
         url = f'https://codeload.github.com/{repo}/tar.gz/{commit}'
         path = CACHE / f'{name}-{commit}.tar.gz'
+        if not path.exists() and args.from_sidecar:
+            with tarfile.open(args.from_sidecar, 'r:gz') as prior:
+                data = prior.extractfile('upstream-sources/' + path.name).read()
+            expected = previous['sources'][name]
+            assert len(data) == expected['bytes'] and hashlib.sha256(data).hexdigest() == expected['sha256'], name
+            path.write_bytes(data)
         if not path.exists():
             request = urllib.request.Request(url, headers={'User-Agent': 'dsh-cyber-amber-source-snapshot'})
             partial = path.with_suffix(path.suffix + '.part')
@@ -59,10 +70,16 @@ def main():
     version = json.loads((ROOT / 'package.json').read_text(encoding='utf-8'))['version']
     target = ROOT / 'dist' / f'dsh-cyber-amber-{version}-upstream-sources.tar.gz'
     target.parent.mkdir(exist_ok=True)
-    with tarfile.open(target, 'w:gz') as output:
+    # Stable metadata: identical source/doc bytes produce identical sidecars.
+    with target.open('wb') as raw, gzip.GzipFile(fileobj=raw, filename='', mode='wb', mtime=0) as compressed, tarfile.open(fileobj=compressed, mode='w') as output:
         for entry in inventory['sources'].values():
-            output.add(CACHE / entry['file'], arcname=f'upstream-sources/{entry["file"]}', recursive=False)
-        for file in ['docs/SOURCES.md', 'vendor/source-code.lock.json', 'vendor/ffmpeg-buildconf.txt', 'NOTICE.md']:
+            member = tarfile.TarInfo(f'upstream-sources/{entry["file"]}')
+            member.size = entry['bytes']
+            member.mode = 0o644
+            with (CACHE / entry['file']).open('rb') as source:
+                output.addfile(member, source)
+        for file in ['docs/SOURCES.md', 'docs/DISTRIBUTION.md', 'vendor/distribution-audit.json',
+                     'vendor/source-code.lock.json', 'vendor/ffmpeg-buildconf.txt', 'NOTICE.md']:
             data = (ROOT / file).read_bytes()
             member = tarfile.TarInfo('upstream-sources/' + file)
             member.size = len(data)

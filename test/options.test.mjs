@@ -1,7 +1,28 @@
 import { test } from 'node:test'
 import assert from 'node:assert/strict'
 import { resolve } from 'node:path'
-import { DEFAULTS, readConfig, timecode, gifOptions, fitClip, sourceInput, downloadArgs } from '../lib/options.js'
+import { CONFIG_FIELDS, DEFAULTS, displaySource, readConfig, timecode, gifOptions, fitClip, sourceInput, downloadArgs } from '../lib/options.js'
+
+test('display provenance removes authentication without changing download input', () => {
+  const input = 'https://www.bilibili.com/video/BV1RwnQ6sEd5/?p=2&token=secret&sign=hidden#fragment'
+  assert.equal(displaySource(input), 'https://www.bilibili.com/video/BV1RwnQ6sEd5/?p=2')
+  const youtube = 'https://www.youtube.com/watch?v=abc-123&key=hidden'
+  assert.equal(displaySource(youtube), 'https://www.youtube.com/watch?v=abc-123')
+  assert.equal(sourceInput(input, null, false).value, input)
+  assert.equal(displaySource('https://example.com/video?secret=hidden'), 'https://example.com/video')
+})
+
+test('every numeric configuration uses the shared bounds and integer contract', () => {
+  assert.deepEqual(Object.keys(CONFIG_FIELDS).sort(), Object.keys(DEFAULTS).sort())
+  for (const [key, field] of Object.entries(CONFIG_FIELDS)) {
+    assert(field.description)
+    if (field.min === undefined) continue
+    assert.throws(() => readConfig({ [key]: field.min - 1 }))
+    assert.throws(() => readConfig({ [key]: field.max + 1 }))
+    assert.equal(readConfig({ [key]: field.min })[key], field.min)
+    if (field.integer) assert.throws(() => readConfig({ [key]: field.min + 0.5 }))
+  }
+})
 
 test('default settings and quality coupling are explicit', () => {
   const p = gifOptions({}, readConfig())

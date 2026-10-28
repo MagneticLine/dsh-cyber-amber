@@ -1,0 +1,46 @@
+name: Windows candidate checks
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: windows-latest
+    strategy:
+      matrix:
+        node: ['22.20.0', '24.21.0']
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4, read-only checkout
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: ${{ matrix.node }}
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: '3.11'
+      - name: Restore pinned engines (never latest)
+        run: python scripts/vendor.py
+      - name: Verify bundle and run actual encoders
+        shell: pwsh
+        run: |
+          node scripts/verify-bundle.mjs
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          node --test --test-reporter=tap 'test/*.test.mjs' | Tee-Object -FilePath .validation/ci-tests.tap
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          $tap = Get-Content -Raw .validation/ci-tests.tap
+          $total = [regex]::Match($tap, '(?m)^# tests (\d+)\r?$')
+          $passed = [regex]::Match($tap, '(?m)^# pass (\d+)\r?$')
+          if (!$total.Success -or !$passed.Success -or [int]$total.Groups[1].Value -lt 32 -or $total.Groups[1].Value -ne $passed.Groups[1].Value -or $tap -notmatch '(?m)^# skipped 0\r?$') { throw 'Unexpected test counts or skipped tests' }
+      - name: Pack and check actual tarball
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Force dist | Out-Null
+          npm pack --pack-destination dist
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          $version = (Get-Content -Raw package.json | ConvertFrom-Json).version
+          python scripts/verify-package.py "dist/dsh-cyber-amber-$version.tgz" .
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+      # No upload, npm publish, release, PR write, platform download or LLM call.
+      # Real DSH host acceptance and the distribution-source gate are separate
+      # required local release checks; CI green alone is not release approval.

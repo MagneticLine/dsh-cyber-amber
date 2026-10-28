@@ -1,0 +1,41 @@
+{
+  "version": "0.2.1-rc.1",
+  "status": "local_functional_candidate",
+  "public_mutations": false,
+  "publication_ready": false,
+  "publication_blockers": [
+    {
+      "id": "DIST-01",
+      "component": "ffmpeg",
+      "reason": "Exact binary-to-transitive-library version, source, patch and notice mapping is not established for all enabled libraries."
+    },
+    {
+      "id": "DIST-02",
+      "component": "gifski",
+      "reason": "Main source and Cargo.lock are preserved; the shipped binary feature/dependency source and license closure has not been independently established."
+    },
+    {
+      "id": "DIST-03",
+      "component": "yt-dlp",
+      "reason": "Main source and upstream notices are preserved; exact private Python/native dependency versions and corresponding source coverage remain incomplete."
+    }
+  ],
+  "artifacts": [
+    "892cc617f1430dcfd176564ddf0517802fc1d721955566b667c5b9c78ecbeb3c  dsh-cyber-amber-0.2.1-rc.1.tgz",
+    "22b54e03487b245e39c00166e03bf5c9c67b1fae27baa1e3e0942984b548de86  dsh-cyber-amber-0.2.1-rc.1-upstream-sources.tar.gz"
+  ],
+  "node_tests": {
+    "22.20.0": 49,
+    "24.21.0": 49,
+    "failed": 0,
+    "skipped": 0
+  },
+  "host": {
+    "dsh": "0.2.1-rc.3",
+    "tool_calls": 5,
+    "independent_full_gif_decode": true,
+    "unchanged_source_sha256": "d10e2c774ce0a66d4b17af5aa018ea88cf7a4e054602cb0e53168b039d0842ba",
+    "temporary_folders": []
+  },
+  "github_ci": "prepared_locally_not_run"
+}

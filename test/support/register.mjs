@@ -5,7 +5,7 @@ registerHooks({ resolve(specifier, context, next) {
     url: 'data:text/javascript,export const defineTool = value => value', shortCircuit: true,
   }
   if (specifier === '@deepseek-ai/schemastery') return {
-    url: 'data:text/javascript,' + encodeURIComponent('const type=()=>({default:value=>({default:value})}); export default {number:type,string:type,object:shape=>({shape})}'),
+    url: 'data:text/javascript,' + encodeURIComponent('const type=()=>{const x={}; for(const m of ["min","max","step","role","default","description"])x[m]=()=>x; return x}; export default {number:type,string:type,object:shape=>({shape})}'),
     shortCircuit: true,
   }
   return next(specifier, context)

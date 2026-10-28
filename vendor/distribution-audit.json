@@ -1,0 +1,2143 @@
+{
+  "schema_version": 1,
+  "publication_ready": false,
+  "scope": "Evidence inventory, not a complete SBOM, source closure, or legal certification.",
+  "main_components": {
+    "gifski": {
+      "version": "1.34.0",
+      "source": {
+        "repository": "ImageOptim/gifski",
+        "commit": "1060eab4500a20f27e2fa3ab7e85473d0e921cbd",
+        "url": "https://codeload.github.com/ImageOptim/gifski/tar.gz/1060eab4500a20f27e2fa3ab7e85473d0e921cbd",
+        "file": "gifski-1060eab4500a20f27e2fa3ab7e85473d0e921cbd.tar.gz",
+        "bytes": 90103,
+        "sha256": "71760391a20beff8b37f93a639997867925dea1f43c45972d621e9de784cfd4b"
+      },
+      "license": "AGPL-3.0-or-later"
+    },
+    "ffmpeg": {
+      "version": "n9.0.2-36-g6882969ce9",
+      "source": {
+        "repository": "FFmpeg/FFmpeg",
+        "commit": "6882969ce9fd2aa6aa1d0008b2bfe1c838aac11d",
+        "url": "https://codeload.github.com/FFmpeg/FFmpeg/tar.gz/6882969ce9fd2aa6aa1d0008b2bfe1c838aac11d",
+        "file": "ffmpeg-6882969ce9fd2aa6aa1d0008b2bfe1c838aac11d.tar.gz",
+        "bytes": 17330904,
+        "sha256": "9dc825750d71d51a9c8d45516ad3ffdf05e74f029a66f8c3efaf431ed7331701"
+      },
+      "license": "LGPL-3.0-or-later"
+    },
+    "yt-dlp": {
+      "version": "2026.10.26",
+      "source": {
+        "repository": "yt-dlp/yt-dlp",
+        "commit": "f264a6cbd1f630894da0f368df00f8aae50140e0",
+        "url": "https://codeload.github.com/yt-dlp/yt-dlp/tar.gz/f264a6cbd1f630894da0f368df00f8aae50140e0",
+        "file": "yt-dlp-f264a6cbd1f630894da0f368df00f8aae50140e0.tar.gz",
+        "bytes": 3085727,
+        "sha256": "958a811c7b0ffa187ff7a92051af28e8b87fa1febbb2a6239d24bfc917b55ad0"
+      },
+      "license": "Unlicense source; GPLv3+ official bundled aggregate"
+    }
+  },
+  "preserved_license_files": [
+    {
+      "file": "vendor/licenses/ffmpeg-LICENSE.txt",
+      "sha256": "da7eabb7bafdf7d3ae5e9f223aa5bdc1eece45ac569dc21b3b037520b4464768"
+    },
+    {
+      "file": "vendor/licenses/gifski-LICENSE.md",
+      "sha256": "4e2b565ed4c9537443eb92a10d745a6f8aeb75fa086fd7b955bb52e2cde48a4d"
+    },
+    {
+      "file": "vendor/licenses/GPL-3.0.txt",
+      "sha256": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903"
+    },
+    {
+      "file": "vendor/licenses/yt-dlp-LICENSE.txt",
+      "sha256": "7e12e5df4bae12cb21581ba157ced20e1986a0508dd10d0e8a4ab9a4cf94e85c"
+    },
+    {
+      "file": "vendor/licenses/yt-dlp-THIRD_PARTY_LICENSES.txt",
+      "sha256": "472aefe951c7db35e1657c1d13fd337140511ed6f2b329205105ad441c5a02b7"
+    }
+  ],
+  "gifski_lock_entries": [
+    {
+      "name": "adler2",
+      "version": "2.0.1",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "320119579fcad9c21884f5c4861d16174d0e06250625266f50fe6898340abefa"
+    },
+    {
+      "name": "aho-corasick",
+      "version": "1.1.3",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "8e60d3430d3a69478ad0993f19238d2df97c507009a52b3c10addcd7f6bcb916"
+    },
+    {
+      "name": "anstream",
+      "version": "0.6.19",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "301af1932e46185686725e0fad2f8f2aa7da69dd70bf6ecc44d6b703844a3933"
+    },
+    {
+      "name": "anstyle",
+      "version": "1.0.11",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "862ed96ca487e809f1c8e5a8447f6ee2cf102f846893800b20cebdf541fc6bbd"
+    },
+    {
+      "name": "anstyle-parse",
+      "version": "0.2.7",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "4e7644824f0aa2c7b9384579234ef10eb7efb6a0deb83f9630a49594dd9c15c2"
+    },
+    {
+      "name": "anstyle-query",
+      "version": "1.1.3",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "6c8bdeb6047d8983be085bab0ba1472e6dc604e7041dbf6fcd5e71523014fae9"
+    },
+    {
+      "name": "anstyle-wincon",
+      "version": "3.0.9",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "403f75924867bb1033c59fbf0797484329750cfbe3c4325cd33127941fabc882"
+    },
+    {
+      "name": "arrayvec",
+      "version": "0.7.6",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "7c02d123df017efcdfbd739ef81735b36c5ba83ec3c59c80a9d7ecc718f92e50"
+    },
+    {
+      "name": "autocfg",
+      "version": "1.5.0",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "c08606f8c3cbf4ce6ec8e28fb0014a2c086708fe954eaa885384a6165172e7e8"
+    },
+    {
+      "name": "bindgen",
+      "version": "0.64.0",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "c4243e6031260db77ede97ad86c27e501d646a27ab57b59a574f725d98ab1fb4"
+    },
+    {
+      "name": "bitflags",
+      "version": "1.3.2",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "bef38d45163c2f1dde094a7dfd33ccf595c92905c8f8f4fdc18d06fb1037718a"
+    },
+    {
+      "name": "bytemuck",
+      "version": "1.23.1",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "5c76a5792e44e4abe34d3abf15636779261d45a7450612059293d1d2cfc63422"
+    },
+    {
+      "name": "cc",
+      "version": "1.2.29",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "5c1599538de2394445747c8cf7935946e3cc27e9625f889d979bfb2aaf569362"
+    },
+    {
+      "name": "cexpr",
+      "version": "0.6.0",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "6fac387a98bb7c37292057cffc56d62ecb629900026402633ae9160df93a8766"
+    },
+    {
+      "name": "cfg-if",
+      "version": "1.0.1",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "9555578bc9e57714c812a1f84e4fc5b4d21fcb063490c624de019f7464c91268"
+    },
+    {
+      "name": "clang-sys",
+      "version": "1.8.1",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "0b023947811758c97c59bf9d1c188fd619ad4718dcaa767947df1cadb14f39f4"
+    },
+    {
+      "name": "clap",
+      "version": "4.5.41",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "be92d32e80243a54711e5d7ce823c35c41c9d929dc4ab58e1276f625841aadf9"
+    },
+    {
+      "name": "clap_builder",
+      "version": "4.5.41",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "707eab41e9622f9139419d573eca0900137718000c517d47da73045f54331c3d"
+    },
+    {
+      "name": "clap_lex",
+      "version": "0.7.5",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "b94f61472cee1439c0b966b47e3aca9ae07e45d070759512cd390ea2bebc6675"
+    },
+    {
+      "name": "colorchoice",
+      "version": "1.0.4",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "b05b61dc5112cbb17e4b6cd61790d9845d13888356391624cbe7e41efeac1e75"
+    },
+    {
+      "name": "crc32fast",
+      "version": "1.5.0",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "9481c1c90cbf2ac953f07c8d4a58aa3945c425b7185c9154d67a65e4230da511"
+    },
+    {
+      "name": "crossbeam-channel",
+      "version": "0.5.15",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "82b8f8f868b36967f9606790d1903570de9ceaf870a7bf9fbbd3016d636a2cb2"
+    },
+    {
+      "name": "crossbeam-deque",
+      "version": "0.8.6",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "9dd111b7b7f7d55b72c0a6ae361660ee5853c9af73f70c3c2ef6858b950e2e51"
+    },
+    {
+      "name": "crossbeam-epoch",
+      "version": "0.9.18",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "5b82ac4a3c2ca9c3460964f020e1402edd5753411d7737aa39c3714ad1b5420e"
+    },
+    {
+      "name": "crossbeam-utils",
+      "version": "0.8.21",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "d0a5c400df2834b80a4c3327b3aad3a4c4cd4de0629063962b03235697506a28"
+    },
+    {
+      "name": "dunce",
+      "version": "1.0.5",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "92773504d58c093f6de2459af4af33faa518c13451eb8f2b5698ed3d36e7c813"
+    },
+    {
+      "name": "either",
+      "version": "1.15.0",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "48c757948c5ede0e46177b7add2e67155f70e33c07fea8284df6576da70b3719"
+    },
+    {
+      "name": "ffmpeg-next",
+      "version": "6.1.1",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "4e72c72e8dcf638fb0fb03f033a954691662b5dabeaa3f85a6607d101569fccd"
+    },
+    {
+      "name": "ffmpeg-sys-next",
+      "version": "6.1.0",
+      "source": "git+https://github.com/kornelski/rust-ffmpeg-sys-1?rev=fd5784d645df2ebe022a204ac36582074da1edf7#fd5784d645df2ebe022a204ac36582074da1edf7",
+      "checksum": null
+    },
+    {
+      "name": "flate2",
+      "version": "1.1.2",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "4a3d7db9596fecd151c5f638c0ee5d5bd487b6e0ea232e5dc96d5250f6f94b1d"
+    },
+    {
+      "name": "gif",
+      "version": "0.13.3",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "4ae047235e33e2829703574b54fdec96bfbad892062d97fed2f76022287de61b"
+    },
+    {
+      "name": "gif-dispose",
+      "version": "5.0.1",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "5e1aa07391f3d9c279f388cea6faf291555dd891df59bed01d4378583df946ac"
+    },
+    {
+      "name": "gifski",
+      "version": "1.34.0",
+      "source": null,
+      "checksum": null
+    },
+    {
+      "name": "glob",
+      "version": "0.3.2",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "a8d1add55171497b4705a648c6b583acafb01d58050a51727785f0b2c8e0a2b2"
+    },
+    {
+      "name": "hermit-abi",
+      "version": "0.5.2",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "fc0fef456e4baa96da950455cd02c081ca953b141298e41db3fc7e36b1da849c"
+    },
+    {
+      "name": "imagequant",
+      "version": "4.4.1",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "caf5d73b959dfbe5d6b5cd3ca8de5265c7bc58297f20560a60a1d2ba6a19991f"
+    },
+    {
+      "name": "imgref",
+      "version": "1.11.0",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "d0263a3d970d5c054ed9312c0057b4f3bde9c0b33836d3637361d4a9e6e7a408"
+    },
+    {
+      "name": "is_terminal_polyfill",
+      "version": "1.70.1",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "7943c866cc5cd64cbc25b2e01621d07fa8eb2a1a23160ee81ce38704e97b8ecf"
+    },
+    {
+      "name": "lazy_static",
+      "version": "1.5.0",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "bbd2bcb4c963f2ddae06a2efc7e9f3591312473c50c6685e1f298068316e66fe"
+    },
+    {
+      "name": "lazycell",
+      "version": "1.3.0",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "830d08ce1d1d941e6b30645f1a0eb5643013d835ce3779a5fc208261dbe10f55"
+    },
+    {
+      "name": "libc",
+      "version": "0.2.174",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "1171693293099992e19cddea4e8b849964e9846f4acee11b3948bcc337be8776"
+    },
+    {
+      "name": "libloading",
+      "version": "0.8.8",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "07033963ba89ebaf1584d767badaa2e8fcec21aedea6b8c0346d487d49c28667"
+    },
+    {
+      "name": "libz-rs-sys",
+      "version": "0.5.1",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "172a788537a2221661b480fee8dc5f96c580eb34fa88764d3205dc356c7e4221"
+    },
+    {
+      "name": "lodepng",
+      "version": "3.12.1",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "77a32335d22e44238e2bb0b4d726964d18952ce1f1279ec3305305d2c61539eb"
+    },
+    {
+      "name": "loop9",
+      "version": "0.1.5",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "0fae87c125b03c1d2c0150c90365d7d6bcc53fb73a9acaef207d2d065860f062"
+    },
+    {
+      "name": "memchr",
+      "version": "2.7.5",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "32a282da65faaf38286cf3be983213fcf1d2e2a58700e808f83f4ea9a4804bc0"
+    },
+    {
+      "name": "minimal-lexical",
+      "version": "0.2.1",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "68354c5c6bd36d73ff3feceb05efa59b6acb7626617f4962be322a825e61f79a"
+    },
+    {
+      "name": "miniz_oxide",
+      "version": "0.8.9",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "1fa76a2c86f704bdb222d66965fb3d63269ce38518b83cb0575fca855ebb6316"
+    },
+    {
+      "name": "natord",
+      "version": "1.0.9",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "308d96db8debc727c3fd9744aac51751243420e46edf401010908da7f8d5e57c"
+    },
+    {
+      "name": "nom",
+      "version": "7.1.3",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "d273983c5a657a70a3e8f2a01329822f3b8c8172b73826411a55751e404a0a4a"
+    },
+    {
+      "name": "num-traits",
+      "version": "0.2.19",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "071dfc062690e90b734c0b2273ce72ad0ffa95f0c74596bc250dcfd960262841"
+    },
+    {
+      "name": "num_cpus",
+      "version": "1.17.0",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "91df4bbde75afed763b708b7eee1e8e7651e02d97f6d5dd763e89367e957b23b"
+    },
+    {
+      "name": "once_cell",
+      "version": "1.21.3",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "42f5e15c9953c5e4ccceeb2e7382a716482c34515315f7b03532b8b4e8393d2d"
+    },
+    {
+      "name": "once_cell_polyfill",
+      "version": "1.70.1",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "a4895175b425cb1f87721b59f0f286c2092bd4af812243672510e1ac53e2e0ad"
+    },
+    {
+      "name": "ordered-channel",
+      "version": "1.2.0",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "95be4d57809897b5a7539fc15a7dfe0e84141bc3dfaa2e9b1b27caa90acf61ab"
+    },
+    {
+      "name": "pbr",
+      "version": "1.1.1",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "ed5827dfa0d69b6c92493d6c38e633bbaa5937c153d0d7c28bf12313f8c6d514"
+    },
+    {
+      "name": "peeking_take_while",
+      "version": "0.1.2",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "19b17cddbe7ec3f8bc800887bab5e717348c95ea2ca0b1bf0837fb964dc67099"
+    },
+    {
+      "name": "pkg-config",
+      "version": "0.3.32",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "7edddbd0b52d732b21ad9a5fab5c704c14cd949e5e9a1ec5929a24fded1b904c"
+    },
+    {
+      "name": "proc-macro2",
+      "version": "1.0.95",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "02b3e5e68a3a1a02aad3ec490a98007cbc13c37cbe84a3cd7b8e406d76e7f778"
+    },
+    {
+      "name": "quick-error",
+      "version": "2.0.1",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "a993555f31e5a609f617c12db6250dedcac1b0a85076912c436e6fc9b2c8e6a3"
+    },
+    {
+      "name": "quote",
+      "version": "1.0.40",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "1885c039570dc00dcb4ff087a89e185fd56bae234ddc7f056a945bf36467248d"
+    },
+    {
+      "name": "rayon",
+      "version": "1.10.0",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "b418a60154510ca1a002a752ca9714984e21e4241e804d32555251faf8b78ffa"
+    },
+    {
+      "name": "rayon-core",
+      "version": "1.12.1",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "1465873a3dfdaa8ae7cb14b4383657caab0b3e8a0aa9ae8e04b044854c8dfce2"
+    },
+    {
+      "name": "regex",
+      "version": "1.11.1",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "b544ef1b4eac5dc2db33ea63606ae9ffcfac26c1416a2806ae0bf5f56b201191"
+    },
+    {
+      "name": "regex-automata",
+      "version": "0.4.9",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "809e8dc61f6de73b46c85f4c96486310fe304c434cfa43669d7b40f711150908"
+    },
+    {
+      "name": "regex-syntax",
+      "version": "0.8.5",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "2b15c43186be67a4fd63bee50d0303afffcef381492ebe2c5d87f324e1b8815c"
+    },
+    {
+      "name": "resize",
+      "version": "0.8.8",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "87a103d0b47e783f4579149402f7499397ab25540c7a57b2f70487a5d2d20ef0"
+    },
+    {
+      "name": "rgb",
+      "version": "0.8.51",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "a457e416a0f90d246a4c3288bd7a25b2304ca727f253f95be383dd17af56be8f"
+    },
+    {
+      "name": "rustc-hash",
+      "version": "1.1.0",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "08d43f7aa6b08d49f382cde6a7982047c3426db949b1424bc4b7ec9ae12c6ce2"
+    },
+    {
+      "name": "shlex",
+      "version": "1.3.0",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "0fda2ff0d084019ba4d7c6f371c95d8fd75ce3524c3cb8fb653a3023f6323e64"
+    },
+    {
+      "name": "strsim",
+      "version": "0.11.1",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "7da8b5736845d9f2fcb837ea5d9e2628564b3b043a70948a3f0b778838c5fb4f"
+    },
+    {
+      "name": "syn",
+      "version": "1.0.109",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "72b64191b275b66ffe2469e8af2c1cfe3bafa67b529ead792a6d0160888b4237"
+    },
+    {
+      "name": "thread_local",
+      "version": "1.1.9",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "f60246a4944f24f6e018aa17cdeffb7818b76356965d03b07d6a9886e8962185"
+    },
+    {
+      "name": "unicode-ident",
+      "version": "1.0.18",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "5a5f39404a5da50712a4c1eecf25e90dd62b613502b7e925fd4e4d19b5c96512"
+    },
+    {
+      "name": "utf8parse",
+      "version": "0.2.2",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "06abde3611657adf66d383f00b093d7faecc7fa57071cce2578660c9f1010821"
+    },
+    {
+      "name": "vcpkg",
+      "version": "0.2.15",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "accd4ea62f7bb7a82fe23066fb0957d48ef677f6eeb8215f372f52e48bb32426"
+    },
+    {
+      "name": "weezl",
+      "version": "0.1.10",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "a751b3277700db47d3e574514de2eced5e54dc8a5436a3bf7a0b248b2cee16f3"
+    },
+    {
+      "name": "wild",
+      "version": "2.2.1",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "a3131afc8c575281e1e80f36ed6a092aa502c08b18ed7524e86fbbb12bb410e1"
+    },
+    {
+      "name": "winapi",
+      "version": "0.3.9",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "5c839a674fcd7a98952e593242ea400abe93992746761e38641405d28b00f419"
+    },
+    {
+      "name": "winapi-i686-pc-windows-gnu",
+      "version": "0.4.0",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "ac3b87c63620426dd9b991e5ce0329eff545bccbbb34f3be09ff6fb6ab51b7b6"
+    },
+    {
+      "name": "winapi-x86_64-pc-windows-gnu",
+      "version": "0.4.0",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "712e227841d057c1ee1cd2fb22fa7e5a5461ae8e48fa2ca79ec42cfc1931183f"
+    },
+    {
+      "name": "windows-sys",
+      "version": "0.59.0",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "1e38bc4d79ed67fd075bcc251a1c39b32a1776bbe92e5bef1f0bf1f8c531853b"
+    },
+    {
+      "name": "windows-targets",
+      "version": "0.52.6",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "9b724f72796e036ab90c1021d4780d4d3d648aca59e491e6b98e725b84e99973"
+    },
+    {
+      "name": "windows-targets",
+      "version": "0.53.2",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "c66f69fcc9ce11da9966ddb31a40968cad001c5bedeb5c2b82ede4253ab48aef"
+    },
+    {
+      "name": "windows_aarch64_gnullvm",
+      "version": "0.52.6",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "32a4622180e7a0ec044bb555404c800bc9fd9ec262ec147edd5989ccd0c02cd3"
+    },
+    {
+      "name": "windows_aarch64_gnullvm",
+      "version": "0.53.0",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "86b8d5f90ddd19cb4a147a5fa63ca848db3df085e25fee3cc10b39b6eebae764"
+    },
+    {
+      "name": "windows_aarch64_msvc",
+      "version": "0.52.6",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "09ec2a7bb152e2252b53fa7803150007879548bc709c039df7627cabbd05d469"
+    },
+    {
+      "name": "windows_aarch64_msvc",
+      "version": "0.53.0",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "c7651a1f62a11b8cbd5e0d42526e55f2c99886c77e007179efff86c2b137e66c"
+    },
+    {
+      "name": "windows_i686_gnu",
+      "version": "0.52.6",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "8e9b5ad5ab802e97eb8e295ac6720e509ee4c243f69d781394014ebfe8bbfa0b"
+    },
+    {
+      "name": "windows_i686_gnu",
+      "version": "0.53.0",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "c1dc67659d35f387f5f6c479dc4e28f1d4bb90ddd1a5d3da2e5d97b42d6272c3"
+    },
+    {
+      "name": "windows_i686_gnullvm",
+      "version": "0.52.6",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "0eee52d38c090b3caa76c563b86c3a4bd71ef1a819287c19d586d7334ae8ed66"
+    },
+    {
+      "name": "windows_i686_gnullvm",
+      "version": "0.53.0",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "9ce6ccbdedbf6d6354471319e781c0dfef054c81fbc7cf83f338a4296c0cae11"
+    },
+    {
+      "name": "windows_i686_msvc",
+      "version": "0.52.6",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "240948bc05c5e7c6dabba28bf89d89ffce3e303022809e73deaefe4f6ec56c66"
+    },
+    {
+      "name": "windows_i686_msvc",
+      "version": "0.53.0",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "581fee95406bb13382d2f65cd4a908ca7b1e4c2f1917f143ba16efe98a589b5d"
+    },
+    {
+      "name": "windows_x86_64_gnu",
+      "version": "0.52.6",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "147a5c80aabfbf0c7d901cb5895d1de30ef2907eb21fbbab29ca94c5b08b1a78"
+    },
+    {
+      "name": "windows_x86_64_gnu",
+      "version": "0.53.0",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "2e55b5ac9ea33f2fc1716d1742db15574fd6fc8dadc51caab1c16a3d3b4190ba"
+    },
+    {
+      "name": "windows_x86_64_gnullvm",
+      "version": "0.52.6",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "24d5b23dc417412679681396f2b49f3de8c1473deb516bd34410872eff51ed0d"
+    },
+    {
+      "name": "windows_x86_64_gnullvm",
+      "version": "0.53.0",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "0a6e035dd0599267ce1ee132e51c27dd29437f63325753051e71dd9e42406c57"
+    },
+    {
+      "name": "windows_x86_64_msvc",
+      "version": "0.52.6",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "589f6da84c646204747d1270a2a5661ea66ed1cced2631d546fdfb155959f9ec"
+    },
+    {
+      "name": "windows_x86_64_msvc",
+      "version": "0.53.0",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "271414315aff87387382ec3d271b52d7ae78726f5d44ac98b4f4030c91880486"
+    },
+    {
+      "name": "y4m",
+      "version": "0.8.0",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "7a5a4b21e1a62b67a2970e6831bc091d7b87e119e7f9791aef9702e3bef04448"
+    },
+    {
+      "name": "yuv",
+      "version": "0.1.9",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "8cbe2d856acbe6d86c0fa6f458b73e962834061ca2f7f94c6e4633afc9efd4d4"
+    },
+    {
+      "name": "zlib-rs",
+      "version": "0.5.1",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "626bd9fa9734751fc50d6060752170984d7053f5a39061f524cda68023d4db8a"
+    }
+  ],
+  "gifski_lock_scope": "Includes optional/build dependencies; not proof each entry is linked into the shipped executable. Per-dependency source/license closure remains unverified.",
+  "ffmpeg_enabled_features": [
+    "version3",
+    "shared",
+    "pthreads",
+    "iconv",
+    "zlib",
+    "libxml2",
+    "libvmaf",
+    "fontconfig",
+    "libharfbuzz",
+    "libfreetype",
+    "libfribidi",
+    "lcms2",
+    "vulkan",
+    "libdav1d",
+    "libvorbis",
+    "librav1e",
+    "librsvg",
+    "gmp",
+    "lzma",
+    "liblcevc-dec",
+    "opencl",
+    "amf",
+    "libaom",
+    "chromaprint",
+    "ffnvcodec",
+    "cuda-llvm",
+    "libgme",
+    "libkvazaar",
+    "libaribb24",
+    "libaribcaption",
+    "libass",
+    "libbluray",
+    "libjxl",
+    "libmp3lame",
+    "libopus",
+    "libplacebo",
+    "librist",
+    "libssh",
+    "libtheora",
+    "libvpx",
+    "libwebp",
+    "libzmq",
+    "lv2",
+    "libvpl",
+    "openal",
+    "liboapv",
+    "libopencore-amrnb",
+    "libopencore-amrwb",
+    "libopenh264",
+    "libopenjpeg",
+    "libopenmpt",
+    "schannel",
+    "sdl2",
+    "libsnappy",
+    "libsoxr",
+    "libsrt",
+    "libsvtav1",
+    "libtwolame",
+    "libuavs3d",
+    "vaapi",
+    "vapoursynth",
+    "libvvenc",
+    "libzimg",
+    "libzvbi"
+  ],
+  "ffmpeg_build_recipes": [
+    {
+      "file": "scripts.d/10-mingw-std-threads.sh",
+      "sha256": "44b29b0a71465615b40deeb9cd853039234868699cf4c6b85453560aba8dc212",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://github.com/meganz/mingw-std-threads.git\"",
+        "SCRIPT_COMMIT=\"c931bac289dd431f1dd30fc4a5d1a7be36668073\""
+      ]
+    },
+    {
+      "file": "scripts.d/10-mingw.sh",
+      "sha256": "185bab50495c0f6dbf83f9e84342a6bd45de9a69607e6a6b7a7bac868c1e1b70",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://git.code.sf.net/p/mingw-w64/mingw-w64.git\"",
+        "SCRIPT_COMMIT=\"7213d719fe344553aa24fef7cc7dedee4940d594\""
+      ]
+    },
+    {
+      "file": "scripts.d/10-xorg-macros.sh",
+      "sha256": "933dd1096b6b9f1b32fcc7d172a528df316cf0119ce0abc6f121d0501566436e",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://gitlab.freedesktop.org/xorg/util/macros.git\"",
+        "SCRIPT_COMMIT=\"ea1e15a4909ac8b03b2c5a08ac3810b385985157\""
+      ]
+    },
+    {
+      "file": "scripts.d/15-base.sh",
+      "sha256": "2e418d514d75752ef44ad4e44ddb469e21037f752cf207b8c60d613c6834de47",
+      "source_declarations": []
+    },
+    {
+      "file": "scripts.d/20-libiconv.sh",
+      "sha256": "e44a53ee097acb09f663efdd9a19e6bb6b5dd15ae909ad606a65debf2fec29e9",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://git.savannah.gnu.org/git/libiconv.git\"",
+        "SCRIPT_COMMIT=\"b5a1735e02bf43ee6e490fcf9395e8abc8d32432\""
+      ]
+    },
+    {
+      "file": "scripts.d/20-zlib.sh",
+      "sha256": "bef6fb0b6561b6da68ad8588763fe832e6e32bc22b039ee7f28fb6b44e315e6f",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://github.com/madler/zlib.git\"",
+        "SCRIPT_COMMIT=\"9d314c341b2ce16e01ae44e27ec3dd2f32aa58fd\""
+      ]
+    },
+    {
+      "file": "scripts.d/25-fftw3.sh",
+      "sha256": "970edcbca1ea147c9ab9eb6c64e2d264a232ff0818c3075defe3c96f246b2142",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://github.com/FFTW/fftw3.git\"",
+        "SCRIPT_COMMIT=\"a7b679c528330cf6258253d6dcf5ec90552e6c93\""
+      ]
+    },
+    {
+      "file": "scripts.d/25-fribidi.sh",
+      "sha256": "c2abc0b857d158e1ccf2f2aada0539925af995109fd57088588ccebb0b50d7c7",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://github.com/fribidi/fribidi.git\"",
+        "SCRIPT_COMMIT=\"d2f3e1f4946e7cef9789e1c3ebdb4a60d4314c7f\""
+      ]
+    },
+    {
+      "file": "scripts.d/25-gmp.sh",
+      "sha256": "098559f926d52282b6b9559f567886b5be617b08ca8c0a0d2d884225365fcd84",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://github.com/BtbN/gmplib.git\"",
+        "SCRIPT_COMMIT=\"5c3e9a9d52b697cab7b7d26a53972a3bf922d59a\""
+      ]
+    },
+    {
+      "file": "scripts.d/25-libogg.sh",
+      "sha256": "f72086b3d86824174bacb8ee4fd4f966c9e13fd8a8242821f429252c77b6e585",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://github.com/xiph/ogg.git\"",
+        "SCRIPT_COMMIT=\"06a5e0262cdc28aa4ae6797627a783b5010440f0\""
+      ]
+    },
+    {
+      "file": "scripts.d/25-libpng.sh",
+      "sha256": "e2aff43b4778306f8685743e0e0e46e95659bd40bc1b35f27ade1974a0cef9b3",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://github.com/glennrp/libpng.git\"",
+        "SCRIPT_COMMIT=\"0b0876829d77db0827a8cc2c4326f63be22b2aa1\""
+      ]
+    },
+    {
+      "file": "scripts.d/25-libxml2.sh",
+      "sha256": "fc8b796dfaecf11ef2543e8218f3f6e70ce5bbb33353e09ad7984aadf7d75273",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://github.com/GNOME/libxml2.git\"",
+        "SCRIPT_COMMIT=\"c79c9612fcc77b06b0d16f35fd363d938bdbbf5e\""
+      ]
+    },
+    {
+      "file": "scripts.d/25-openssl.sh",
+      "sha256": "8f1846a444f2beabe2c6af86d033edc1080704591f1ca8b3506686d01852b2af",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://github.com/openssl/openssl.git\"",
+        "SCRIPT_COMMIT=\"openssl-3.6.5\""
+      ]
+    },
+    {
+      "file": "scripts.d/25-xz.sh",
+      "sha256": "37a0cd9f749ab87a1c4365fdc9b57cdcf5ad002b33b5b30b521a895bdb4d34b5",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://github.com/tukaani-project/xz.git\"",
+        "SCRIPT_COMMIT=\"299eb5c3f597f107fd6019bf156885ac8bfaa5ea\""
+      ]
+    },
+    {
+      "file": "scripts.d/45-brotli.sh",
+      "sha256": "90ccce5d41b6442494a4876608060459ed537e3c21cd765211e37bc352e0102c",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://github.com/google/brotli.git\"",
+        "SCRIPT_COMMIT=\"2e2bcf17ae7115d84ef6588d9a3651cc987d73e7\""
+      ]
+    },
+    {
+      "file": "scripts.d/45-fonts/25-freetype.sh",
+      "sha256": "0259302178c60317ce96f3306ab8296085514169f44176548a170f11ce0490c6",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://gitlab.freedesktop.org/freetype/freetype.git\"",
+        "SCRIPT_COMMIT=\"4ba7c3d82ab8b3cc80b869337d2c2b1913c5e415\""
+      ]
+    },
+    {
+      "file": "scripts.d/45-fonts/35-fontconfig.sh",
+      "sha256": "6e97a785ab32494c58df6aac7696c1b648b5afb987e9b63b6bb393fd98fc6bee",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://gitlab.freedesktop.org/fontconfig/fontconfig.git\"",
+        "SCRIPT_COMMIT=\"b25ffeabd15b76f86c0c6736f6df2f1b89858010\""
+      ]
+    },
+    {
+      "file": "scripts.d/45-fonts/45-harfbuzz.sh",
+      "sha256": "a9de5692b8e09820bbd0e1942a2e240f735d95d5d2873c08160abe9de21c919e",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://github.com/harfbuzz/harfbuzz.git\"",
+        "SCRIPT_COMMIT=\"75d8ac5d2313842550174eaab0cbaf653c8f2f77\""
+      ]
+    },
+    {
+      "file": "scripts.d/45-fonts/50-freetype.sh",
+      "sha256": "c1d544b29e2525c828d474b8d9e8e4329b8e03106de2906c5b4194baf2f79ff8",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://gitlab.freedesktop.org/freetype/freetype.git\"",
+        "SCRIPT_COMMIT=\"4ba7c3d82ab8b3cc80b869337d2c2b1913c5e415\""
+      ]
+    },
+    {
+      "file": "scripts.d/45-lcms2.sh",
+      "sha256": "e3c4f4f4999353590633fa4133e1790b595f1aa702a99d6f8e66a50e21640a1a",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://github.com/mm2/Little-CMS.git\"",
+        "SCRIPT_COMMIT=\"1112313b3784ced9297d8c0ee076aba17499827a\""
+      ]
+    },
+    {
+      "file": "scripts.d/45-libffi.sh",
+      "sha256": "5fc711e7944537d0255c1a059f3d7cc8dea58f9b17331e8e62a4c1ee6f9a459a",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://github.com/libffi/libffi.git\"",
+        "SCRIPT_COMMIT=\"bc553867367246d140cd156f060bd0409f57f157\""
+      ]
+    },
+    {
+      "file": "scripts.d/45-libsamplerate.sh",
+      "sha256": "628de3f8d1f8f71a375bf743f103e5583802f946cf82a2d1474e125f6891dc1f",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://github.com/libsndfile/libsamplerate.git\"",
+        "SCRIPT_COMMIT=\"0844c208f683527c08ea8a80acc13b398aa9c8bf\""
+      ]
+    },
+    {
+      "file": "scripts.d/45-libudfread.sh",
+      "sha256": "55d2af80b7dda6b8fbca52e2cc8262791b1ffdb09ef6a990117b93c11b1f2339",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://code.videolan.org/videolan/libudfread.git\"",
+        "SCRIPT_COMMIT=\"b0bc6957e7e07d5f35391f210596d9eb71cffdd9\""
+      ]
+    },
+    {
+      "file": "scripts.d/45-libunibreak.sh",
+      "sha256": "ddd6a0ba29c4bad5778fd8dfe8311b4ff9dfd0bb40ce89fc3565d4bb4d1fca72",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://github.com/adah1972/libunibreak.git\"",
+        "SCRIPT_COMMIT=\"f8172fe771ef620112247cadfb876aecaa4f769e\""
+      ]
+    },
+    {
+      "file": "scripts.d/45-libvorbis.sh",
+      "sha256": "96a4e7735c0d442d62a4859d8e46db735b57c09d5a4440361e35d064e1220a90",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://github.com/xiph/vorbis.git\"",
+        "SCRIPT_COMMIT=\"1b75110b5a2754ba1931d82dd83cb822b266a21d\""
+      ]
+    },
+    {
+      "file": "scripts.d/45-opencl.sh",
+      "sha256": "9d9b764fa68250a3733c83463f93d074c76af703b0d12fa6043aadc8863105e5",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://github.com/KhronosGroup/OpenCL-Headers.git\"",
+        "SCRIPT_COMMIT=\"82f60316cc142e7b21dc1d8983b26de18858fbd9\""
+      ]
+    },
+    {
+      "file": "scripts.d/45-pcre2.sh",
+      "sha256": "3eea6d415218090b49715a5b2455479b81c360efedd8384b1ae5b51ef1882dd3",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://github.com/PCRE2Project/pcre2.git\"",
+        "SCRIPT_COMMIT=\"be940c4eaec0bc4117e06e8f14e56bf82089be6b\""
+      ]
+    },
+    {
+      "file": "scripts.d/45-pixman.sh",
+      "sha256": "1b09f93b0a4a225bed4518c9210a71e3e195fd1db1e50639f1675b16117466d6",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://gitlab.freedesktop.org/pixman/pixman.git\"",
+        "SCRIPT_COMMIT=\"e7fd44140fe6edef507d54bdbc25c09543ffc936\""
+      ]
+    },
+    {
+      "file": "scripts.d/45-pulseaudio.sh",
+      "sha256": "0f04e9090dacea4eefd77e97622645eda80f51118c58489551812252d1e8e597",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://gitlab.freedesktop.org/pulseaudio/pulseaudio.git\"",
+        "SCRIPT_COMMIT=\"77d25a1e613095bdf87a1d13b65e7c330565077a\""
+      ]
+    },
+    {
+      "file": "scripts.d/45-vmaf.sh",
+      "sha256": "a7345e20e1ab4c525b58d5d693ff6a739435c791fb6bfbd7b9fa54bc80a44590",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://github.com/Netflix/vmaf.git\"",
+        "SCRIPT_COMMIT=\"f712fa7564fe49b12991d83920b83573af2ae063\""
+      ]
+    },
+    {
+      "file": "scripts.d/45-x11/10-xcbproto.sh",
+      "sha256": "acfc9ca92025c4b3a138b7026143227be349335e5e3d0adfe1f09b67e06e554c",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://gitlab.freedesktop.org/xorg/proto/xcbproto.git\"",
+        "SCRIPT_COMMIT=\"cf7e2581b613802f2f8ec2a4b50a6a20aad4bf52\""
+      ]
+    },
+    {
+      "file": "scripts.d/45-x11/10-xproto.sh",
+      "sha256": "c8b506f29a2776b61e0e1748c8a36afc11e1a8e5f4459b5eebe6366e4290a995",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://gitlab.freedesktop.org/xorg/proto/xorgproto.git\"",
+        "SCRIPT_COMMIT=\"6d3907b6d5dc4aa7d7ee6ee5d7d8714e7466630b\""
+      ]
+    },
+    {
+      "file": "scripts.d/45-x11/10-xtrans.sh",
+      "sha256": "2afe1a0fe979ecba3eaa16073c02cd532b510186b71986bf585f948517dcaf78",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://gitlab.freedesktop.org/xorg/lib/libxtrans.git\"",
+        "SCRIPT_COMMIT=\"79f6b0bfe2170496e8c37626043d009f4cd3f1e1\""
+      ]
+    },
+    {
+      "file": "scripts.d/45-x11/20-libxau.sh",
+      "sha256": "d17a219799559adca1cc47cf87d3f6d2c1e9fee837aefa9a3aaf7faf3d804245",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://gitlab.freedesktop.org/xorg/lib/libxau.git\"",
+        "SCRIPT_COMMIT=\"be1daeb909f1d678e7859ac1555e90b4e768d5c4\""
+      ]
+    },
+    {
+      "file": "scripts.d/45-x11/30-libxcb.sh",
+      "sha256": "441e8209547ea43cdde2d57f905bfe4344f8dfd793f3409b239b24b52dc2ea01",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://gitlab.freedesktop.org/xorg/lib/libxcb.git\"",
+        "SCRIPT_COMMIT=\"d4e07bab5729c7d7cc3d2b95568cd9a661a53c4f\""
+      ]
+    },
+    {
+      "file": "scripts.d/45-x11/40-libx11.sh",
+      "sha256": "2e990188c8e31a2f810bc349a7d508f3383931dcd3f4f784febebfe46a9c23a7",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://gitlab.freedesktop.org/xorg/lib/libx11.git\"",
+        "SCRIPT_COMMIT=\"b8d5a7046a98a244ee8ca3c9c07fd617c800dde2\""
+      ]
+    },
+    {
+      "file": "scripts.d/45-x11/50-libxext.sh",
+      "sha256": "9645cba0af2654aca242f7614488a311d181601cf00c5cb208327088f6fa305f",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://gitlab.freedesktop.org/xorg/lib/libxext.git\"",
+        "SCRIPT_COMMIT=\"508f8adca2540ff8926ac8456cb1c553a8caae76\""
+      ]
+    },
+    {
+      "file": "scripts.d/45-x11/50-libxfixes.sh",
+      "sha256": "73547e6e578f04af825b72f7f1a045ae7a000a54b8c6578eea119dee38b18c45",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://gitlab.freedesktop.org/xorg/lib/libxfixes.git\"",
+        "SCRIPT_COMMIT=\"55bb2d1d57d43e0595ce45393f26eb433d75a7cc\""
+      ]
+    },
+    {
+      "file": "scripts.d/45-x11/50-libxi.sh",
+      "sha256": "03b347d026b332a05a900534afdc756a2f4d9c90d18137dcbe3eb4834d4e1289",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://gitlab.freedesktop.org/xorg/lib/libxi.git\"",
+        "SCRIPT_COMMIT=\"9ea632ab9dce9ad6630ef7db9d1850ea3d0a2419\""
+      ]
+    },
+    {
+      "file": "scripts.d/45-x11/50-libxinerama.sh",
+      "sha256": "96fe9952805a9a1a311d5970cd4d12de8814bd24d0256d7ca28beb908a23e1c0",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://gitlab.freedesktop.org/xorg/lib/libxinerama.git\"",
+        "SCRIPT_COMMIT=\"d7162b962710bc724b41cabab4e7cea303c4b541\""
+      ]
+    },
+    {
+      "file": "scripts.d/45-x11/50-libxrender.sh",
+      "sha256": "04b35b24e8d205313144cb02c1f8ec60fa7894bf92d593fa7bb947ffe730a54d",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://gitlab.freedesktop.org/xorg/lib/libxrender.git\"",
+        "SCRIPT_COMMIT=\"f30d654658ebf17d41141ed3ec2abf607d8a512e\""
+      ]
+    },
+    {
+      "file": "scripts.d/45-x11/50-libxscrnsaver.sh",
+      "sha256": "761a34dff03b11676ed3d9dcf39e8959746b2ad2a631bc2afcac55598947142b",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://gitlab.freedesktop.org/xorg/lib/libxscrnsaver.git\"",
+        "SCRIPT_COMMIT=\"3f753e7a4050db083474444ae91cc17a849eaa4d\""
+      ]
+    },
+    {
+      "file": "scripts.d/45-x11/50-libxxf86vm.sh",
+      "sha256": "05802fe0722248708057f3f8376fa779eb5f10e8721bf7296aa56b412f9d7b31",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://gitlab.freedesktop.org/xorg/lib/libxxf86vm.git\"",
+        "SCRIPT_COMMIT=\"c76fde6bffcc87e5dd98d8196bb01a299bdc3236\""
+      ]
+    },
+    {
+      "file": "scripts.d/45-x11/60-libglvnd.sh",
+      "sha256": "01b9826e399a9269912d3601ecc360407f6b4e0fdae7f53686ed07e33234c07f",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://gitlab.freedesktop.org/glvnd/libglvnd.git\"",
+        "SCRIPT_COMMIT=\"c046a760d845416e98ac4128757b2b356c47fdaa\""
+      ]
+    },
+    {
+      "file": "scripts.d/45-x11/60-libxcursor.sh",
+      "sha256": "16821a2401c58a462db2285b665bb99fdaa75fdbf50fae9b72f70610f6f9369a",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://gitlab.freedesktop.org/xorg/lib/libxcursor.git\"",
+        "SCRIPT_COMMIT=\"15efad7ccd035f5d1ddc8d437e047569d1775fa7\""
+      ]
+    },
+    {
+      "file": "scripts.d/45-x11/60-libxrandr.sh",
+      "sha256": "e133962118fc7b8e000fe9aa7ce003b51a5a318977808c86cdf0bc02efb9ffe4",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://gitlab.freedesktop.org/xorg/lib/libxrandr.git\"",
+        "SCRIPT_COMMIT=\"8a4ba1974bcf07057cf891128d86ae1ab5303574\""
+      ]
+    },
+    {
+      "file": "scripts.d/45-x11/60-libxv.sh",
+      "sha256": "429373b447abd8a1c5da6f223e5d00cf1b4fd18b568de2188c35fe3c49abc991",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://gitlab.freedesktop.org/xorg/lib/libxv.git\"",
+        "SCRIPT_COMMIT=\"f315ec50fcad9bdbaed46c3e78dc5e7fe209f933\""
+      ]
+    },
+    {
+      "file": "scripts.d/45-x11/99-finalize.sh",
+      "sha256": "51d5311ee5a279db229b9044e5e21149b7aa2222904d6aaafff1d92bd4bf143e",
+      "source_declarations": []
+    },
+    {
+      "file": "scripts.d/45-xxhash.sh",
+      "sha256": "c80437aca895419c6c2dcbcfca730407b695e1f42a135c081eb2290b894e0fc8",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://github.com/Cyan4973/xxHash.git\"",
+        "SCRIPT_COMMIT=\"61fd0fece2ebafc5bd9b573050e0c046c4e48d28\""
+      ]
+    },
+    {
+      "file": "scripts.d/45-zstd.sh",
+      "sha256": "74c41c961b8e96d615ef0b5fb758f2b6eea3743d8b41026dc9f2df8f5b5c9137",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://github.com/facebook/zstd.git\"",
+        "SCRIPT_COMMIT=\"49cf51799ea051457f57243527aa2058f999f005\""
+      ]
+    },
+    {
+      "file": "scripts.d/47-vulkan/40-vulkan-headers.sh",
+      "sha256": "e67d677252459429ef0dc2deb9cd869de5f49c3f84d3c42820038e9328b4c31b",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://github.com/KhronosGroup/Vulkan-Headers.git\"",
+        "SCRIPT_COMMIT=\"v1.4.366\""
+      ]
+    },
+    {
+      "file": "scripts.d/47-vulkan/45-vulkan-loader.sh",
+      "sha256": "9ab94dc0721f427bca7247cc719604a6bddf808866a6302ca5a41f82a1d6df45",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://github.com/BtbN/Vulkan-Shim-Loader.git\"",
+        "SCRIPT_COMMIT=\"65b3936528cd92eb4ea3de485d03f858a3850484\""
+      ]
+    },
+    {
+      "file": "scripts.d/47-vulkan/50-shaderc.sh",
+      "sha256": "f5f1e8442267ffd374d77112086daeb8e15ccc59db07f22a6c60c6216433163a",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://github.com/google/shaderc.git\"",
+        "SCRIPT_COMMIT=\"2737994b552137a85545f956e303d620e6ff232c\""
+      ]
+    },
+    {
+      "file": "scripts.d/47-vulkan/55-spirv-cross.sh",
+      "sha256": "83c9f201208e3f63d65bdb743f6fc6c6f5e04122541203380a0227e5a1b95278",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://github.com/KhronosGroup/SPIRV-Cross.git\"",
+        "SCRIPT_COMMIT=\"300681bbcb8365a8d1eacdacdbdd0249bbf1d6b1\""
+      ]
+    },
+    {
+      "file": "scripts.d/47-vulkan/60-spirv-headers.sh",
+      "sha256": "ca11a691f63e699a9c8c1d1cd6af8c6386ab12b70c180958f11883ace61c5d68",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://github.com/KhronosGroup/SPIRV-Headers.git\"",
+        "SCRIPT_COMMIT=\"fbf86836a9b1966586faf7be7bb8a6440e156d62\""
+      ]
+    },
+    {
+      "file": "scripts.d/47-vulkan/99-enable.sh",
+      "sha256": "cdd4ff0ef66e99ca076b4b12a63ea090b9cc88baae639980584c2032257e60ef",
+      "source_declarations": []
+    },
+    {
+      "file": "scripts.d/50-amf.sh",
+      "sha256": "a039bbeb31e9a1ad6d01c84a1245fd3c68da171826453891817901945492d558",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://github.com/GPUOpen-LibrariesAndSDKs/AMF.git\"",
+        "SCRIPT_COMMIT=\"57ee0cfb0e1a08d9041f77435653794c1b012be0\""
+      ]
+    },
+    {
+      "file": "scripts.d/50-aom.sh",
+      "sha256": "184505419df015793b8ce25efe945676ab9306f94d68adb8a304c5fbcd041b9c",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://aomedia.googlesource.com/aom\"",
+        "SCRIPT_COMMIT=\"9ace39e02a34992b83fc7f7f2bfbbd2e79348c74\""
+      ]
+    },
+    {
+      "file": "scripts.d/50-avisynth.sh",
+      "sha256": "93c220a2bdf15c654b13484124ab541791de9b20cb0ec719a919305da54e7b2b",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://github.com/AviSynth/AviSynthPlus.git\"",
+        "SCRIPT_COMMIT=\"523370a39933e2f9c208a5d74c1d35d43d177a76\""
+      ]
+    },
+    {
+      "file": "scripts.d/50-chromaprint.sh",
+      "sha256": "e43fd62a56dec7b0f36d4724cfc1e99f7ba54c0c84cb2dca664376e2ba1a36ba",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://github.com/acoustid/chromaprint.git\"",
+        "SCRIPT_COMMIT=\"3b38c100022bdfb49be7797c4828a476f1621d55\""
+      ]
+    },
+    {
+      "file": "scripts.d/50-dav1d.sh",
+      "sha256": "6628224d64ebcd8894a09b74c76131b07e513b6f2f43081f4ad35ad8894747ed",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://code.videolan.org/videolan/dav1d.git\"",
+        "SCRIPT_COMMIT=\"b8b2d726b4b78a2fb174cb45baff441b5969672c\""
+      ]
+    },
+    {
+      "file": "scripts.d/50-davs2.sh",
+      "sha256": "dff0e5e8bf46f349f2ac92bb097122114c4e4c56b4b1b363891a1c81e154bb1e",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://github.com/pkuvcl/davs2.git\"",
+        "SCRIPT_COMMIT=\"b41cf117452e2d73d827f02d3e30aa20f1c721ac\""
+      ]
+    },
+    {
+      "file": "scripts.d/50-dvd/30-libdvdcss.sh",
+      "sha256": "4a630a8652729cfd0db0e5f38e46d9e146c399aca7c7b99c98f8ef535ca6f0bd",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://code.videolan.org/videolan/libdvdcss.git\"",
+        "SCRIPT_COMMIT=\"811ce97a1d4d1c9d936f4b2707f533a9ef768251\""
+      ]
+    },
+    {
+      "file": "scripts.d/50-dvd/40-libdvdread.sh",
+      "sha256": "21e9ff625778d9bfcb04c257282eb0da884d7a9fbae59db578a3f51128b4ce75",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://code.videolan.org/videolan/libdvdread.git\"",
+        "SCRIPT_COMMIT=\"0f30df53125b564ef45903714403ce0a1e6c5e9e\""
+      ]
+    },
+    {
+      "file": "scripts.d/50-dvd/50-libdvdnav.sh",
+      "sha256": "d58f195d7bac9b80e6a5d4b83cb0dc5610aae71a792f57dd5b58e89765646be7",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://code.videolan.org/videolan/libdvdnav.git\"",
+        "SCRIPT_COMMIT=\"8147ccd35e5aae4afdd21171cf7b6b4d8f179d28\""
+      ]
+    },
+    {
+      "file": "scripts.d/50-fdk-aac.sh",
+      "sha256": "c07773e03261d43adf244b281d46e34ee97f8f96f51421974b611952fc912a1f",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://github.com/mstorsjo/fdk-aac.git\"",
+        "SCRIPT_COMMIT=\"c41c3c7516ea8d0d78a53b96b30bed3a29745cc6\""
+      ]
+    },
+    {
+      "file": "scripts.d/50-ffnvcodec.sh",
+      "sha256": "94972bee4c97b9d1d60fb42fe4531589be1a9013813bc9648a88439bf91b1ca3",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://github.com/FFmpeg/nv-codec-headers.git\"",
+        "SCRIPT_COMMIT=\"f2053071ea93137255b6dcf42e9b4c9e0965a44e\""
+      ]
+    },
+    {
+      "file": "scripts.d/50-frei0r.sh",
+      "sha256": "28bed7649455f52d719109cb9a7e6eac2e3d43c74f10856b000043b8e6117661",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://github.com/dyne/frei0r.git\"",
+        "SCRIPT_COMMIT=\"618dde79716fab4e428a05e6476325b9e6f5b063\""
+      ]
+    },
+    {
+      "file": "scripts.d/50-gme.sh",
+      "sha256": "a98435e63c57e920be8d90e1c07d215352f9a97639a44696cf8de7120a41b7db",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://github.com/libgme/game-music-emu.git\"",
+        "SCRIPT_COMMIT=\"f68963b1de0633149b05732113d3c3113c6f63a1\""
+      ]
+    },
+    {
+      "file": "scripts.d/50-kvazaar.sh",
+      "sha256": "bd3f0bcf8b69f8232fbb8298660c1e2150c8e71f68da94218ab097993acf5e4a",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://github.com/ultravideo/kvazaar.git\"",
+        "SCRIPT_COMMIT=\"1f11f9ae33ef0cbe48a7d335b7144af1ecfe8092\""
+      ]
+    },
+    {
+      "file": "scripts.d/50-lcevcdec.sh",
+      "sha256": "8160309ce457f792c61d4dc1733b5ccae7cf0e88605ec14c02e98b1606c8b07a",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://github.com/v-novaltd/LCEVCdec.git\"",
+        "SCRIPT_COMMIT=\"741fb7c869cf61012f7dcebfcd9e56981198c78b\""
+      ]
+    },
+    {
+      "file": "scripts.d/50-libaribb24.sh",
+      "sha256": "819af96814ebaf3612d3e50367e47d892848b22d0a71befe06b481902b9e957b",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://github.com/nkoriyama/aribb24.git\"",
+        "SCRIPT_COMMIT=\"5e9be272f96e00f15a2f3c5f8ba7e124862aec38\""
+      ]
+    },
+    {
+      "file": "scripts.d/50-libaribcaption.sh",
+      "sha256": "7c1acd6629d39f05bec13c76ddd4a4e37b26fad4739b3038eeeae959ddb23a76",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://github.com/xqq/libaribcaption.git\"",
+        "SCRIPT_COMMIT=\"37dde0f32652c32aa98bf92278944d1cfb2e7354\""
+      ]
+    },
+    {
+      "file": "scripts.d/50-libass.sh",
+      "sha256": "e6419cade66532faefe04c652526bafe945963e16552ad4d976dd33f9b13490d",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://github.com/libass/libass.git\"",
+        "SCRIPT_COMMIT=\"f61db567e6593df3470e91594bcd4ad2d0473aff\""
+      ]
+    },
+    {
+      "file": "scripts.d/50-libbluray.sh",
+      "sha256": "d3d9c7c2a203396bdc22b5faf4b6ce3043d5de1d055a650763840966e3f06bd7",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://code.videolan.org/videolan/libbluray.git\"",
+        "SCRIPT_COMMIT=\"f33a738fd7bb8b5e1148b0a5424778db7342450b\""
+      ]
+    },
+    {
+      "file": "scripts.d/50-libcurl/40-libpsl.sh",
+      "sha256": "06c7c59c1b40bdb1fd20bf3439d905c7bb4e3c33ed78877d449aa09eb08f506b",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://github.com/rockdaboot/libpsl.git\"",
+        "SCRIPT_COMMIT=\"620d51d13351e8f3cb724471032246592c9bbd69\""
+      ]
+    },
+    {
+      "file": "scripts.d/50-libcurl/40-nghttp2.sh",
+      "sha256": "b4c1f542caf100eca8d8ff9faada18de81374b1ac6ac0c3cbc438b9033f3a5db",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://github.com/nghttp2/nghttp2.git\"",
+        "SCRIPT_COMMIT=\"3baf9561e09f7ac8b0dce6e84132ce3909309ef0\""
+      ]
+    },
+    {
+      "file": "scripts.d/50-libcurl/40-nghttp3.sh",
+      "sha256": "d65732ad10d1b18d834725a740f69d624f89e40643078bf4e4d12d4e3bff9326",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://github.com/ngtcp2/nghttp3.git\"",
+        "SCRIPT_COMMIT=\"ac11a456eb9d76e55fd6c1626727111cd29d5459\""
+      ]
+    },
+    {
+      "file": "scripts.d/50-libcurl/40-ngtcp2.sh",
+      "sha256": "3948c0764068b032f8bf47f99a7fdc77d5bce7d8739bf8d7225ebaaad5636e16",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://github.com/ngtcp2/ngtcp2.git\"",
+        "SCRIPT_COMMIT=\"20da63db12a3e7fd2a3ae1a9f15be3cadd3f2695\""
+      ]
+    },
+    {
+      "file": "scripts.d/50-libcurl/50-libcurl.sh",
+      "sha256": "72a0b0dffbb131e07658844f0a46ce2451c46bf5bf38c23af0d483aa40687e53",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://github.com/curl/curl.git\"",
+        "SCRIPT_COMMIT=\"bc677a8f16a51e728136eff130509cfac57aad19\""
+      ]
+    },
+    {
+      "file": "scripts.d/50-libjxl/50-libjxl.sh",
+      "sha256": "b4c121aafbce20df5bb7e4fc6eeb42832acca94c65f78dc6422e0c8c8e29c7fe",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://github.com/libjxl/libjxl.git\"",
+        "SCRIPT_COMMIT=\"e47d2a2b5bb418f2947ce07f36cb048861db3820\""
+      ]
+    },
+    {
+      "file": "scripts.d/50-libmp3lame.sh",
+      "sha256": "74a7446bcb049dc26d38b1ce164d94137708f69882c75e31728e9359ba5059bc",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://svn.code.sf.net/p/lame/svn/trunk/lame\"",
+        "SCRIPT_REV=\"7113\""
+      ]
+    },
+    {
+      "file": "scripts.d/50-libopus.sh",
+      "sha256": "1e73a3ebccf8b2f6ba705d60657f44bf7c864b7540f12b3f796b4737c9fd3f80",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://github.com/xiph/opus.git\"",
+        "SCRIPT_COMMIT=\"a8b2545eec71e0f53ecead2d583e7b6baa42684d\""
+      ]
+    },
+    {
+      "file": "scripts.d/50-libplacebo.sh",
+      "sha256": "7a47a3ef4e674f82ea30f7d40dbc993b520577b51058f01817e6206602069be4",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://code.videolan.org/videolan/libplacebo.git\"",
+        "SCRIPT_COMMIT=\"275f7dea27924cdd34ab2e6c20e448b6bc4fab65\""
+      ]
+    },
+    {
+      "file": "scripts.d/50-librist/40-mbedtls.sh",
+      "sha256": "ff89b4a5de49c845d776e8f30e0e823dfe2f504ddaacf0a4646f7d12461ff74a",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://github.com/ARMmbed/mbedtls.git\"",
+        "SCRIPT_COMMIT=\"v4.2.0\""
+      ]
+    },
+    {
+      "file": "scripts.d/50-librist/50-librist.sh",
+      "sha256": "8ad91165b1378b54d328ee8b02416ea057eacdb08116ba77eeb985cc12b14bcd",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://code.videolan.org/rist/librist.git\"",
+        "SCRIPT_COMMIT=\"47ad5513d1aa0adb692d78f635512e7fa123f06e\""
+      ]
+    },
+    {
+      "file": "scripts.d/50-librsvg/10-glib.sh",
+      "sha256": "c74fae5856539bc34bc8fc9b8e2482ffd29a5791b6e44fceaae6111efe07d150",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://github.com/GNOME/glib.git\"",
+        "SCRIPT_COMMIT=\"50b938a3e8f5154a25b5af3dd8b9dd8b2ccba7c3\""
+      ]
+    },
+    {
+      "file": "scripts.d/50-librsvg/20-cairo.sh",
+      "sha256": "6d658d45d259e3a7c588c24c091d214d929d4a8b6e4e18773be51d5f45523c4c",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://gitlab.freedesktop.org/cairo/cairo.git\"",
+        "SCRIPT_COMMIT=\"74755964edef651691d5cd36ff140108298e4e6e\""
+      ]
+    },
+    {
+      "file": "scripts.d/50-librsvg/30-pango.sh",
+      "sha256": "78a519045e2ceb1bebf7957c2eb99305b4d200c1bedbb21dee01d9305279778f",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://github.com/GNOME/pango.git\"",
+        "SCRIPT_COMMIT=\"68e981d243d50e03f3df12fb400f31647ef570d2\""
+      ]
+    },
+    {
+      "file": "scripts.d/50-librsvg/99-librsvg.sh",
+      "sha256": "0c367d886d3883accef29f47fa8f81f4ddc15c4c44cb0f3ac6b605b1a6f94c15",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://github.com/GNOME/librsvg.git\"",
+        "SCRIPT_COMMIT=\"0c074d0a25adefd65843067306f9bc1fb609f68f\""
+      ]
+    },
+    {
+      "file": "scripts.d/50-libssh.sh",
+      "sha256": "9415237b4620f115b421d7f5a24b49ed05a84def2b9dcc4aeade52d833be773c",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://gitlab.com/libssh/libssh-mirror.git\"",
+        "SCRIPT_COMMIT=\"9de02f3d01ba16d06f46c0c4d27aa08d8deeecee\""
+      ]
+    },
+    {
+      "file": "scripts.d/50-libtheora.sh",
+      "sha256": "cd093a82eb271d465092c498567cdbef724dbf99165dda1fec0179ce5a60c089",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://github.com/xiph/theora.git\"",
+        "SCRIPT_COMMIT=\"28fd5ec77f0ad0e07a371cef1047828116f6bd8a\""
+      ]
+    },
+    {
+      "file": "scripts.d/50-libvpx.sh",
+      "sha256": "6200f661fe7a1120e2b7e3ade051c159098c962a40a8c7635f62ff3c87ed7119",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://chromium.googlesource.com/webm/libvpx\"",
+        "SCRIPT_COMMIT=\"900b2a52b69e9d4ab72eb855c365da1100c50eb1\""
+      ]
+    },
+    {
+      "file": "scripts.d/50-libwebp.sh",
+      "sha256": "a15afb8329dcd427f29169f6e8ad465f09510def2b0dde787db3d03a4530158f",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://chromium.googlesource.com/webm/libwebp\"",
+        "SCRIPT_COMMIT=\"1844042d1ca751e62e61df7617dba19c98588339\""
+      ]
+    },
+    {
+      "file": "scripts.d/50-libzmq.sh",
+      "sha256": "6d664155f794f62f7069385f26bbf2bc725ba648e5c4becef5648b48c0203e8a",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://github.com/zeromq/libzmq.git\"",
+        "SCRIPT_COMMIT=\"46493370217ac135246617fa2f6ac819d8b61bfc\""
+      ]
+    },
+    {
+      "file": "scripts.d/50-lilv/96-lv2.sh",
+      "sha256": "4863872ffd75697aaf8ee39ac79dce745c03289b15dcef2339cdf6e053c42f68",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://github.com/lv2/lv2.git\"",
+        "SCRIPT_COMMIT=\"3c57dae600a5ad8d05acd53ee3490f7d91cb7be6\""
+      ]
+    },
+    {
+      "file": "scripts.d/50-lilv/96-serd.sh",
+      "sha256": "9db9feda622666fa3874c998a9a6936310902b63cc2f1ce0c0556e2ac7657cfe",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://github.com/drobilla/serd.git\"",
+        "SCRIPT_COMMIT=\"b621b0bc790d1e8102d3138ead16b974ddda8432\""
+      ]
+    },
+    {
+      "file": "scripts.d/50-lilv/96-zix.sh",
+      "sha256": "afc07c6e7b5b5f92042cb3f445ed145357a48d3402c60985b136e66182c45f27",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://github.com/drobilla/zix.git\"",
+        "SCRIPT_COMMIT=\"17d632393f5addb6fa24dda2927b96515407cca7\""
+      ]
+    },
+    {
+      "file": "scripts.d/50-lilv/97-sord.sh",
+      "sha256": "2271dbcfb70c67890aa5a9f5c0392046496ee05b2f23b1780dfbc09e28d5dcf9",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://github.com/drobilla/sord.git\"",
+        "SCRIPT_COMMIT=\"4b5232bb91e7f2f1b84df384494d073fabbcd312\""
+      ]
+    },
+    {
+      "file": "scripts.d/50-lilv/98-sratom.sh",
+      "sha256": "70897a779e9a3a24998fa3a5ccaf4aeee21a551ed3be9e14acf00770b9d8bd1b",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://github.com/lv2/sratom.git\"",
+        "SCRIPT_COMMIT=\"9e8ee84eed502e6030ce8bb49694fd28542b08fc\""
+      ]
+    },
+    {
+      "file": "scripts.d/50-lilv/99-lilv.sh",
+      "sha256": "9e46c337c276393545a12fa099ba468185a8f120ce0569fbc64ec687bc082acf",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://github.com/lv2/lilv.git\"",
+        "SCRIPT_COMMIT=\"4b8f30055fa5cb4134a2eb45fc1555bc04289314\""
+      ]
+    },
+    {
+      "file": "scripts.d/50-onevpl.sh",
+      "sha256": "46cf258ffa89c85f146419874eb425504cce7b17fd1976dd6ac0115e6e31b12e",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://github.com/intel/libvpl.git\"",
+        "SCRIPT_COMMIT=\"674d015bcb294bc39fa276e99a652ea045423e82\""
+      ]
+    },
+    {
+      "file": "scripts.d/50-openal.sh",
+      "sha256": "08b2ba27ea96c1fd0dac27ffed615baeaac485f694777cd1d7f212a39b5573fd",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://github.com/kcat/openal-soft.git\"",
+        "SCRIPT_COMMIT=\"4a52288b772d1722713675f71bb30f321e78fd80\""
+      ]
+    },
+    {
+      "file": "scripts.d/50-openapv.sh",
+      "sha256": "f1551a761a66e8d58104eaea413053ad9422888b61ffe7d21384f418fa16ae73",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://github.com/AcademySoftwareFoundation/openapv.git\"",
+        "SCRIPT_COMMIT=\"b4ff69856b4c3e8849df431ee3db54fd535f9bf3\""
+      ]
+    },
+    {
+      "file": "scripts.d/50-opencore-amr.sh",
+      "sha256": "574666d18051057ca5bb5064e034332dfd0fc9d9575a41a17d7b079ff3154d00",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://git.code.sf.net/p/opencore-amr/code\"",
+        "SCRIPT_COMMIT=\"7dba8c32238418ce0b316a852b2224df586ca896\""
+      ]
+    },
+    {
+      "file": "scripts.d/50-openh264.sh",
+      "sha256": "edcd55479cd5de091091708767849e1ffa0aa1f8e3ef98d0bdd27a406809b2dd",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://github.com/cisco/openh264.git\"",
+        "SCRIPT_COMMIT=\"1bca62311e447fd9c39fc93de2c4b96cd5ce971c\""
+      ]
+    },
+    {
+      "file": "scripts.d/50-openjpeg.sh",
+      "sha256": "d901cd8495f1a6d67a93c3aca6cba02373a0147cd65fd3a21a05ca2b368138b1",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://github.com/uclouvain/openjpeg.git\"",
+        "SCRIPT_COMMIT=\"8314119b067c0fc77834731168daaebd379fdb12\""
+      ]
+    },
+    {
+      "file": "scripts.d/50-openmpt.sh",
+      "sha256": "c2b0eae1b70df2940568c7464ea5a4f84a803bb93cfc4893c6b8ed502221a0be",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://github.com/OpenMPT/openmpt.git\"",
+        "SCRIPT_COMMIT=\"3ee3c8000b45886703816fd027369ab6ad6fc6cb\""
+      ]
+    },
+    {
+      "file": "scripts.d/50-rav1e.sh",
+      "sha256": "a3a92819459530d94e97423b94560d2ea58fb06b1a944c8124f4f0c46eaaa421",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://github.com/xiph/rav1e.git\"",
+        "SCRIPT_COMMIT=\"31435de9d76fddd38f6dcc31d4014574cebb2092\""
+      ]
+    },
+    {
+      "file": "scripts.d/50-rubberband.sh",
+      "sha256": "18ed41389704bf882ae6e6c532ec6d622e609a82261e20ebe35209f339fcb8ba",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://github.com/breakfastquay/rubberband.git\"",
+        "SCRIPT_COMMIT=\"e4296ac80b1170018a110bc326fd0d45a0eb27d6\""
+      ]
+    },
+    {
+      "file": "scripts.d/50-schannel.sh",
+      "sha256": "1a815e5fd18665cd59ef40789cc24212c4663e6b09dac8a685272790b0ed2945",
+      "source_declarations": []
+    },
+    {
+      "file": "scripts.d/50-sdl.sh",
+      "sha256": "402d527bee6619db734449aed01938618e9e2d4033dba707dcc7325d885955b4",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://github.com/libsdl-org/SDL.git\"",
+        "SCRIPT_COMMIT=\"8acf7cfc0f88717e5c036f60f0314bfcafe39189\"",
+        "SCRIPT_BRANCH=\"SDL2\""
+      ]
+    },
+    {
+      "file": "scripts.d/50-snappy.sh",
+      "sha256": "f6bafd22aed861b7709b55e7a89a15cdce4c599fef4d70460f9eb83f2bf217a2",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://github.com/google/snappy.git\"",
+        "SCRIPT_COMMIT=\"946606459314e55d029c85f9a8c46f8809467f0f\""
+      ]
+    },
+    {
+      "file": "scripts.d/50-soxr.sh",
+      "sha256": "333ca3a3331c67fc9468ca81affdbae90385b138a9e91f5b3ad2122f42a8f0f9",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://git.code.sf.net/p/soxr/code\"",
+        "SCRIPT_COMMIT=\"945b592b70470e29f917f4de89b4281fbbd540c0\""
+      ]
+    },
+    {
+      "file": "scripts.d/50-srt.sh",
+      "sha256": "ef9b4a4c0ffa57c75ba7cdf7f807ca137743e6d868c6ee71b1158f82fdb9f02f",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://github.com/Haivision/srt.git\"",
+        "SCRIPT_COMMIT=\"9f2390232a8256ed4c72a5418c2b2777c49ad737\""
+      ]
+    },
+    {
+      "file": "scripts.d/50-svtav1.sh",
+      "sha256": "96d5fc951f3b6f1c8b35082725cce614a756f435bef0e29e8b711add60f47887",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://gitlab.com/AOMediaCodec/SVT-AV1.git\"",
+        "SCRIPT_COMMIT=\"f2c3fb78611d542b12b11c6d10d3744b31b754a0\""
+      ]
+    },
+    {
+      "file": "scripts.d/50-twolame.sh",
+      "sha256": "ac47c5d2b47a0faf34bf2e032db75754c6d9ed6cce7c3f69f8ed64a7e95698d3",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://github.com/njh/twolame.git\"",
+        "SCRIPT_COMMIT=\"6fced852d4d5cfad58cf9dbe3ea619b08e87d398\""
+      ]
+    },
+    {
+      "file": "scripts.d/50-uavs3d.sh",
+      "sha256": "3cde849cac8a4fe08df4951840bd40c27592c82e665065f1b7fd506bef71868e",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://github.com/uavs3/uavs3d.git\"",
+        "SCRIPT_COMMIT=\"0e20d2c291853f196c68922a264bcd8471d75b68\""
+      ]
+    },
+    {
+      "file": "scripts.d/50-vaapi/30-libpciaccess.sh",
+      "sha256": "d46f13dbc1396a21be7294b5c18d615f8ebbf161a2b3947d0e80a80ae001946a",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://gitlab.freedesktop.org/xorg/lib/libpciaccess.git\"",
+        "SCRIPT_COMMIT=\"38e6f15f839fba2c49982e7ad61cde681fd5d4d6\""
+      ]
+    },
+    {
+      "file": "scripts.d/50-vaapi/40-libdrm.sh",
+      "sha256": "87f86eed075bb148108e80fb4a89e628485c4d5cec29a5f187a6cc28c22f75c4",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://gitlab.freedesktop.org/mesa/drm.git\"",
+        "SCRIPT_COMMIT=\"b97cbde15c5c3abfe44d78e8f57139e50f612fec\""
+      ]
+    },
+    {
+      "file": "scripts.d/50-vaapi/50-libva.sh",
+      "sha256": "d94c5ccfa5e0c34929c6f4fffe00a31ef4b667a7480ed14f5d1a878b460d10dc",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://github.com/intel/libva.git\"",
+        "SCRIPT_COMMIT=\"f052e984e0c8bf10784198cc311b23c567b1367f\""
+      ]
+    },
+    {
+      "file": "scripts.d/50-vaapi/99-finalize.sh",
+      "sha256": "f53ab88accece6bf1c3e43a1efb3e23cd01dfd4e7ea3e1b96eab277e9184802e",
+      "source_declarations": []
+    },
+    {
+      "file": "scripts.d/50-vapoursynth.sh",
+      "sha256": "5c7afab202aee54a30f8823fb38171b1e7fe8224016c63f933393ba7ccba96a5",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://github.com/vapoursynth/vapoursynth.git\"",
+        "SCRIPT_COMMIT=\"R81\""
+      ]
+    },
+    {
+      "file": "scripts.d/50-vidstab.sh",
+      "sha256": "d857de89e32b1bb71b3c4f6034ee165414a8c645f0c585edbeb77cb63d792c96",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://github.com/georgmartius/vid.stab.git\"",
+        "SCRIPT_COMMIT=\"e2445c4081658318223762a696eb1c645c2d7168\""
+      ]
+    },
+    {
+      "file": "scripts.d/50-vvenc.sh",
+      "sha256": "a366436a6345f6a90f362267077328e045718f84edbfc2d2308237e6505f393f",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://github.com/fraunhoferhhi/vvenc.git\"",
+        "SCRIPT_COMMIT=\"0e7508b811bbea3cd510956ddb3193f3a4c93684\""
+      ]
+    },
+    {
+      "file": "scripts.d/50-whisper.sh",
+      "sha256": "f2fb2843a0ecfc6b64c72ea5b825a923c7cad1d4a0a756b0b7f8c2351f13f80c",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://github.com/ggml-org/whisper.cpp.git\"",
+        "SCRIPT_COMMIT=\"231638a0717b7822784297e5980965ffcec05810\""
+      ]
+    },
+    {
+      "file": "scripts.d/50-x264.sh",
+      "sha256": "37b598e715823c03347bd3ba782f829bf5e289c47cf350eae8042c2263dabfaa",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://code.videolan.org/videolan/x264.git\"",
+        "SCRIPT_COMMIT=\"0480cb05fa188d37ae87e8f4fd8f1aea3711f7ee\""
+      ]
+    },
+    {
+      "file": "scripts.d/50-x265.sh",
+      "sha256": "79b428eb57716cb6f87a59d721604b67923edb7f4d720229c482ced485391863",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://github.com/Multicorewareinc/x265.git\"",
+        "SCRIPT_COMMIT=\"5143a2a00ad0cc600831654a248b96ec7307eb4a\""
+      ]
+    },
+    {
+      "file": "scripts.d/50-xavs2.sh",
+      "sha256": "aec8c0ded25b8a6116e6cfddaec86591cca268b376554efd8bd44842c6e0fc80",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://github.com/pkuvcl/xavs2.git\"",
+        "SCRIPT_COMMIT=\"eae1e8b9d12468059bdd7dee893508e470fa83d8\""
+      ]
+    },
+    {
+      "file": "scripts.d/50-xvid.sh",
+      "sha256": "b138072e0e59e7aa6df2f0fdc1d2aacf9776eb3631681516815f7ba4e6997bd8",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://svn.xvid.org/trunk/xvidcore\"",
+        "SCRIPT_REV=\"2204\""
+      ]
+    },
+    {
+      "file": "scripts.d/50-zimg.sh",
+      "sha256": "fe5d823c95d90ca14a5e44fe7b83800661d9c44aea6ba87431c4f9238204f407",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://github.com/sekrit-twc/zimg.git\"",
+        "SCRIPT_COMMIT=\"67e0603271c080e22c8429856dd4a8a56587e61e\""
+      ]
+    },
+    {
+      "file": "scripts.d/50-zvbi.sh",
+      "sha256": "0989c43587b870757dce7055ab56491bcbf766c2d82aac26482b4dd8b26912e6",
+      "source_declarations": [
+        "SCRIPT_REPO=\"https://github.com/zapping-vbi/zvbi\"",
+        "SCRIPT_COMMIT=\"34bb6f660c5c1bacd4a66cc7b22311e4ca3c1ab5\""
+      ]
+    },
+    {
+      "file": "scripts.d/55-rustdedup.sh",
+      "sha256": "48d9367d97c79b176e3c176b69f69d65f1a665f0942b7372d74b39d8b9a3377c",
+      "source_declarations": []
+    },
+    {
+      "file": "scripts.d/zz-final.sh",
+      "sha256": "c332bf3fb7503c78211557149c01fd7880fd9011486fd6c33c8b1d428ab40a68",
+      "source_declarations": []
+    }
+  ],
+  "ffmpeg_recipe_scope": "Preserved recipe evidence; moving branch tips and transitive patches must be resolved to the actual binary build, not current upstream heads.",
+  "ytdlp_notice_entries": [
+    {
+      "component": "Python",
+      "license": "PSF-2.0",
+      "project_urls": [
+        "https://www.python.org/"
+      ]
+    },
+    {
+      "component": "bzip2",
+      "license": "bzip2-1.0.6",
+      "project_urls": [
+        "https://sourceware.org/bzip2/"
+      ]
+    },
+    {
+      "component": "libffi",
+      "license": "MIT",
+      "project_urls": [
+        "https://sourceware.org/libffi/"
+      ]
+    },
+    {
+      "component": "OpenSSL 1.x",
+      "license": "OpenSSL",
+      "project_urls": [
+        "https://www.openssl.org/"
+      ]
+    },
+    {
+      "component": "OpenSSL 3.0+",
+      "license": "Apache-2.0",
+      "project_urls": [
+        "https://www.openssl.org/"
+      ]
+    },
+    {
+      "component": "SQLite",
+      "license": "Public Domain",
+      "project_urls": [
+        "https://www.sqlite.org/"
+      ]
+    },
+    {
+      "component": "liblzma",
+      "license": "0BSD",
+      "project_urls": [
+        "https://tukaani.org/xz/"
+      ]
+    },
+    {
+      "component": "mpdecimal",
+      "license": "BSD-2-Clause",
+      "project_urls": [
+        "https://www.bytereef.org/mpdecimal/"
+      ]
+    },
+    {
+      "component": "zlib",
+      "license": "zlib",
+      "project_urls": [
+        "https://zlib.net/"
+      ]
+    },
+    {
+      "component": "Expat",
+      "license": "MIT",
+      "project_urls": [
+        "https://libexpat.github.io/"
+      ]
+    },
+    {
+      "component": "ncurses",
+      "license": "X11-distribute-modifications-variant",
+      "project_urls": [
+        "https://invisible-island.net/ncurses/"
+      ]
+    },
+    {
+      "component": "GNU Readline",
+      "license": "GPL-3.0-or-later",
+      "project_urls": [
+        "https://www.gnu.org/software/readline/"
+      ]
+    },
+    {
+      "component": "libstdc++",
+      "license": "GPL-3.0-with-GCC-exception",
+      "project_urls": [
+        "https://gcc.gnu.org/onlinedocs/libstdc++/"
+      ]
+    },
+    {
+      "component": "libgcc",
+      "license": "GPL-3.0-with-GCC-exception",
+      "project_urls": [
+        "https://gcc.gnu.org/"
+      ]
+    },
+    {
+      "component": "libuuid",
+      "license": "BSD-3-Clause",
+      "project_urls": [
+        "https://git.kernel.org/pub/scm/fs/ext2/e2fsprogs.git/tree/lib/uuid"
+      ]
+    },
+    {
+      "component": "libintl",
+      "license": "LGPL-2.1-or-later",
+      "project_urls": [
+        "https://www.gnu.org/software/gettext/"
+      ]
+    },
+    {
+      "component": "libidn2",
+      "license": "LGPL-3.0-or-later",
+      "project_urls": [
+        "https://www.gnu.org/software/libidn/"
+      ]
+    },
+    {
+      "component": "libidn2 (Unicode character data files)",
+      "license": "Unicode-TOU AND Unicode-DFS-2016",
+      "project_urls": [
+        "https://www.gnu.org/software/libidn/"
+      ]
+    },
+    {
+      "component": "libunistring",
+      "license": "LGPL-3.0-or-later",
+      "project_urls": [
+        "https://www.gnu.org/software/libunistring/"
+      ]
+    },
+    {
+      "component": "curl-impersonate",
+      "license": "MIT",
+      "project_urls": [
+        "https://github.com/lexiforest/curl-impersonate"
+      ]
+    },
+    {
+      "component": "curl",
+      "license": "curl",
+      "project_urls": [
+        "https://curl.se/"
+      ]
+    },
+    {
+      "component": "BoringSSL",
+      "license": "Apache-2.0",
+      "project_urls": [
+        "https://boringssl.googlesource.com/boringssl"
+      ]
+    },
+    {
+      "component": "nghttp2",
+      "license": "MIT",
+      "project_urls": [
+        "https://nghttp2.org/"
+      ]
+    },
+    {
+      "component": "ngtcp2",
+      "license": "MIT",
+      "project_urls": [
+        "https://nghttp2.org/ngtcp2/"
+      ]
+    },
+    {
+      "component": "nghttp3",
+      "license": "MIT",
+      "project_urls": [
+        "https://nghttp2.org/nghttp3/"
+      ]
+    },
+    {
+      "component": "zstd",
+      "license": "BSD-3-Clause",
+      "project_urls": [
+        "https://facebook.github.io/zstd/"
+      ]
+    },
+    {
+      "component": "brotli",
+      "license": "MIT",
+      "project_urls": [
+        "https://brotli.org/"
+      ]
+    },
+    {
+      "component": "curl_cffi",
+      "license": "MIT",
+      "project_urls": [
+        "https://curl-cffi.readthedocs.io/"
+      ]
+    },
+    {
+      "component": "Tornado",
+      "license": "Apache-2.0",
+      "project_urls": [
+        "http://www.tornadoweb.org/"
+      ]
+    },
+    {
+      "component": "httpx",
+      "license": "BSD-3-Clause",
+      "project_urls": [
+        "https://www.python-httpx.org/",
+        "https://www.encode.io/)."
+      ]
+    },
+    {
+      "component": "cffi",
+      "license": "MIT-0",
+      "project_urls": [
+        "https://cffi.readthedocs.io/"
+      ]
+    },
+    {
+      "component": "pycparser",
+      "license": "BSD-3-Clause",
+      "project_urls": [
+        "https://github.com/eliben/pycparser"
+      ]
+    },
+    {
+      "component": "mutagen",
+      "license": "GPL-2.0-or-later",
+      "project_urls": [
+        "https://mutagen.readthedocs.io/"
+      ]
+    },
+    {
+      "component": "PyCryptodome",
+      "license": "Public Domain and BSD-2-Clause",
+      "project_urls": [
+        "https://www.pycryptodome.org/"
+      ]
+    },
+    {
+      "component": "certifi",
+      "license": "MPL-2.0",
+      "project_urls": [
+        "https://github.com/certifi/python-certifi"
+      ]
+    },
+    {
+      "component": "requests",
+      "license": "Apache-2.0",
+      "project_urls": [
+        "https://requests.readthedocs.io/"
+      ]
+    },
+    {
+      "component": "charset-normalizer",
+      "license": "MIT",
+      "project_urls": [
+        "https://charset-normalizer.readthedocs.io/"
+      ]
+    },
+    {
+      "component": "idna",
+      "license": "BSD-3-Clause",
+      "project_urls": [
+        "https://github.com/kjd/idna"
+      ]
+    },
+    {
+      "component": "urllib3",
+      "license": "MIT",
+      "project_urls": [
+        "https://urllib3.readthedocs.io/"
+      ]
+    },
+    {
+      "component": "SecretStorage",
+      "license": "BSD-3-Clause",
+      "project_urls": [
+        "https://secretstorage.readthedocs.io/"
+      ]
+    },
+    {
+      "component": "cryptography",
+      "license": "Apache-2.0",
+      "project_urls": [
+        "https://cryptography.io/"
+      ]
+    },
+    {
+      "component": "Jeepney",
+      "license": "MIT",
+      "project_urls": [
+        "https://jeepney.readthedocs.io/"
+      ]
+    },
+    {
+      "component": "websockets",
+      "license": "BSD-3-Clause",
+      "project_urls": [
+        "https://websockets.readthedocs.io/"
+      ]
+    },
+    {
+      "component": "Meriyah",
+      "license": "ISC",
+      "project_urls": [
+        "https://github.com/meriyah/meriyah"
+      ]
+    },
+    {
+      "component": "Astring",
+      "license": "MIT",
+      "project_urls": [
+        "https://github.com/davidbonnet/astring/"
+      ]
+    }
+  ],
+  "ytdlp_notice_scope": "Upstream notices cover multiple platforms; presence here does not prove inclusion in this Windows build or identify an exact bundled version.",
+  "publication_blockers": [
+    {
+      "id": "DIST-01",
+      "component": "ffmpeg",
+      "reason": "Exact binary-to-transitive-library version, source, patch and notice mapping is not established for all enabled libraries."
+    },
+    {
+      "id": "DIST-02",
+      "component": "gifski",
+      "reason": "Main source and Cargo.lock are preserved; the shipped binary feature/dependency source and license closure has not been independently established."
+    },
+    {
+      "id": "DIST-03",
+      "component": "yt-dlp",
+      "reason": "Main source and upstream notices are preserved; exact private Python/native dependency versions and corresponding source coverage remain incomplete."
+    }
+  ]
+}

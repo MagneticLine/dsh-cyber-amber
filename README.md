@@ -11,7 +11,11 @@ Optional size limits use measured Q/L adjustments. Windows x64 only; output stay
 
 ## 安装与依赖
 
-宿主已验证版本为 DSH 0.2.1-rc.3。**0.2.0为Windows x64自包含包**，最低系统为Windows 10 22H2。
+当前源码为 **0.2.1-rc.1 本地验收候选版**；安装与复验见 [docs/CANDIDATE.md](docs/CANDIDATE.md)。
+它尚未公开发布，第三方依赖分发核查仍有阻塞项，见 [docs/DISTRIBUTION.md](docs/DISTRIBUTION.md)。
+以下公开链接仍指向既有的 0.2.0，不代表候选版下载地址。
+
+宿主已验证版本为 DSH 0.2.1-rc.3。Windows x64 自包含包最低系统为 Windows 10 22H2。
 宿主提供 `@deepseek-ai/*`，
 以下程序及所需DLL已包含在tgz中，不用另装Python、FFmpeg、Gifski或yt-dlp。
 
@@ -53,6 +57,8 @@ dsh plugin --profile desktop add 'https://github.com/MagneticLine/dsh-cyber-ambe
 
 `amber_download_video`：`url` 必填，可为HTTP(S)页面链接、BV号或av号；`output_dir` 可选。
 默认取1080p以内最佳可用格式与可用音轨，不下载整个播放列表，成品视频保留。
+返回 `has_audio` 及存在时的 `audio_codec`；无音轨的原片也可以成功下载。
+返回的 `source` 是适合展示的来源，移除查询凭据和片段，仅保留已知视频定位参数；不保证可作为原下载地址复用。
 来源未提供分辨率元数据时允许选择该视频流，下载后用ffprobe报告实际尺寸。
 
 `amber_make_gif`：
@@ -74,6 +80,7 @@ dsh plugin --profile desktop add 'https://github.com/MagneticLine/dsh-cyber-ambe
 未指定范围时使用整片，默认最多30秒；超长要求选择片段，不擅自截短。
 GIF实际时长按百分之一秒量化；相同画面可能合并为更少的编码帧，不代表改变播放速度。
 源视频为VFR时，按其平均帧率限制采样；本版本不做HDR色调映射，HDR输入明确报错。
+尺寸按像素显示比例和直角旋转计算；未知像素比例或非直角旋转明确报错。
 
 ## 体积目标
 
@@ -115,7 +122,13 @@ Cookie文件只传给yt-dlp，不读取浏览器或其他插件的登录态；�
 FFmpeg解码／截取／缩放／采样后直接通过背压管道传给Gifski，**无有损中间MP4、CRF或逐帧图片目录**。
 所有生产进程通过DSH的subprocess管理，并响应取消、超时及插件卸载。
 下载工具成品保留；GIF链接入口的原片、试编码和失败产物在任务结束后清理；本地原片不修改。
+处理与清理同时失败时保留原始错误并补充清理情况。成品有效但临时目录删除失败时，
+成品仍保留，结果包含 `warnings`；未确认进程退出时不自动删除任务目录，也不声称已清理。
 输出使用唯一文件名，避免覆盖既有结果。成品长期保留，由用户管理。
+
+`maxSourceMB` 和 `maxOutputMB` 不是峰值磁盘配额，合并、复制及试编码会额外占用空间。
+强制结束宿主、断电或系统拒绝清理可能留下 `.amber-*`；当前不自动扫描或删除旧任务，
+以免误删其他进程的工作。请在确认相关任务与进程已经停止后，按错误中给出的具体目录手动处理。
 
 ## 开发测试
 

@@ -1,6 +1,6 @@
 {
   "name": "dsh-cyber-amber",
-  "version": "0.2.0",
+  "version": "0.2.1-rc.1",
   "description": "Download a video or turn a link/local clip into a high-quality Gifski GIF in DeepSeek Harness.",
   "author": "MagneticLine",
   "repository": { "type": "git", "url": "git+https://github.com/MagneticLine/dsh-cyber-amber.git" },
@@ -14,9 +14,17 @@
     "./package.json": "./package.json"
   },
   "dsh": { "bundle": { "patch": "./cordis.patch.yml" } },
-  "engines": { "node": "^22.19.0 || >=24.0.0", "dsh": "^0.2.1-rc.3" },
+  "engines": { "node": "^22.19.0 || >=24.0.0", "dsh": "0.2.1-rc.3" },
   "os": ["win32"],
   "cpu": ["x64"],
+  "peerDependencies": {
+    "@deepseek-ai/dsh-tools": "0.2.1-rc.3",
+    "@deepseek-ai/schemastery": "3.18.5"
+  },
+  "peerDependenciesMeta": {
+    "@deepseek-ai/dsh-tools": { "optional": true },
+    "@deepseek-ai/schemastery": { "optional": true }
+  },
   "files": ["lib", "locale", "vendor", "cordis.patch.yml", "README.md", "LICENSE", "NOTICE.md", "docs"],
   "scripts": { "test": "node --test test/*.test.mjs", "prepack": "node scripts/verify-bundle.mjs" },
   "license": "SEE LICENSE IN NOTICE.md"
