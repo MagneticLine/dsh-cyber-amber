@@ -1,0 +1,7 @@
+url: https://github.com/MagneticLine/dsh-cyber-amber
+name: MagneticLine/dsh-cyber-amber
+category: tools
+description:
+  en: Download videos and create GIFs with optional size limits on Windows x64.
+  zh: 在 Windows x64 上下载视频，并制作可指定体积上限的 GIF。
+tarball: https://github.com/MagneticLine/dsh-cyber-amber/releases/download/v0.2.0/dsh-cyber-amber-0.2.0.tgz

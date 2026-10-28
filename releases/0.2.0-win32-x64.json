@@ -3,8 +3,8 @@
   "platform": "win32-x64",
   "minimum_windows": "Windows 10 22H2",
   "artifact": "dist/dsh-cyber-amber-0.2.0.tgz",
-  "bytes": 92307953,
-  "sha256": "78282e82b4b77a7639d90bce6a7498338651fea14091f0497840039b0402d370",
+  "bytes": 92311201,
+  "sha256": "641b428185cc7249670cd90ddd1e8d312e0ff6f79a1b39d0e86482f95e234784",
   "dependency_files_verified": 158,
   "installed_runtime_files_matched": 7,
   "dependencies": {
@@ -36,5 +36,12 @@
       "lossy_quality": 53
     },
     "unicode_workspace_output": true
+  },
+  "validated_prepublication_sha256": "78282e82b4b77a7639d90bce6a7498338651fea14091f0497840039b0402d370",
+  "runtime_matches_validated_prepublication_package": true,
+  "upstream_source_snapshots": {
+    "artifact": "dist/dsh-cyber-amber-0.2.0-upstream-sources.tar.gz",
+    "bytes": 20503678,
+    "sha256": "c32590b8e893eaf40c20bee6b3834b82216b4bd2bfe7e9080afe9e73412af500"
   }
 }

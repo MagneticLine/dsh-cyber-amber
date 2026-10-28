@@ -3,12 +3,16 @@
 给 DeepSeek Harness 提供两个工具：下载视频，或把链接／本地视频的一段制作成高质量 GIF。
 文件保存在本地，可由用户保存，也可交给其他插件继续处理。本插件不上传、不评论、不自动发布。
 
+Download a video or make a Gifski GIF from a URL/local clip in DeepSeek Harness.
+Optional size limits use measured Q/L adjustments. Windows x64 only; output stays local.
+
 默认：**长边640、20fps、Q75／M75／L75、normal、无限循环**。
 不预估后要求逐次确认；未指定体积目标时只编码一次，不自动降质。
 
 ## 安装与依赖
 
-宿主已验证版本为 DSH 0.2.1-rc.3。**0.2.0为Windows x64自包含包**，宿主提供 `@deepseek-ai/*`，
+宿主已验证版本为 DSH 0.2.1-rc.3。**0.2.0为Windows x64自包含包**，最低系统为Windows 10 22H2。
+宿主提供 `@deepseek-ai/*`，
 以下程序及所需DLL已包含在tgz中，不用另装Python、FFmpeg、Gifski或yt-dlp。
 
 | 内置程序 | 用途 | 可选外部覆盖项 |
@@ -16,27 +20,32 @@
 | yt-dlp 2026.10.26目录版 | 解析、下载链接；包含其私有Python运行时 | `ytdlpPath` |
 | FFmpeg n9.0.2-36-g6882969ce9共享库版 | 截取、缩放、采样与音视频合并 | `ffmpegPath` |
 | 同版ffprobe | 探测原片，读取并验证GIF实际帧数和时长 | `ffprobePath` |
-| Gifski | 高质量GIF编码；开发验证使用1.34.0 | `gifskiPath` |
+| Gifski 1.34.0 | 高质量GIF编码 | `gifskiPath` |
 
 默认使用包内固定版本，使用前验证SHA256及配套文件；不追随latest，不在安装或首次使用时下载／更新程序。
 只有显式填写覆盖路径时才使用用户指定的版本；旧版如果填写过路径，清空四个路径字段才切回内置版。
 本包目前不支持Windows ARM64、32位、macOS或Linux安装，后续应分别制作平台包。
 不要向本包安装另一份 `@deepseek-ai/*`。
 
-本机安装已生成的完整包，在PowerShell执行：
+在DSH可用的终端中执行：
 
 ```powershell
-& 'E:\DeepSeekHarness\resources\runtime\cli\bin\dsh.cmd' plugin --profile desktop add 'file:F:/Project/03-Tools-Automation/DSH-plugin/dsh-cyber-amber/dist/dsh-cyber-amber-0.2.0.tgz'
+dsh plugin --profile desktop add 'https://github.com/MagneticLine/dsh-cyber-amber/releases/download/v0.2.0/dsh-cyber-amber-0.2.0.tgz'
 ```
 
-随后重启DSH。无需改PATH、执行安装脚本或给系统临时目录添加权限。
-本项目不会替你修改实际 `desktop` profile。开发后刷新本地安装需先remove再add；仅改源码不会更新宿主拷贝。
+若提示找不到 `dsh`，请使用DSH安装目录提供的CLI执行同样的参数；不需要另外安装编码器。
+也可以从 [Releases](https://github.com/MagneticLine/dsh-cyber-amber/releases) 下载tgz，
+核对同页 `SHA256SUMS.txt` 后按本地文件安装：`dsh plugin --profile desktop add 'file:C:/Downloads/dsh-cyber-amber-0.2.0.tgz'`。
+
+安装后若当前会话未显示工具，重启DSH或创建新会话。无需执行安装脚本或给系统临时目录添加权限。
+开发后刷新本地安装需先remove再add；仅改源码不会更新宿主拷贝。
+请使用Release的完整tgz；Git源码仓库不包含大型二进制，不适合直接作为完整安装包。
 
 ## 对话验收
 
 - “下载这个视频，保留原片：BV1RwnQ6sEd5。” → `amber_download_video`
 - “把 BV1RwnQ6sEd5 的2到6秒做成GIF，默认参数。” → `amber_make_gif`
-- “把 F:\bilibili\我的视频.mp4 的00：02到00：06做成GIF。”
+- “把 C:\Videos\我的视频.mp4 的00：02到00：06做成GIF。”
 - “同一片段不超过3MB；先保留640尺寸和20帧。”
 - 若返回 `needs_adjustment`，选择“保持20帧，缩小到建议尺寸再试”等取舍。
 
@@ -119,10 +128,14 @@ node --test 'test/*.test.mjs'
 测试包含真实包内FFmpeg/Gifski编码；测试原片由JavaScript直接生成，工件位于项目 `.validation/tests`，
 不要求FFmpeg向系统临时目录写视频。离线下载协议fixture只验证编排，不代表平台联网成功。
 DSH隔离验证和平台实测状态见 [docs/VALIDATION.md](docs/VALIDATION.md)。
+真实desktop会话还验证了两个工具由模型调用、下载音轨可解码、GIF全部80帧可解码。
+本次只实测B站样例和本地视频；其他网站的支持范围由yt-dlp、登录权限及网络情况共同决定。
 
 维护者从Git检出后，执行 `python scripts/vendor.py` 按锁定URL与哈希准备依赖，
 再执行 `node scripts/verify-bundle.mjs` 和 `npm pack --pack-destination dist`。
 依赖二进制不放入Git，但完整tgz包含它们；请保留发行tgz，必要时可从中恢复vendor目录并按清单校验。
 只有维护者显式执行准备脚本才联网，用户安装tgz无需运行该脚本。详见 [vendor/README.md](vendor/README.md)。
 
-本包原创代码为MIT；外部程序各自许可与来源见 [NOTICE.md](NOTICE.md)。
+本包原创代码为MIT；外部程序各自许可与来源见 [NOTICE.md](NOTICE.md)，
+对应源码、依赖和构建资料见 [docs/SOURCES.md](docs/SOURCES.md)。
+问题反馈请附DSH版本、操作系统、工具错误码和相关参数，勿附Cookie或带鉴权参数的链接。

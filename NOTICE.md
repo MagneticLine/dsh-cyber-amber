@@ -4,6 +4,9 @@ The original JavaScript glue and tests are MIT licensed. The Windows x64 release
 is an aggregate of that code and the following separately licensed command-line
 programs. Their notices and license texts are preserved under `vendor/licenses`.
 No other plugin's credentials or runtime are included.
+Corresponding-source access directions, upstream dependency records and build
+instructions are collected in `docs/SOURCES.md`. Release downloads also offer
+immutable upstream source snapshots separately from the installable tgz.
 
 - Gifski: <https://github.com/ImageOptim/gifski>, AGPL-3.0-or-later; alternative
   commercial licensing is offered by its author. Tested engine version: 1.34.0.
