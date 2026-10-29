@@ -55,7 +55,7 @@ export function apply(ctx, config) {
         const decoder = ctx.subprocess.spawn({ argv: [join(config.packageRoot, 'vendor', manifest.binaries.ffmpeg),
           '-v', 'error', '-nostdin', '-ignore_loop', '1', '-i', gif.value.path, '-f', 'null', '-'],
         cwd: config.outputDir, signal: controller.signal, graceMs: 1000,
-        stdio: { stdin: 'ignore', stdout: 'ignore', stderr: { maxBytes: 65536 } } })
+        stdio: { stdin: 'ignore', stdout: { maxBytes: 1 }, stderr: { maxBytes: 65536 } } })
         try { assert.equal((await decoder.done).exitCode, 0, 'Independent full GIF decode failed') }
         finally { decoder.terminate(); await decoder.waitForExit() }
         const bytes = await readFile(gif.value.path)

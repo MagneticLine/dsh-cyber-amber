@@ -21,6 +21,7 @@ test('Gifski and FFmpeg encoder failures identify the actual program', async () 
   for (const failing of ['gifski.exe', 'ffmpeg.exe']) {
     const runtime = new Runtime({ spawn(spec) {
       const isConsumer = spec.argv[0] === 'gifski.exe'
+      if (isConsumer) assert.deepEqual(spec.stdio.stdout, { maxBytes: 1 })
       const h = handle(spec.argv[0] === failing ? 13 : 0,
         spec.argv[0] === failing ? 'Permission denied' : '')
       if (isConsumer) h.stdin = new PassThrough()
@@ -111,4 +112,26 @@ test('cancellation retains secondary cleanup failure and does not claim cleanup 
     }), error => error.code === 'cancelled' && error.message.includes('清理失败')
       && !error.message.includes('已清理'))
   } finally { await service.close(); await removeTestFolder(root) }
+})
+
+test('malformed probe metadata fails with a media error instead of an unchecked TypeError', async () => {
+  const service = new AmberService({ subprocess: {}, workingDirectory: {} })
+  try {
+    for (const value of [null, [], 'unexpected']) {
+      service.runtime.run = async () => JSON.stringify(value)
+      await assert.rejects(service.probe('unused', { ffprobe: 'unused' }, { work: '.', signal: signal() }),
+        error => error.code === 'invalid_metadata')
+    }
+    service.runtime.run = async () => JSON.stringify({ streams: [null, false, {}] })
+    await assert.rejects(service.probe('unused', { ffprobe: 'unused' }, { work: '.', signal: signal() }),
+      error => error.code === 'no_video')
+  } finally { await service.close() }
+})
+
+test('unknown error cleanup metadata cannot hide the original failure', () => {
+  const service = new AmberService({ subprocess: {}, workingDirectory: {} })
+  const failure = service.failure({ code: 'EIO', cleanupNotes: [null, 4, 'retained task folder'] }, signal(), signal())
+  assert.equal(failure.code, 'processing_failed')
+  assert(failure.message.includes('EIO'))
+  assert.deepEqual(failure.cleanupNotes, ['retained task folder'])
 })

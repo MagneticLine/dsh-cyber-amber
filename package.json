@@ -1,31 +1,85 @@
 {
   "name": "dsh-cyber-amber",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "Download a video or turn a link/local clip into a high-quality Gifski GIF in DeepSeek Harness.",
   "author": "MagneticLine",
-  "repository": { "type": "git", "url": "git+https://github.com/MagneticLine/dsh-cyber-amber.git" },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MagneticLine/dsh-cyber-amber.git"
+  },
   "homepage": "https://github.com/MagneticLine/dsh-cyber-amber#readme",
-  "bugs": { "url": "https://github.com/MagneticLine/dsh-cyber-amber/issues" },
-  "keywords": ["dsh-plugin", "deepseek-harness", "gif", "gifski", "yt-dlp"],
+  "bugs": {
+    "url": "https://github.com/MagneticLine/dsh-cyber-amber/issues"
+  },
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "gif",
+    "gifski",
+    "yt-dlp"
+  ],
   "type": "module",
   "exports": {
-    ".": "./lib/index.js",
+    ".": {
+      "types": "./lib/index.d.ts",
+      "default": "./lib/index.js"
+    },
     "./locale/*.json": "./locale/*.json",
     "./package.json": "./package.json"
   },
-  "dsh": { "bundle": { "patch": "./cordis.patch.yml" } },
-  "engines": { "node": "^22.19.0 || >=24.0.0", "dsh": "0.2.1-rc.3" },
-  "os": ["win32"],
-  "cpu": ["x64"],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "engines": {
+    "node": "^22.19.0 || >=24.0.0",
+    "dsh": "0.2.1-rc.3"
+  },
+  "os": [
+    "win32"
+  ],
+  "cpu": [
+    "x64"
+  ],
   "peerDependencies": {
     "@deepseek-ai/dsh-tools": "0.2.1-rc.3",
     "@deepseek-ai/schemastery": "3.18.5"
   },
   "peerDependenciesMeta": {
-    "@deepseek-ai/dsh-tools": { "optional": true },
-    "@deepseek-ai/schemastery": { "optional": true }
+    "@deepseek-ai/dsh-tools": {
+      "optional": true
+    },
+    "@deepseek-ai/schemastery": {
+      "optional": true
+    }
   },
-  "files": ["lib", "locale", "vendor", "cordis.patch.yml", "README.md", "LICENSE", "NOTICE.md", "docs"],
-  "scripts": { "test": "node --test test/*.test.mjs", "prepack": "node scripts/verify-bundle.mjs" },
-  "license": "SEE LICENSE IN NOTICE.md"
+  "files": [
+    "lib",
+    "src",
+    "tsconfig.json",
+    "locale",
+    "vendor",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE",
+    "NOTICE.md",
+    "docs"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "npm run build && node --test test/*.test.mjs",
+    "prepack": "npm run build && node scripts/verify-bundle.mjs"
+  },
+  "license": "SEE LICENSE IN NOTICE.md",
+  "devDependencies": {
+    "@deepseek-ai/cordis": "4.0.5",
+    "@deepseek-ai/dsh-subprocess": "0.2.1-rc.3",
+    "@deepseek-ai/dsh-tools": "0.2.1-rc.3",
+    "@deepseek-ai/dsh-working-directory": "0.2.1-rc.3",
+    "@deepseek-ai/schemastery": "3.18.5",
+    "@types/node": "22.19.3",
+    "typescript": "5.9.3"
+  }
 }

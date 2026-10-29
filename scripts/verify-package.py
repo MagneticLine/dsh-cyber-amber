@@ -26,7 +26,13 @@ with tarfile.open(path, 'r:gz') as archive:
         assert struct.unpack_from('<H', data, offset + 4)[0] == 0x8664, name
     names = archive.getnames()
     assert not any('/.validation/' in name or '/dist/' in name for name in names)
+    typed_package = isinstance(package['exports']['.'], dict) and 'types' in package['exports']['.']
+    if typed_package:
+        assert 'package/lib/index.d.ts' in names and 'package/tsconfig.json' in names
+        assert 'package/src/index.ts' in names and 'package/src/service.ts' in names
+        assert not any('/node_modules/' in name for name in names)
     matched = 0
+    matched_sources = 0
     notice_payload = None
     if len(sys.argv) > 2:
         installed = Path(sys.argv[2])
@@ -37,6 +43,9 @@ with tarfile.open(path, 'r:gz') as archive:
             if name.startswith('package/lib/') or name == 'package/vendor/manifest.json':
                 assert archive.extractfile(name).read() == (installed / name.removeprefix('package/')).read_bytes(), name
                 matched += 1
+            if typed_package and (name.startswith('package/src/') or name == 'package/tsconfig.json'):
+                assert archive.extractfile(name).read() == (installed / name.removeprefix('package/')).read_bytes(), name
+                matched_sources += 1
         if package['version'] != '0.2.0':
             helper = runpy.run_path(str(Path(__file__).with_name('package-notices.py')))
             notice_payload = helper['verify_notices'](archive, installed)
@@ -45,4 +54,5 @@ with tarfile.open(path, 'r:gz') as archive:
     print(json.dumps({'package': package['name'], 'version': package['version'], 'platform': 'win32-x64',
                       'tarball_bytes': path.stat().st_size, 'verified_dependency_files': len(manifest['files']),
                       'matched_installed_runtime_files': matched, 'notice_payload': notice_payload,
+                      'matched_installed_typescript_source_files': matched_sources,
                       'sha256': archive_sha256}))

@@ -44,6 +44,19 @@ test('explicit overrides are authoritative even when the bundle is incomplete', 
   assert.deepEqual(seen, ['external-ffmpeg'])
 })
 
+test('malformed manifest fields fail before returning an executable', async () => {
+  const options = await fixture('invalid-shapes')
+  const path = join(options.root, 'manifest.json')
+  const original = JSON.parse(await readFile(path, 'utf8'))
+  const invalid = [null, [], { ...original, platform: 1 },
+    { ...original, binaries: { ffmpeg: 7 } },
+    { ...original, files: { 'ffmpeg.exe': { component: 'ffmpeg', bytes: -1, sha256: 'bad' } } }]
+  for (const value of invalid) {
+    await writeFile(path, JSON.stringify(value))
+    await assert.rejects(bundledExecutable('ffmpeg', options), error => error.code === 'bundle_invalid')
+  }
+})
+
 test('release manifest contains all four pinned engines and the onedir Python support files', async () => {
   const manifest = JSON.parse(await readFile(join(VENDOR_ROOT, 'manifest.json'), 'utf8'))
   assert.deepEqual(Object.keys(manifest.binaries).sort(), ['ffmpeg', 'ffprobe', 'gifski', 'yt-dlp'])

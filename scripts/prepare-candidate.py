@@ -51,12 +51,13 @@ def main():
     try:
         report['node'] = run('node-version', [args.node, '--version']).strip()
         report['npm'] = run('npm-version', [args.node, args.npm_cli, '--version']).strip()
+        run('build', [args.node, ROOT / 'node_modules/typescript/bin/tsc', '-p', 'tsconfig.json'])
         run('bundle', [args.node, 'scripts/verify-bundle.mjs'])
         tests = run('tests', [args.node, '--test', '--test-reporter=tap',
                               *sorted(str(p.relative_to(ROOT)) for p in (ROOT / 'test').glob('*.test.mjs'))])
         stats = {key: int(re.search(rf'^# {key} (\d+)$', tests, re.M)[1])
                  for key in ('tests', 'pass', 'fail', 'skipped', 'cancelled')}
-        assert stats['tests'] >= 32 and stats['tests'] == stats['pass'] and not any(stats[k] for k in ('fail', 'skipped', 'cancelled')), stats
+        assert stats['tests'] >= 52 and stats['tests'] == stats['pass'] and not any(stats[k] for k in ('fail', 'skipped', 'cancelled')), stats
         report['tests'] = stats
         # The exact prepack integrity check ran above. Suppress duplicate lifecycle
         # stdout here so npm's documented JSON output remains machine-readable.

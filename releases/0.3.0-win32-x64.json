@@ -1,0 +1,104 @@
+{
+  "version": "0.3.0",
+  "status": "local_validation_passed",
+  "public_operations": false,
+  "release_status": "awaiting_user_review",
+  "migration_baseline": "76b7473a3075e39e7d9bd69d5e4f825ae51131c1",
+  "compiler": {
+    "version": "5.9.3",
+    "strict": true,
+    "module": "NodeNext",
+    "target": "ES2022",
+    "third_party_declaration_body_check_skipped": true,
+    "public_api_positive_and_negative_type_checks": "passed"
+  },
+  "tests": {
+    "node24": {
+      "tests": 52,
+      "pass": 52,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    "node22": {
+      "tests": 52,
+      "pass": 52,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    "python": {
+      "tests": 10,
+      "passed": 10,
+      "skipped": 0
+    }
+  },
+  "host": {
+    "version": "0.2.1-rc.3",
+    "tool_calls": 5,
+    "package_sha256": "37a5a36dbf90b82d54615b4c5690dd11af782d2f1f34c1ded4d1d77e4a5a0dad",
+    "full_gif_decode": true,
+    "temporary_folders": [],
+    "source_unchanged": true,
+    "gif": {
+      "width": 640,
+      "height": 360,
+      "bytes": 2797315,
+      "frame_count": 80,
+      "duration_seconds": 4,
+      "fps": 20,
+      "quality": 75,
+      "motion_quality": 75,
+      "lossy_quality": 75,
+      "start": 2,
+      "end": 6,
+      "loop": 0,
+      "mode": "normal",
+      "status": "completed",
+      "title": "input-97f536d3-272",
+      "attempts": [
+        {
+          "quality": 75,
+          "lossy_quality": 75,
+          "motion_quality": 75,
+          "bytes": 2797315
+        }
+      ]
+    },
+    "external_platform_retested": false,
+    "download_source": "loopback HTTP fixture",
+    "desktop_profile_modified": false
+  },
+  "reproducible_compiled_files": 21,
+  "preserved_old_documents_and_release_records": 26,
+  "verified_dependency_files": 158,
+  "matched_typescript_source_files": 8,
+  "assets": [
+    {
+      "file": "dsh-cyber-amber-0.3.0.tgz",
+      "bytes": 93693057,
+      "sha256": "37a5a36dbf90b82d54615b4c5690dd11af782d2f1f34c1ded4d1d77e4a5a0dad"
+    },
+    {
+      "file": "dsh-cyber-amber-0.3.0-upstream-sources.tar.gz",
+      "bytes": 20526850,
+      "sha256": "7552fc884b8eb3cc93fdddf183ae67a5babf4961134595e422bb531ac117ccbf"
+    },
+    {
+      "file": "dsh-cyber-amber-0.2.1-rc.1-third-party-sources-final-20261029.tar.gz",
+      "bytes": 291703528,
+      "sha256": "5337b2584163d13ca9950f11ddab7a56d0539ec614bb774d1d1bdd472e4ce075"
+    },
+    {
+      "file": "dsh-cyber-amber-0.2.1-rc.1-ffmpeg-native-sources-20261029.tar.gz",
+      "bytes": 2060107056,
+      "sha256": "9d34fcb06ec4ae2ab7075b2c3e86a744992784536f03d8e6a7f7c1ca593e9ee5"
+    },
+    {
+      "file": "SHA256SUMS-0.3.0.txt",
+      "bytes": 470,
+      "sha256": "8043dc520cc3b3588b8f5825cb19412a0bd5bf7d48abd47cc04aefc50cbb23d3"
+    }
+  ],
+  "remaining_gate": "REVIEW-01"
+}
