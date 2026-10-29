@@ -25,7 +25,7 @@ Download videos and turn links or local clips into GIFs in DeepSeek Harness.
 在 DSH 终端中执行：
 
 ```powershell
-dsh plugin --profile desktop add 'https://github.com/MagneticLine/dsh-cyber-amber/releases/download/v0.2.1/dsh-cyber-amber-0.2.1.tgz'
+dsh plugin --profile desktop add 'https://github.com/MagneticLine/dsh-cyber-amber/releases/download/v0.3.0/dsh-cyber-amber-0.3.0.tgz'
 ```
 
 也可从 [Releases](https://github.com/MagneticLine/dsh-cyber-amber/releases) 下载后本地安装，详见 [安装说明](docs/INSTALLATION.md)。
@@ -52,7 +52,7 @@ dsh plugin --profile desktop add 'https://github.com/MagneticLine/dsh-cyber-ambe
 可以在插件设置中调整默认尺寸、帧率、画质及片段时长，也能配置下载代理和 Cookie。
 需要登录的视频可提供 Cookie 文件；网站支持由 yt-dlp 提供，B 站已实测。
 
-更多选项见 [参数与配置](docs/REFERENCE.md)。开发和测试资料见 [开发说明](docs/DEVELOPMENT.md)。
+更多选项见 [参数与配置](docs/REFERENCE.md)。开发和测试资料见 [开发说明](docs/DEVELOPMENT-0.3.md)。
 
 ## 许可
 

@@ -76,8 +76,8 @@
   "assets": [
     {
       "file": "dsh-cyber-amber-0.3.0.tgz",
-      "bytes": 93693057,
-      "sha256": "37a5a36dbf90b82d54615b4c5690dd11af782d2f1f34c1ded4d1d77e4a5a0dad"
+      "bytes": 93693053,
+      "sha256": "5e481737f5c32bc76782d92d1b57a5e49284164ba800812f8f1fb2d4903aa4dc"
     },
     {
       "file": "dsh-cyber-amber-0.3.0-upstream-sources.tar.gz",
@@ -97,8 +97,33 @@
     {
       "file": "SHA256SUMS-0.3.0.txt",
       "bytes": 470,
-      "sha256": "8043dc520cc3b3588b8f5825cb19412a0bd5bf7d48abd47cc04aefc50cbb23d3"
+      "sha256": "4e364ffab4c7af275b22bf1212651397d82c2f1377fda25601a38d7fb5d4a674"
     }
   ],
-  "remaining_gate": "REVIEW-01"
+  "remaining_gate": "REVIEW-01",
+  "documentation_revision": {
+    "status": "passed",
+    "previous_package_sha256": "37a5a36dbf90b82d54615b4c5690dd11af782d2f1f34c1ded4d1d77e4a5a0dad",
+    "package_sha256": "5e481737f5c32bc76782d92d1b57a5e49284164ba800812f8f1fb2d4903aa4dc",
+    "package_bytes": 93693053,
+    "changed_members": [
+      "package/README.md",
+      "package/docs/INSTALLATION.md"
+    ],
+    "identical_common_members": 216,
+    "runtime_tests_reexecuted": false,
+    "runtime_and_source_bytes_identical": true,
+    "user_acceptance": {
+      "reported_by": "user",
+      "date": "2026-10-29",
+      "scope": "User reported acceptance passed; no additional test details supplied.",
+      "accepted_package_sha256": "37a5a36dbf90b82d54615b4c5690dd11af782d2f1f34c1ded4d1d77e4a5a0dad"
+    }
+  },
+  "user_acceptance": {
+    "reported_by": "user",
+    "date": "2026-10-29",
+    "scope": "User reported acceptance passed; no additional test details supplied.",
+    "accepted_package_sha256": "37a5a36dbf90b82d54615b4c5690dd11af782d2f1f34c1ded4d1d77e4a5a0dad"
+  }
 }
