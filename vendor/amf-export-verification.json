@@ -1,0 +1,10 @@
+{
+  "stage": "50-amf",
+  "revision": "57ee0cfb0e1a08d9041f77435653794c1b012be0",
+  "files": 578,
+  "tree_sha256": "efcb83f140649aa6819af60f6d544a1cc6ee8858f3f4009fe5a96ea1f1c705ad",
+  "tree_api_route": "repos/GPUOpen-LibrariesAndSDKs/AMF/git/trees/57ee0cfb0e1a08d9041f77435653794c1b012be0?recursive=1",
+  "cached_source_sha256": "2b9b274e157ae453d20f4ffa2a8f60acef9a50fdaa949cadf1460c602ec3df7b",
+  "comparison": "Git blob SHA1 for every cached file against the untruncated commit tree, excluding Thirdparty as specified by the build recipe",
+  "all_files_identical": true
+}

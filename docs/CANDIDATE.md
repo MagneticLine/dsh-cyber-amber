@@ -32,10 +32,11 @@ dsh plugin --profile desktop add 'file:F:/Project/03-Tools-Automation/DSH-plugin
 不要为了运行命令修改全局配置或升级工具。占位符使用本机已验证的路径：
 
 ```powershell
-python scripts/prepare-candidate.py --node '<node.exe>' --npm-cli '<npm-cli.js>' --source-sidecar 'dist/dsh-cyber-amber-0.2.0-upstream-sources.tar.gz'
+python scripts/prepare-candidate.py --node '<node.exe>' --npm-cli '<npm-cli.js>' --source-sidecar 'dist/dsh-cyber-amber-0.2.1-rc.1-upstream-sources.tar.gz' --materials-sidecar 'dist/dsh-cyber-amber-0.2.1-rc.1-third-party-sources-final-20261029.tar.gz' --native-sidecar 'dist/dsh-cyber-amber-0.2.1-rc.1-ffmpeg-native-sources-20261029.tar.gz'
 python scripts/verify-host.py --dsh-node '<DSH安装目录/DeepSeek Harness.exe>' --dsh-cli '<DSH安装目录/resources/app.asar/dsh/node_modules/@deepseek-ai/dsh-desktop-host/lib/cli.js>' --package 'dist/dsh-cyber-amber-0.2.1-rc.1.tgz' --source '<已有的至少10秒MP4绝对路径>'
 ```
 
+rc.1 文件已经冻结，准备下一个候选版时须先使用新的版本号，不能覆盖原包。
 第一个命令验证依赖、完整测试、实际 tgz 和源码附件，生成版本专属校验值。
 第二个命令在项目 `.validation` 下隔离安装候选包，用真实 DSH 工具服务和本机 HTTP 视频源
 调用下载器与编码器，无模型调用、无平台联网、无 GUI 操作。成功后清理本次宿主与媒体，保留小型报告。

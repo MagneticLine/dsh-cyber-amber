@@ -18,6 +18,8 @@ def main():
     parser.add_argument('--node', required=True, help='Verified Node executable')
     parser.add_argument('--npm-cli', required=True, help='Verified npm-cli.js path; no install is run')
     parser.add_argument('--source-sidecar', type=Path, required=True, help='Existing hash-pinned source snapshot sidecar')
+    parser.add_argument('--materials-sidecar', type=Path, help='Additional pinned third-party sources/notice payload')
+    parser.add_argument('--native-sidecar', type=Path, help='Separate FFmpeg native-source payload')
     parser.add_argument('--require-public-ready', action='store_true')
     args = parser.parse_args()
     os.chdir(ROOT)
@@ -53,6 +55,10 @@ def main():
         assert stats['tests'] >= 32 and stats['tests'] == stats['pass'] and not any(stats[k] for k in ('fail', 'skipped', 'cancelled')), stats
         report['tests'] = stats
         audit_args = [sys.executable, 'scripts/audit-distribution.py', '--sidecar', args.source_sidecar.resolve()]
+        if args.materials_sidecar:
+            audit_args += ['--materials-sidecar', args.materials_sidecar.resolve()]
+        if args.native_sidecar:
+            audit_args += ['--native-sidecar', args.native_sidecar.resolve()]
         if args.require_public_ready:
             audit_args.append('--require-public-ready')
         audit = json.loads(run('distribution-audit', audit_args))

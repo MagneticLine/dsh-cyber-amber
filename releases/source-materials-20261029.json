@@ -1,0 +1,42 @@
+{
+  "date": "2026-10-29",
+  "status": "source_material_checks_verified_candidate_repack_pending",
+  "artifacts": [
+    {
+      "artifact": "dsh-cyber-amber-0.2.1-rc.1-third-party-sources-final-20261029.tar.gz",
+      "files": 674,
+      "bytes": 291703528,
+      "sha256": "5337b2584163d13ca9950f11ddab7a56d0539ec614bb774d1d1bdd472e4ce075"
+    },
+    {
+      "artifact": "dsh-cyber-amber-0.2.1-rc.1-ffmpeg-native-sources-20261029.tar.gz",
+      "files": 117,
+      "bytes": 2060107056,
+      "sha256": "9d34fcb06ec4ae2ab7075b2c3e86a744992784536f03d8e6a7f7c1ca593e9ee5"
+    }
+  ],
+  "source_records": 669,
+  "native_archives": 103,
+  "verified_component_checks": [
+    "DIST-01",
+    "DIST-02",
+    "DIST-03"
+  ],
+  "pending_component_checks": [
+    "DIST-04"
+  ],
+  "offline_tests": {
+    "passed": 6,
+    "failed": 0,
+    "skipped": 0
+  },
+  "pinned_dependency_files_verified": 158,
+  "public_mutations": false,
+  "frozen_rc1_package_unchanged": true,
+  "large_upstream_cache_removed": true,
+  "cleanup_pending": false,
+  "retained_windows_lock_residue": ".validation/distribution/tmpk9mwyom0/wc.db",
+  "scope": "Version, retained-source and notice evidence; no complete linked-code SBOM or bit-identical rebuild certification",
+  "duplicate_source_files_removed": 774,
+  "duplicate_source_bytes_removed": 2503427485
+}

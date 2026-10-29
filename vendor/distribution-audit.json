@@ -1,6 +1,30 @@
 {
   "schema_version": 1,
   "publication_ready": false,
+  "additional_source_progress": {
+    "verified": true,
+    "gifski_complete": true,
+    "python_complete": true,
+    "ffmpeg_complete": true,
+    "sidecar": {
+      "files": 674,
+      "bytes": 291703528,
+      "sha256": "5337b2584163d13ca9950f11ddab7a56d0539ec614bb774d1d1bdd472e4ce075"
+    },
+    "gifski_lock_sources": 102,
+    "rustc_revision": "6b00bc3880198600130e1cf62b8f8a93494488cc",
+    "python_requirement_sources": 21,
+    "python_native_sources": 18,
+    "python_scope": "Pinned Python sdists, custom bootloader source/recipes, full CPython snapshot, native dependency source archives mapped from CPython/curl recipes, and retained notices. Some CPython native revisions are recipe-derived, not runtime measurements; not a bit-identical rebuild or full linked-code SBOM certification.",
+    "native_sidecar": {
+      "files": 117,
+      "bytes": 2060107056,
+      "sha256": "9d34fcb06ec4ae2ab7075b2c3e86a744992784536f03d8e6a7f7c1ca593e9ee5"
+    },
+    "native_archives": 103,
+    "native_cargo_references": 635,
+    "ffmpeg_scope": "Exact build-cache source archives, root/nested Git and SVN pins, AMF file-tree comparison, native notices and Cargo source checks. Conservative superset; not a linked-code SBOM or legal certification."
+  },
   "scope": "Evidence inventory, not a complete SBOM, source closure, or legal certification.",
   "main_components": {
     "gifski": {
@@ -682,7 +706,7 @@
       "checksum": "626bd9fa9734751fc50d6060752170984d7053f5a39061f524cda68023d4db8a"
     }
   ],
-  "gifski_lock_scope": "Includes optional/build dependencies; not proof each entry is linked into the shipped executable. Per-dependency source/license closure remains unverified.",
+  "gifski_lock_scope": "Includes optional/build dependencies; matching source archives and retained notices are checked when the additional sidecar is supplied. Not proof every entry is linked.",
   "ffmpeg_enabled_features": [
     "version3",
     "shared",
@@ -2125,19 +2149,9 @@
   "ytdlp_notice_scope": "Upstream notices cover multiple platforms; presence here does not prove inclusion in this Windows build or identify an exact bundled version.",
   "publication_blockers": [
     {
-      "id": "DIST-01",
-      "component": "ffmpeg",
-      "reason": "Exact binary-to-transitive-library version, source, patch and notice mapping is not established for all enabled libraries."
-    },
-    {
-      "id": "DIST-02",
-      "component": "gifski",
-      "reason": "Main source and Cargo.lock are preserved; the shipped binary feature/dependency source and license closure has not been independently established."
-    },
-    {
-      "id": "DIST-03",
-      "component": "yt-dlp",
-      "reason": "Main source and upstream notices are preserved; exact private Python/native dependency versions and corresponding source coverage remain incomplete."
+      "id": "DIST-04",
+      "component": "candidate-package",
+      "reason": "Frozen rc.1 does not contain the newly retained aggregate notices. Prepare and verify a new candidate without replacing rc.1; user review is required before any public action."
     }
   ]
 }
