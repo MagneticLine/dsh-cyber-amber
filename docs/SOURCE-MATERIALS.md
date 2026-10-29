@@ -3,7 +3,7 @@
 This work supplements the frozen 0.2.1-rc.1 candidate. It does not replace its
 tgz, executable versions, hashes, public release, or PR state.
 
-The later local rc.2 candidate includes these notice aggregates and reuses both
+The later local rc.2 candidate and 0.2.1 package include these aggregates and reuse both
 2026-10-29 source-material sidecars unchanged. Their rc.1 filenames identify
 the source-collection snapshot, not an incompatibility with rc.2; engine versions
 and binary hashes are identical across the two candidates.

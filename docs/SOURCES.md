@@ -1,10 +1,10 @@
 # Source code and build information
 
-The local 0.2.1-rc.2 candidate has a separate source sidecar named
-`dsh-cyber-amber-0.2.1-rc.2-upstream-sources.tar.gz`; it has not been uploaded.
+Version 0.2.1 has a separate source sidecar named
+`dsh-cyber-amber-0.2.1-upstream-sources.tar.gz`, prepared locally for release review.
 The main source revisions below are unchanged. Additional source and notice
 materials are documented in [SOURCE-MATERIALS.md](SOURCE-MATERIALS.md).
-The frozen rc.1 installation package predates these new notices. The rc.2
+The frozen rc.1 installation package predates these new notices. The rc.2 and 0.2.1
 package includes them and reuses the unchanged 2026-10-29 additional source
 sidecars; see [DISTRIBUTION.md](DISTRIBUTION.md). User approval is still required.
 

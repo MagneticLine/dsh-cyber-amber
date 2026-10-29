@@ -1,6 +1,6 @@
 {
   "name": "dsh-cyber-amber",
-  "version": "0.2.1-rc.2",
+  "version": "0.2.1",
   "description": "Download a video or turn a link/local clip into a high-quality Gifski GIF in DeepSeek Harness.",
   "author": "MagneticLine",
   "repository": { "type": "git", "url": "git+https://github.com/MagneticLine/dsh-cyber-amber.git" },

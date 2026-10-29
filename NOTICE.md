@@ -11,7 +11,7 @@ No other plugin's credentials or runtime are included.
 Corresponding-source access directions, upstream dependency records and build
 instructions are collected in `docs/SOURCES.md`. Release downloads also offer
 immutable upstream source snapshots separately from the installable tgz.
-The rc.2 candidate additionally uses the two unchanged, locally retained
+Versions 0.2.1-rc.2 and 0.2.1 additionally use the two unchanged, locally retained
 2026-10-29 source-material sidecars described in `docs/SOURCE-MATERIALS.md`.
 The multi-gigabyte source archives are not installed as runtime dependencies.
 

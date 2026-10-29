@@ -1,0 +1,112 @@
+{
+  "version": "0.2.1",
+  "report_kind": "local_prepublication_validation_snapshot",
+  "release_status": "awaiting_user_review",
+  "public_operations": false,
+  "publication_ready": false,
+  "candidate_ready_for_review": true,
+  "assets": [
+    {
+      "file": "dsh-cyber-amber-0.2.1.tgz",
+      "bytes": 93660068,
+      "sha256": "8b839231f963f4343c3d29204f6198ad9db82594811545ecdf3ef731c930d817"
+    },
+    {
+      "file": "dsh-cyber-amber-0.2.1-upstream-sources.tar.gz",
+      "bytes": 20526850,
+      "sha256": "7552fc884b8eb3cc93fdddf183ae67a5babf4961134595e422bb531ac117ccbf"
+    },
+    {
+      "file": "dsh-cyber-amber-0.2.1-rc.1-third-party-sources-final-20261029.tar.gz",
+      "bytes": 291703528,
+      "sha256": "5337b2584163d13ca9950f11ddab7a56d0539ec614bb774d1d1bdd472e4ce075"
+    },
+    {
+      "file": "dsh-cyber-amber-0.2.1-rc.1-ffmpeg-native-sources-20261029.tar.gz",
+      "bytes": 2060107056,
+      "sha256": "9d34fcb06ec4ae2ab7075b2c3e86a744992784536f03d8e6a7f7c1ca593e9ee5"
+    },
+    {
+      "file": "SHA256SUMS-0.2.1.txt",
+      "bytes": 470,
+      "sha256": "695239c98e8537da34a6e49c0190bf83dd1b3801a0b9262203797d4ab1c90236"
+    }
+  ],
+  "total_upload_bytes": 2465997972,
+  "tests": {
+    "node24": {
+      "tests": 49,
+      "pass": 49,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    "node22": {
+      "tests": 49,
+      "pass": 49,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    "python": {
+      "tests": 10,
+      "passed": 10,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "verified_dependency_files": 158,
+  "verified_notice_evidence_files": 15,
+  "rc2_comparison": {
+    "identical_runtime_locale_config_and_native_files": 163,
+    "package_metadata_changes": [
+      "version"
+    ]
+  },
+  "host": {
+    "version": "0.2.1-rc.3",
+    "status": "passed",
+    "tool_calls": 5,
+    "full_gif_decode": true,
+    "temporary_folders": [],
+    "source_unchanged": true,
+    "gif": {
+      "width": 640,
+      "height": 360,
+      "bytes": 2797315,
+      "frame_count": 80,
+      "duration_seconds": 4,
+      "fps": 20,
+      "quality": 75,
+      "motion_quality": 75,
+      "lossy_quality": 75,
+      "loop": 0
+    }
+  },
+  "rc2_bilibili_acceptance": {
+    "reported_by": "user",
+    "retested_with_platform_in_0.2.1": false,
+    "bvid": "BV1RwnQ6sEd5",
+    "has_audio": true,
+    "audio_codec": "aac",
+    "width": 640,
+    "height": 400,
+    "frames": 80,
+    "seconds": 4,
+    "fps": 20,
+    "loop": 0,
+    "bytes": 2969452,
+    "q": 53,
+    "m": 75,
+    "l": 53,
+    "tiny_budget": "needs_adjustment without dimension/fps changes",
+    "warnings": false,
+    "permission_errors": false,
+    "temporary_residue": false
+  },
+  "market_entry_local_validation": true,
+  "market_remote_ci_run": false,
+  "github_ci_run": false,
+  "desktop_profile_modified": false,
+  "remaining_gate": "REVIEW-01"
+}
