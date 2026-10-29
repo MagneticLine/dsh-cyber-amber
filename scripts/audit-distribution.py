@@ -141,7 +141,7 @@ def inventory(sidecar, materials_sidecar=None, native_sidecar=None):
         blockers.append({'id': 'DIST-02', 'component': 'gifski', 'reason': 'Additional pinned Cargo sources and retained notices have not been verified.'})
     if not progress['python_complete']:
         blockers.append({'id': 'DIST-03', 'component': 'yt-dlp', 'reason': 'Additional Python/native-build and custom PyInstaller source records have not been verified.'})
-    blockers.append({'id': 'DIST-04', 'component': 'candidate-package', 'reason': 'Frozen rc.1 does not contain the newly retained aggregate notices. Prepare and verify a new candidate without replacing rc.1; user review is required before any public action.'})
+    blockers.append({'id': 'DIST-04', 'component': 'candidate-package', 'reason': 'Actual candidate notice/evidence payload has not been verified by this source-only inventory; supply --candidate-package. Public actions also require user review.'})
     return {
         'schema_version': 1,
         'publication_ready': False,
@@ -169,18 +169,39 @@ def main():
     parser.add_argument('--sidecar', type=Path, required=True)
     parser.add_argument('--materials-sidecar', type=Path, help='Verify the additional source payload before clearing component checks')
     parser.add_argument('--native-sidecar', type=Path, help='Verify the separate large FFmpeg native-source payload')
+    parser.add_argument('--candidate-package', type=Path, help='Also inspect the actual candidate notice/evidence payload')
+    parser.add_argument('--report', type=Path, help='Separate candidate report, never embedded back into its own tarball')
     parser.add_argument('--write', action='store_true', help='Explicitly update the tracked evidence inventory')
     parser.add_argument('--require-public-ready', action='store_true')
     args = parser.parse_args()
+    if args.candidate_package and args.write:
+        parser.error('Candidate attestations must use --report, not rewrite the source inventory inside the package')
     result = inventory(args.sidecar, args.materials_sidecar, args.native_sidecar)
     path = ROOT / 'vendor/distribution-audit.json'
     if args.write:
         path.write_text(json.dumps(result, indent=2, ensure_ascii=False) + '\n', encoding='utf-8', newline='\n')
     else:
         assert json.loads(path.read_text(encoding='utf-8')) == result, 'Distribution evidence differs; inspect and explicitly regenerate'
+    if args.candidate_package:
+        helper = runpy.run_path(str(ROOT / 'scripts/package-notices.py'))
+        with tarfile.open(args.candidate_package, 'r:gz') as archive:
+            package = json.load(archive.extractfile('package/package.json'))
+            assert package['version'] == json.loads((ROOT / 'package.json').read_text(encoding='utf-8'))['version']
+            notices = helper['verify_notices'](archive, ROOT)
+        with args.candidate_package.open('rb') as source:
+            checksum = hashlib.file_digest(source, 'sha256').hexdigest()
+        result['candidate_package'] = {'file': args.candidate_package.name, 'version': package['version'],
+            'sha256': checksum, 'notice_payload': notices}
+        result['publication_blockers'] = [b for b in result['publication_blockers'] if b['id'] != 'DIST-04']
+        result['candidate_ready_for_review'] = not result['publication_blockers']
+        result['publication_blockers'].append({'id': 'REVIEW-01', 'component': 'user-review',
+            'reason': 'Local checks do not authorize remote operations. User must review the candidate and explicitly approve any public action.'})
+    if args.report:
+        args.report.write_text(json.dumps(result, indent=2, ensure_ascii=False) + '\n', encoding='utf-8', newline='\n')
     print(json.dumps({'main_components': len(result['main_components']), 'license_files': len(result['preserved_license_files']),
                       'cargo_lock_entries': len(result['gifski_lock_entries']), 'build_recipes': len(result['ffmpeg_build_recipes']),
                       'notice_entries': len(result['ytdlp_notice_entries']), 'publication_ready': result['publication_ready'],
+                      'candidate_ready_for_review': result.get('candidate_ready_for_review', False),
                       'publication_blockers': result['publication_blockers']}))
     if args.require_public_ready and not result['publication_ready']:
         raise SystemExit('Public distribution gate is BLOCKED; see vendor/distribution-audit.json')

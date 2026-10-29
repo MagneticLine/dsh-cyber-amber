@@ -2,11 +2,18 @@
 
 The original JavaScript glue and tests are MIT licensed. The Windows x64 release
 is an aggregate of that code and the following separately licensed command-line
-programs. Their notices and license texts are preserved under `vendor/licenses`.
+programs. Their upstream notices and license texts are preserved under `vendor/licenses`.
+Additional dependency notices and authorship are preserved in
+`vendor/SOURCE_MATERIAL_NOTICES.txt` and `vendor/NATIVE_SOURCE_NOTICES.txt`.
+These are conservative collections; inclusion does not assert every optional,
+build-only or other-platform dependency is linked into the Windows binaries.
 No other plugin's credentials or runtime are included.
 Corresponding-source access directions, upstream dependency records and build
 instructions are collected in `docs/SOURCES.md`. Release downloads also offer
 immutable upstream source snapshots separately from the installable tgz.
+The rc.2 candidate additionally uses the two unchanged, locally retained
+2026-10-29 source-material sidecars described in `docs/SOURCE-MATERIALS.md`.
+The multi-gigabyte source archives are not installed as runtime dependencies.
 
 - Gifski: <https://github.com/ImageOptim/gifski>, AGPL-3.0-or-later; alternative
   commercial licensing is offered by its author. Tested engine version: 1.34.0.

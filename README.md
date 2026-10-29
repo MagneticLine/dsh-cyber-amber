@@ -11,8 +11,8 @@ Optional size limits use measured Q/L adjustments. Windows x64 only; output stay
 
 ## 安装与依赖
 
-当前源码为 **0.2.1-rc.1 本地验收候选版**；安装与复验见 [docs/CANDIDATE.md](docs/CANDIDATE.md)。
-它尚未公开发布，第三方依赖分发核查仍有阻塞项，见 [docs/DISTRIBUTION.md](docs/DISTRIBUTION.md)。
+当前源码为 **0.2.1-rc.2 本地验收候选版**；安装与复验见 [docs/CANDIDATE.md](docs/CANDIDATE.md)。
+它尚未公开发布；源码资料与实际安装包检查见 [docs/DISTRIBUTION.md](docs/DISTRIBUTION.md)，公开操作仍需用户审核同意。
 以下公开链接仍指向既有的 0.2.0，不代表候选版下载地址。
 
 宿主已验证版本为 DSH 0.2.1-rc.3。Windows x64 自包含包最低系统为 Windows 10 22H2。

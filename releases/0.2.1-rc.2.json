@@ -1,0 +1,70 @@
+{
+  "version": "0.2.1-rc.2",
+  "candidate_ready_for_review": true,
+  "publication_ready": false,
+  "public_operations": false,
+  "package": {
+    "file": "dsh-cyber-amber-0.2.1-rc.2.tgz",
+    "bytes": 93658800,
+    "sha256": "36acd45ad98108f9adcf4324415c57af5365dc854aca73e6e7979ab1dc15a55d"
+  },
+  "checksums": [
+    "36acd45ad98108f9adcf4324415c57af5365dc854aca73e6e7979ab1dc15a55d  dsh-cyber-amber-0.2.1-rc.2.tgz",
+    "82bca54c32a85f6bec77ede9fd24ecd2b4b8431ffb638f4709806d7e72fbb2b3  dsh-cyber-amber-0.2.1-rc.2-upstream-sources.tar.gz",
+    "5337b2584163d13ca9950f11ddab7a56d0539ec614bb774d1d1bdd472e4ce075  dsh-cyber-amber-0.2.1-rc.1-third-party-sources-final-20261029.tar.gz",
+    "9d34fcb06ec4ae2ab7075b2c3e86a744992784536f03d8e6a7f7c1ca593e9ee5  dsh-cyber-amber-0.2.1-rc.1-ffmpeg-native-sources-20261029.tar.gz"
+  ],
+  "tests": {
+    "node24": {
+      "tests": 49,
+      "pass": 49,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    "node22": {
+      "tests": 49,
+      "pass": 49,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    "python": {
+      "tests": 10,
+      "passed": 10,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "verified_dependency_files": 158,
+  "verified_notice_evidence_files": 15,
+  "host": {
+    "version": "0.2.1-rc.3",
+    "status": "passed",
+    "tool_calls": 5,
+    "config_validation": true,
+    "full_gif_decode": true,
+    "temporary_folders": [],
+    "original_source_sha256": "6bc0c05833fd3fa5b6b63989dba9129165bc0277534dd4c1831faa7d060a7150",
+    "gif": {
+      "width": 640,
+      "height": 360,
+      "bytes": 2797315,
+      "frame_count": 80,
+      "duration_seconds": 4,
+      "fps": 20,
+      "quality": 75,
+      "motion_quality": 75,
+      "lossy_quality": 75,
+      "loop": 0
+    }
+  },
+  "desktop_profile_modified": false,
+  "frozen_rc1_unchanged": true,
+  "runtime_source_unchanged": true,
+  "limitations": [
+    "No new external-platform download in rc.2 acceptance; a local HTTP source exercised the real downloader.",
+    "GitHub CI has not been run remotely.",
+    "Public actions require user review."
+  ]
+}

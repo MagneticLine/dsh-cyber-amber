@@ -2151,7 +2151,7 @@
     {
       "id": "DIST-04",
       "component": "candidate-package",
-      "reason": "Frozen rc.1 does not contain the newly retained aggregate notices. Prepare and verify a new candidate without replacing rc.1; user review is required before any public action."
+      "reason": "Actual candidate notice/evidence payload has not been verified by this source-only inventory; supply --candidate-package. Public actions also require user review."
     }
   ]
 }

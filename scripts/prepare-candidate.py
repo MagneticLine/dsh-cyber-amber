@@ -30,6 +30,10 @@ def main():
     report_dir.mkdir(parents=True, exist_ok=True)
     dist = ROOT / 'dist'
     dist.mkdir(exist_ok=True)
+    for name in (f'dsh-cyber-amber-{version}.tgz', f'dsh-cyber-amber-{version}-upstream-sources.tar.gz',
+                 f'SHA256SUMS-{version}.txt'):
+        if (dist / name).exists():
+            raise FileExistsError(f'Refusing to replace retained candidate artifact: {dist / name}')
     env = dict(os.environ, PYTHONIOENCODING='utf-8')
     report = {'version': version, 'steps': [], 'public_operations': False}
 
@@ -54,7 +58,17 @@ def main():
                  for key in ('tests', 'pass', 'fail', 'skipped', 'cancelled')}
         assert stats['tests'] >= 32 and stats['tests'] == stats['pass'] and not any(stats[k] for k in ('fail', 'skipped', 'cancelled')), stats
         report['tests'] = stats
-        audit_args = [sys.executable, 'scripts/audit-distribution.py', '--sidecar', args.source_sidecar.resolve()]
+        # The exact prepack integrity check ran above. Suppress duplicate lifecycle
+        # stdout here so npm's documented JSON output remains machine-readable.
+        packed = json.loads(run('pack', [args.node, args.npm_cli, 'pack', '--ignore-scripts', '--json', '--pack-destination', dist]))
+        assert len(packed) == 1
+        artifact = dist / packed[0]['filename']
+        assert artifact.name == f'dsh-cyber-amber-{version}.tgz'
+        report['package'] = json.loads(run('package', [sys.executable, 'scripts/verify-package.py', artifact, ROOT]))
+        assert report['package']['matched_installed_runtime_files'] >= 7
+        assert report['package']['notice_payload']['verified']
+        audit_args = [sys.executable, 'scripts/audit-distribution.py', '--sidecar', args.source_sidecar.resolve(),
+                      '--candidate-package', artifact, '--report', report_dir / 'distribution-report.json']
         if args.materials_sidecar:
             audit_args += ['--materials-sidecar', args.materials_sidecar.resolve()]
         if args.native_sidecar:
@@ -64,18 +78,13 @@ def main():
         audit = json.loads(run('distribution-audit', audit_args))
         report['publication_ready'] = audit['publication_ready']
         report['publication_blockers'] = audit['publication_blockers']
-        # The exact prepack integrity check ran above. Suppress duplicate lifecycle
-        # stdout here so npm's documented JSON output remains machine-readable.
-        packed = json.loads(run('pack', [args.node, args.npm_cli, 'pack', '--ignore-scripts', '--json', '--pack-destination', dist]))
-        assert len(packed) == 1
-        artifact = dist / packed[0]['filename']
-        assert artifact.name == f'dsh-cyber-amber-{version}.tgz'
-        report['package'] = json.loads(run('package', [sys.executable, 'scripts/verify-package.py', artifact, ROOT]))
-        assert report['package']['matched_installed_runtime_files'] >= 7
+        report['candidate_ready_for_review'] = audit['candidate_ready_for_review']
+        assert report['candidate_ready_for_review'], 'Candidate technical checks remain incomplete'
         run('sources', [sys.executable, 'scripts/source-snapshots.py', '--from-sidecar', args.source_sidecar.resolve()])
         sidecar = dist / f'dsh-cyber-amber-{version}-upstream-sources.tar.gz'
         sums = []
-        for path in (artifact, sidecar):
+        for path in (artifact, sidecar, *([args.materials_sidecar] if args.materials_sidecar else []),
+                     *([args.native_sidecar] if args.native_sidecar else [])):
             with path.open('rb') as stream:
                 sha = hashlib.file_digest(stream, 'sha256').hexdigest()
             sums.append(f'{sha}  {path.name}')

@@ -1,6 +1,6 @@
 # Distribution evidence and public-release gate
 
-The 0.2.1-rc.1 package is a local functional validation candidate. It is **not
+The 0.2.1-rc.2 package is a local validation candidate. It is **not
 cleared for a new public distribution**. Main project source snapshots and license
 files are present, but they do not prove complete corresponding-source coverage
 for every library inside the upstream binaries.
@@ -30,14 +30,15 @@ download cache was removed after verified extraction.
 
 Details and evidence scope: [SOURCE-MATERIALS.md](SOURCE-MATERIALS.md).
 `SOURCE_MATERIAL_NOTICES.txt` and the additional sidecar are new local materials;
-the frozen rc.1 tgz has not been replaced. A later candidate must include the
-new notices before any new public binary distribution is considered.
+the frozen rc.1 tgz has not been replaced. The rc.2 package includes the two
+aggregate notices and indexes; actual packaged bytes are checked separately.
 
 ## Remaining packaging step
 
 | ID | Component | Evidence still needed before public release |
 |---|---|---|
-| DIST-04 | Candidate package | The frozen rc.1 tgz predates the additional notices. Prepare a new candidate containing them, verify the actual package, then obtain user review before any public action. |
+| DIST-04 | Candidate package | Source-only inventory cannot attest a tarball. Supplying `--candidate-package` checks its notice payload and records an independent candidate report. |
+| REVIEW-01 | User review | A successful local candidate check does not authorize a public upload, Release, push or PR. |
 
 This list describes verification gaps, not a conclusion that upstream releases
 or this package violate a license. Do not mark these items resolved merely because
@@ -53,6 +54,12 @@ maintainer operation after inspecting changed evidence. `--require-public-ready`
 fails while any public-release blocker remains. Candidate packaging reports the
 blockers but does not hide them or call the package publication-ready. Downloaded
 ranges were accepted only after matching the complete upstream artifact digest.
+
+`prepare-candidate.py` verifies the actual tgz and installed payload; it writes
+`.validation/candidate-0.2.1-rc.2/distribution-report.json`. A successful candidate
+report clears DIST-04, sets `candidate_ready_for_review=true`, and leaves
+`publication_ready=false` with REVIEW-01. The tracked source-only inventory is
+not overwritten with the package's own hash, avoiding a circular archive hash.
 
 The review scope is retained material and version evidence. A complete linked-code
 SBOM, bit-identical rebuild, and legal certification are not claimed. The native

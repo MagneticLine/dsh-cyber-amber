@@ -1,4 +1,4 @@
-# 0.2.1-rc.1 本地候选版
+# 0.2.1-rc.2 本地候选版
 
 本轮只做本地修改、Git 提交和安装包验收，不推送、不上传 Release、不操作 PR。
 两个工具入口及默认 640／20fps／Q75／M75／L75 不变。
@@ -9,17 +9,17 @@
 
 ```powershell
 dsh plugin --profile desktop remove dsh-cyber-amber
-dsh plugin --profile desktop add 'file:F:/Project/03-Tools-Automation/DSH-plugin/dsh-cyber-amber/dist/dsh-cyber-amber-0.2.1-rc.1.tgz'
+dsh plugin --profile desktop add 'file:F:/Project/03-Tools-Automation/DSH-plugin/dsh-cyber-amber/dist/dsh-cyber-amber-0.2.1-rc.2.tgz'
 ```
 
 这两步由用户执行，维护者的验证脚本只操作独立 DSH_HOME 下的 `amber-rc` profile。
 安装前可用 `Get-FileHash -Algorithm SHA256 <安装包>` 对照
-`dist/SHA256SUMS-0.2.1-rc.1.txt`；0.2.0 的公开包与校验文件保持原样。
+`dist/SHA256SUMS-0.2.1-rc.2.txt`；原 rc.1 与 0.2.0 的包和校验文件保持原样。
 四个程序路径留空使用内置版；如未出现工具，请刷新宿主或新建会话。
 
 ## 发给 DSH 的验收提示词
 
-> 请验收本地安装的赛博琥珀 0.2.1-rc.1。先只读确认版本和四个程序路径配置；不要改权限、提权或安装依赖。
+> 请验收本地安装的赛博琥珀 0.2.1-rc.2。先只读确认版本和四个程序路径配置；不要改权限、提权或安装依赖。
 > 用 amber_download_video 下载 BV1RwnQ6sEd5，检查本地文件和返回的 has_audio/audio_codec。
 > 复用下载结果，用 amber_make_gif 制作 2–6 秒、上限 3MB 的 GIF；检查 640×400、20fps、80帧、4秒及无限循环，Q/L 可自动下调，M 必须仍为75。
 > 再试一个明显无法满足的体积上限，应返回 needs_adjustment，不自动缩尺寸或降帧率。
@@ -33,16 +33,17 @@ dsh plugin --profile desktop add 'file:F:/Project/03-Tools-Automation/DSH-plugin
 
 ```powershell
 python scripts/prepare-candidate.py --node '<node.exe>' --npm-cli '<npm-cli.js>' --source-sidecar 'dist/dsh-cyber-amber-0.2.1-rc.1-upstream-sources.tar.gz' --materials-sidecar 'dist/dsh-cyber-amber-0.2.1-rc.1-third-party-sources-final-20261029.tar.gz' --native-sidecar 'dist/dsh-cyber-amber-0.2.1-rc.1-ffmpeg-native-sources-20261029.tar.gz'
-python scripts/verify-host.py --dsh-node '<DSH安装目录/DeepSeek Harness.exe>' --dsh-cli '<DSH安装目录/resources/app.asar/dsh/node_modules/@deepseek-ai/dsh-desktop-host/lib/cli.js>' --package 'dist/dsh-cyber-amber-0.2.1-rc.1.tgz' --source '<已有的至少10秒MP4绝对路径>'
+python scripts/verify-host.py --dsh-node '<DSH安装目录/DeepSeek Harness.exe>' --dsh-cli '<DSH安装目录/resources/app.asar/dsh/node_modules/@deepseek-ai/dsh-desktop-host/lib/cli.js>' --package 'dist/dsh-cyber-amber-0.2.1-rc.2.tgz' --source '<已有的至少10秒MP4绝对路径>'
 ```
 
-rc.1 文件已经冻结，准备下一个候选版时须先使用新的版本号，不能覆盖原包。
+rc.1 文件已经冻结；rc.2 复用其两份额外源码附件，外部程序及源码版本相同。
+脚本拒绝覆盖已有候选包；准备下一候选版时须使用新的版本号。
 第一个命令验证依赖、完整测试、实际 tgz 和源码附件，生成版本专属校验值。
 第二个命令在项目 `.validation` 下隔离安装候选包，用真实 DSH 工具服务和本机 HTTP 视频源
 调用下载器与编码器，无模型调用、无平台联网、无 GUI 操作。成功后清理本次宿主与媒体，保留小型报告。
 失败时保留具体日志目录；遇到真正的访问拒绝应停止受阻操作，不修改权限或换目录绕过。
 
-结果在 `.validation/candidate-0.2.1-rc.1/`。检查报告的 status、实际测试数量及跳过数，
+结果在 `.validation/candidate-0.2.1-rc.2/`。检查报告的 status、实际测试数量及跳过数，
 不能只看启动退出码。CI 文件只是本地准备，未经远端实际运行不能写成“GitHub CI 已通过”。
 
 ## 发布条件
@@ -51,3 +52,7 @@ rc.1 文件已经冻结，准备下一个候选版时须先使用新的版本号
 [DISTRIBUTION.md](DISTRIBUTION.md)。`audit-distribution.py --require-public-ready` 应拒绝通过，
 不能用功能测试替代这项核查。只有依赖资料、最终安装包、发布文案和市场条目均完成审查，
 并得到用户对具体公开操作的明确同意后，才执行任何远端写入。
+
+源码清单只验证资料；实际包检查记录在独立的 `distribution-report.json`。
+`candidate_ready_for_review=true` 表示可交付验收，`publication_ready=false` 表示仍需用户审核。
+包的 SHA256 不写回包内清单，避免产生自引用校验值。

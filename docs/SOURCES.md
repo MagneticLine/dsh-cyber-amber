@@ -1,11 +1,12 @@
 # Source code and build information
 
-The local 0.2.1-rc.1 candidate has a separate source sidecar named
-`dsh-cyber-amber-0.2.1-rc.1-upstream-sources.tar.gz`; it has not been uploaded.
+The local 0.2.1-rc.2 candidate has a separate source sidecar named
+`dsh-cyber-amber-0.2.1-rc.2-upstream-sources.tar.gz`; it has not been uploaded.
 The main source revisions below are unchanged. Additional source and notice
 materials are documented in [SOURCE-MATERIALS.md](SOURCE-MATERIALS.md).
-The frozen rc.1 installation package predates these new notices and remains
-blocked for a new public distribution; see [DISTRIBUTION.md](DISTRIBUTION.md).
+The frozen rc.1 installation package predates these new notices. The rc.2
+package includes them and reuses the unchanged 2026-10-29 additional source
+sidecars; see [DISTRIBUTION.md](DISTRIBUTION.md). User approval is still required.
 
 Cyber Amber does not modify the bundled executables or DLLs. It copies selected
 files from the upstream distributions identified by `vendor/sources.lock.json`.

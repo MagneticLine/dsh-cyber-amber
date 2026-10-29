@@ -1,6 +1,7 @@
 """Check the actual npm tarball, including every pinned executable and support DLL."""
 import hashlib
 import json
+import runpy
 from pathlib import Path
 import struct
 import sys
@@ -26,6 +27,7 @@ with tarfile.open(path, 'r:gz') as archive:
     names = archive.getnames()
     assert not any('/.validation/' in name or '/dist/' in name for name in names)
     matched = 0
+    notice_payload = None
     if len(sys.argv) > 2:
         installed = Path(sys.argv[2])
         previous = json.loads((installed / 'package.json').read_text(encoding='utf-8'))
@@ -35,8 +37,12 @@ with tarfile.open(path, 'r:gz') as archive:
             if name.startswith('package/lib/') or name == 'package/vendor/manifest.json':
                 assert archive.extractfile(name).read() == (installed / name.removeprefix('package/')).read_bytes(), name
                 matched += 1
+        if package['version'] != '0.2.0':
+            helper = runpy.run_path(str(Path(__file__).with_name('package-notices.py')))
+            notice_payload = helper['verify_notices'](archive, installed)
     with path.open('rb') as stream:
         archive_sha256 = hashlib.file_digest(stream, 'sha256').hexdigest()
     print(json.dumps({'package': package['name'], 'version': package['version'], 'platform': 'win32-x64',
                       'tarball_bytes': path.stat().st_size, 'verified_dependency_files': len(manifest['files']),
-                      'matched_installed_runtime_files': matched, 'sha256': archive_sha256}))
+                      'matched_installed_runtime_files': matched, 'notice_payload': notice_payload,
+                      'sha256': archive_sha256}))
