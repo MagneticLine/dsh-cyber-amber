@@ -8,8 +8,8 @@
   "assets": [
     {
       "file": "dsh-cyber-amber-0.2.1.tgz",
-      "bytes": 93660068,
-      "sha256": "8b839231f963f4343c3d29204f6198ad9db82594811545ecdf3ef731c930d817"
+      "bytes": 93658494,
+      "sha256": "f311368643ef3a5fd1ea38c2c5cfd60662ca8c21e80aced7e57a51bfa1ea290f"
     },
     {
       "file": "dsh-cyber-amber-0.2.1-upstream-sources.tar.gz",
@@ -29,10 +29,10 @@
     {
       "file": "SHA256SUMS-0.2.1.txt",
       "bytes": 470,
-      "sha256": "695239c98e8537da34a6e49c0190bf83dd1b3801a0b9262203797d4ab1c90236"
+      "sha256": "f04c7e90aeda5f53148af97516c939f584d864d4f633b5fee1c039fd331b6f17"
     }
   ],
-  "total_upload_bytes": 2465997972,
+  "total_upload_bytes": 2465996398,
   "tests": {
     "node24": {
       "tests": 49,
@@ -81,7 +81,9 @@
       "motion_quality": 75,
       "lossy_quality": 75,
       "loop": 0
-    }
+    },
+    "validated_package_sha256": "8b839231f963f4343c3d29204f6198ad9db82594811545ecdf3ef731c930d817",
+    "reused_for_byte_identical_runtime": true
   },
   "rc2_bilibili_acceptance": {
     "reported_by": "user",
@@ -108,5 +110,28 @@
   "market_remote_ci_run": false,
   "github_ci_run": false,
   "desktop_profile_modified": false,
-  "remaining_gate": "REVIEW-01"
+  "remaining_gate": "REVIEW-01",
+  "documentation_revision": {
+    "version": "0.2.1",
+    "revision": "documentation-only",
+    "previous_package_sha256": "8b839231f963f4343c3d29204f6198ad9db82594811545ecdf3ef731c930d817",
+    "package_sha256": "f311368643ef3a5fd1ea38c2c5cfd60662ca8c21e80aced7e57a51bfa1ea290f",
+    "package_bytes": 93658494,
+    "changed_members": [
+      "package/README.md",
+      "package/docs/INSTALLATION.md"
+    ],
+    "added_members": [
+      "package/docs/DEVELOPMENT.md",
+      "package/docs/REFERENCE.md"
+    ],
+    "identical_common_members": 190,
+    "all_packaged_markdown_matches_project": true,
+    "relative_links_valid": true,
+    "runtime_tests_reexecuted": false,
+    "runtime_tests_reused_for_identical_bytes": true,
+    "source_sidecars_unchanged": true,
+    "runtime_and_host_test_results_reused": true,
+    "validation_report": ".validation/documentation-revision-0.2.1/content-verification.json"
+  }
 }
