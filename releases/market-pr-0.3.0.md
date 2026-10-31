@@ -1,13 +1,10 @@
-Add Cyber Amber video download and GIF tools
+收录赛博琥珀：视频下载与 GIF 制作工具
 
-Adds `MagneticLine/dsh-cyber-amber` in the tools category. It provides
-`amber_download_video` and `amber_make_gif`, with optional measured GIF size
-limits and configurable clip, dimensions, frame rate and quality.
+在 `tools` 分类新增 `MagneticLine/dsh-cyber-amber`，提供两个工具：
 
-The entry pins the v0.3.0 GitHub Release tarball for Windows x64. It bundles
-fixed download/encoding engines and has been tested in an isolated DSH
-0.2.1-rc.3 profile. Other platforms and host versions are not claimed.
+- `amber_download_video`：下载视频并保留原片，返回本地路径及媒体信息。
+- `amber_make_gif`：从视频链接或本地文件选取片段制作 GIF，支持自定义尺寸、帧率、画质和体积上限；指定上限时实测并调整 Q/L，保留尺寸、帧率与片段。
 
-The user has also accepted the 0.3.0 build in their DSH environment.
+条目使用已发布的 v0.3.0 固定安装链接。支持 Windows x64，内置固定版本的 yt-dlp、FFmpeg／ffprobe 和 Gifski；已完成 DSH 0.2.1-rc.3 隔离宿主验证及实际会话验收。
 
-Only `data/plugins/MagneticLine__dsh-cyber-amber.yml` is proposed.
+本 PR 仅新增 `data/plugins/MagneticLine__dsh-cyber-amber.yml`，不修改自动生成的 README。
