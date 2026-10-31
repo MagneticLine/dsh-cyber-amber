@@ -1,0 +1,4 @@
+interface:
+  display_name: "视频下载"
+  short_description: "下载多平台单个视频，保留原片并返回可供其他工具读取的本地路径"
+  default_prompt: "使用 $video-download 将这个视频链接下载到当前项目，返回本地文件路径和媒体信息。"
