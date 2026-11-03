@@ -6,6 +6,7 @@
 
 使用 `package.json` 声明的 Node 版本和 npm，构建依赖由 `package-lock.json` 固定。
 DSH SDK 仅作为开发依赖提供类型；安装包运行时仍使用宿主服务。
+0.3.1 使用固定的 0.2.1-rc.5 SDK 构建，运行兼容范围为 `^0.2.1-rc.3`。构建依赖固定版本不要求用户的宿主版本与其相同；只有相关接口变化或出现实际故障时才需重新适配。
 
 ```powershell
 npm ci --legacy-peer-deps --ignore-scripts --no-audit --no-fund
@@ -26,7 +27,7 @@ TypeScript 5.9.3 编译为 ES2022 ESM；输出 JS、类型声明和 source map�
 ```powershell
 npm run build
 npm pack --pack-destination dist
-python scripts/verify-package.py dist/dsh-cyber-amber-0.3.0.tgz .
+python scripts/verify-package.py dist/dsh-cyber-amber-0.3.1.tgz .
 ```
 
 完整的源码附件与隔离宿主验证沿用现有 `prepare-candidate.py`、`verify-host.py`；前者现在会先编译源码。

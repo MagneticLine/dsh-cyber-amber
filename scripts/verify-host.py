@@ -25,6 +25,7 @@ def main():
     parser.add_argument('--package', type=Path, required=True)
     parser.add_argument('--source', type=Path, required=True, help='Existing MP4 with at least 10 seconds of video')
     parser.add_argument('--deadline', type=int, default=180)
+    parser.add_argument('--expected-dsh-version', help='Fail if the actual CLI is not this version')
     args = parser.parse_args()
     package, source = args.package.resolve(strict=True), args.source.resolve(strict=True)
     assert package.is_file() and source.is_file()
@@ -50,6 +51,9 @@ def main():
                 raise RuntimeError(f'{label} failed: {result.stderr[-3000:]}')
             return result.stdout
 
+        host_version = run('host-version', ['--version']).strip()
+        if args.expected_dsh_version and host_version != args.expected_dsh_version:
+            raise RuntimeError(f'Expected DSH {args.expected_dsh_version}, got {host_version!r}')
         run('initialize', ['--profile', 'amber-rc', '--from-default-profile', 'sdk-minimal', '--dump-config'])
         profile = home / 'profiles' / 'amber-rc'
         # Inspect the generated project before the official CLI performs install.
@@ -82,6 +86,8 @@ def main():
                     raise RuntimeError(f'Host did not produce its report; inspect {owned}')
                 time.sleep(0.2)
             report = json.loads(report_path.read_text(encoding='utf-8'))
+            report['dsh_version'] = host_version
+            report['version_exemptions_used'] = False
             report['installed_package'] = json.loads(verified.stdout)
             with source.open('rb') as stream:
                 assert hashlib.file_digest(stream, 'sha256').hexdigest() == source_hash, 'Original video changed'

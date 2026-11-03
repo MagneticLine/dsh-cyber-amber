@@ -1,8 +1,17 @@
 {
   "version": "0.3.0",
   "status": "local_validation_passed",
-  "public_operations": false,
-  "release_status": "awaiting_user_review",
+  "public_operations": true,
+  "release_status": "published",
+  "publication": {
+    "tag": "v0.3.0",
+    "published_at": "2026-10-29T16:30:00Z",
+    "url": "https://github.com/MagneticLine/dsh-cyber-amber/releases/tag/v0.3.0",
+    "market_pr": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin/pull/10130",
+    "market_merged_at": "2026-10-31T16:44:01Z",
+    "verified_on": "2026-11-03",
+    "published_assets_modified": false
+  },
   "migration_baseline": "76b7473a3075e39e7d9bd69d5e4f825ae51131c1",
   "compiler": {
     "version": "5.9.3",
@@ -100,7 +109,7 @@
       "sha256": "4e364ffab4c7af275b22bf1212651397d82c2f1377fda25601a38d7fb5d4a674"
     }
   ],
-  "remaining_gate": "REVIEW-01",
+  "remaining_gate": null,
   "documentation_revision": {
     "status": "passed",
     "previous_package_sha256": "37a5a36dbf90b82d54615b4c5690dd11af782d2f1f34c1ded4d1d77e4a5a0dad",

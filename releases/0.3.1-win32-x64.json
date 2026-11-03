@@ -1,0 +1,116 @@
+{
+  "version": "0.3.1",
+  "status": "local_validation_passed",
+  "release_status": "awaiting_user_review",
+  "public_operations": false,
+  "engines_dsh": "^0.2.1-rc.3",
+  "build_sdk": "0.2.1-rc.5",
+  "validation_date": "2026-11-03",
+  "typecheck": "passed",
+  "tests": {
+    "node22": {
+      "version": "22.20.0",
+      "tests": 52,
+      "pass": 52,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    "node24": {
+      "version": "24.21.0",
+      "tests": 52,
+      "pass": 52,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    "python": {
+      "tests": 24,
+      "passed": 24,
+      "skipped": 0
+    }
+  },
+  "host": {
+    "version": "0.2.1-rc.5",
+    "tool_calls": 5,
+    "registered_tools": [
+      "amber_download_video",
+      "amber_make_gif"
+    ],
+    "package_sha256": "b2c2c399ade616a7f4e3e623781b8657d97d62df9d75e151bbb84862fb4ed0fd",
+    "version_exemptions_used": false,
+    "desktop_profile_modified": false,
+    "independent_full_gif_decode": true,
+    "temporary_folders": [],
+    "temporary_validation_directory_removed": true,
+    "source_unchanged": true,
+    "source_sha256": "d10e2c774ce0a66d4b17af5aa018ea88cf7a4e054602cb0e53168b039d0842ba",
+    "download_source": "loopback HTTP serving existing user video",
+    "external_platform_retested": false,
+    "gif": {
+      "width": 640,
+      "height": 400,
+      "bytes": 2990361,
+      "frame_count": 80,
+      "duration_seconds": 4,
+      "fps": 20,
+      "quality": 50,
+      "motion_quality": 75,
+      "lossy_quality": 50,
+      "start": 2,
+      "end": 6,
+      "loop": 0,
+      "mode": "normal"
+    }
+  },
+  "package_comparison": {
+    "baseline": "0.3.0",
+    "candidate": "0.3.1",
+    "changed_members": [
+      "package/README.md",
+      "package/docs/DEVELOPMENT-0.3.md",
+      "package/docs/INSTALLATION.md",
+      "package/package.json"
+    ],
+    "added_members": [],
+    "removed_members": [],
+    "identical_members": 214,
+    "all_runtime_types_sources_and_vendor_bytes_identical": true
+  },
+  "assets": [
+    {
+      "file": "dsh-cyber-amber-0.3.1.tgz",
+      "bytes": 93693248,
+      "sha256": "b2c2c399ade616a7f4e3e623781b8657d97d62df9d75e151bbb84862fb4ed0fd"
+    },
+    {
+      "file": "dsh-cyber-amber-0.3.1-upstream-sources.tar.gz",
+      "bytes": 20526850,
+      "sha256": "7552fc884b8eb3cc93fdddf183ae67a5babf4961134595e422bb531ac117ccbf"
+    },
+    {
+      "file": "dsh-cyber-amber-0.2.1-rc.1-third-party-sources-final-20261029.tar.gz",
+      "bytes": 291703528,
+      "sha256": "5337b2584163d13ca9950f11ddab7a56d0539ec614bb774d1d1bdd472e4ce075"
+    },
+    {
+      "file": "dsh-cyber-amber-0.2.1-rc.1-ffmpeg-native-sources-20261029.tar.gz",
+      "bytes": 2060107056,
+      "sha256": "9d34fcb06ec4ae2ab7075b2c3e86a744992784536f03d8e6a7f7c1ca593e9ee5"
+    },
+    {
+      "file": "SHA256SUMS-0.3.1.txt",
+      "bytes": 470,
+      "sha256": "cfb64e25b1c5217a6aec01bc9925b77ed388107fabda3ec1e39f39c8ee565f7b"
+    }
+  ],
+  "remaining_gates": [
+    "REVIEW-01"
+  ],
+  "pipeline_note": "The initial prepare-candidate command mistakenly requested --require-public-ready. It correctly stopped at user review after technical checks passed. Source packaging and checksums were completed separately without rerunning tests or changing the tested tarball; original logs are retained.",
+  "not_retested": [
+    "DSH rc.3 on this candidate",
+    "external platform download",
+    "future DSH versions"
+  ]
+}

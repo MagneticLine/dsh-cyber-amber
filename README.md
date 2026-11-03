@@ -20,12 +20,12 @@ Download videos and turn links or local clips into GIFs in DeepSeek Harness.
 
 ## 安装
 
-**Windows x64 · DSH 0.2.1-rc.3**
+**Windows x64 · DSH 0.2 系列（从 0.2.1-rc.3 起）**
 
 在 DSH 终端中执行：
 
 ```powershell
-dsh plugin --profile desktop add 'https://github.com/MagneticLine/dsh-cyber-amber/releases/download/v0.3.0/dsh-cyber-amber-0.3.0.tgz'
+dsh plugin --profile desktop add 'https://github.com/MagneticLine/dsh-cyber-amber/releases/download/v0.3.1/dsh-cyber-amber-0.3.1.tgz'
 ```
 
 也可从 [Releases](https://github.com/MagneticLine/dsh-cyber-amber/releases) 下载后本地安装，详见 [安装说明](docs/INSTALLATION.md)。

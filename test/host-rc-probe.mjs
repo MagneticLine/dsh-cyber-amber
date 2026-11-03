@@ -25,6 +25,9 @@ export function apply(ctx, config) {
         await mkdir(config.outputDir, { recursive: true })
         const pkg = JSON.parse(await readFile(join(config.packageRoot, 'package.json'), 'utf8'))
         report.version = pkg.version
+        report.engines_dsh = pkg.engines.dsh
+        report.tools = ['amber_download_video', 'amber_make_gif']
+        for (const tool of report.tools) assert(ctx.tools.get(tool), `Missing tool: ${tool}`)
         const { Config } = await import(pathToFileURL(join(config.packageRoot, 'lib/index.js')).href)
         assert.equal(Config({}).quality, 75)
         for (const invalid of [{ fps: 0 }, { fps: 1.5 }, { maxPending: 0 }, { quality: 101 }]) {

@@ -1,21 +1,21 @@
 # 安装
 
-适用于 Windows x64，DSH 版本为 0.2.1-rc.3。
+适用于 Windows x64，兼容 DSH 0.2 系列（从 0.2.1-rc.3 起）。当前版本已在 0.2.1-rc.5 上验证。
 
 ## 通过链接安装
 
 在 DSH 终端中执行：
 
 ```powershell
-dsh plugin --profile desktop add 'https://github.com/MagneticLine/dsh-cyber-amber/releases/download/v0.3.0/dsh-cyber-amber-0.3.0.tgz'
+dsh plugin --profile desktop add 'https://github.com/MagneticLine/dsh-cyber-amber/releases/download/v0.3.1/dsh-cyber-amber-0.3.1.tgz'
 ```
 
 ## 下载后安装
 
-从 [Releases](https://github.com/MagneticLine/dsh-cyber-amber/releases) 下载 `dsh-cyber-amber-0.3.0.tgz`，然后把下面路径换成文件的实际位置：
+从 [Releases](https://github.com/MagneticLine/dsh-cyber-amber/releases) 下载 `dsh-cyber-amber-0.3.1.tgz`，然后把下面路径换成文件的实际位置：
 
 ```powershell
-dsh plugin --profile desktop add 'file:C:/Downloads/dsh-cyber-amber-0.3.0.tgz'
+dsh plugin --profile desktop add 'file:C:/Downloads/dsh-cyber-amber-0.3.1.tgz'
 ```
 
 安装后若当前会话没有出现工具，刷新 DSH 或新建会话。
