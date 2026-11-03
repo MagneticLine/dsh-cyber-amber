@@ -1,8 +1,24 @@
 {
   "version": "0.3.1",
   "status": "local_validation_passed",
-  "release_status": "awaiting_user_review",
-  "public_operations": false,
+  "release_status": "published",
+  "public_operations": true,
+  "publication": {
+    "user_approved_on": "2026-11-03",
+    "reviewed_commit": "50c3c41521bcfa3a88e4d3af82420bc837752f04",
+    "tag": "v0.3.1",
+    "release_id": 432472625,
+    "published_at": "2026-11-03T09:18:58Z",
+    "url": "https://github.com/MagneticLine/dsh-cyber-amber/releases/tag/v0.3.1",
+    "verified_assets": 5,
+    "public_download_sha256_verified": true,
+    "main_ci": "https://github.com/MagneticLine/dsh-cyber-amber/actions/runs/41608228767",
+    "tag_ci": "https://github.com/MagneticLine/dsh-cyber-amber/actions/runs/41608580718",
+    "main_and_tag_ci": "passed",
+    "market_pr": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin/pull/11649",
+    "market_pr_is_draft": false,
+    "market_pr_state_at_submission": "OPEN"
+  },
   "engines_dsh": "^0.2.1-rc.3",
   "build_sdk": "0.2.1-rc.5",
   "validation_date": "2026-11-03",
@@ -104,9 +120,8 @@
       "sha256": "cfb64e25b1c5217a6aec01bc9925b77ed388107fabda3ec1e39f39c8ee565f7b"
     }
   ],
-  "remaining_gates": [
-    "REVIEW-01"
-  ],
+  "remaining_gates": [],
+  "market_review_pending": true,
   "pipeline_note": "The initial prepare-candidate command mistakenly requested --require-public-ready. It correctly stopped at user review after technical checks passed. Source packaging and checksums were completed separately without rerunning tests or changing the tested tarball; original logs are retained.",
   "not_retested": [
     "DSH rc.3 on this candidate",
